@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header{
+    background-color: #ff0000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+  }
+  
+  .logo {
+    height: 70px;
+    cursor: pointer;
+    align-items: center;
+    
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .title {
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+    text-transform: uppercase;
+  }
+  .cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  .cart-image {
+    width: 100px;
+    height: 100px;
+  }
+  .cart-info {
+    flex: 1;
+    margin-left: 20px;
+  }
+  .cart-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .cart-price {
+    font-size: 16px;
+    color: #f00;
+  }
+  .cart-delete {
+    width: 50px;
+    height: 50px;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .cart-delete:hover{
+    background-color: blue;
+  }
+  .total {
+    display: flex;
+    margin-top: 20px;
+    padding-right: 10px;
+  }
+  .total-label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .total-price {
+    font-size: 20px;
+    color: #f00;
+  }
+  .checkout {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  
+  }
+  .checkout:hover{
+    background-color: rgb(72, 72, 255);
+  }
+  
+  footer {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30%;
+  }
+  
+  @media (max-width: 768px) {
+    .header, footer {
+      width: 100%;
+    }
+  
+    .container{
+      width: 95%;
+    }
+  
+    footer{
+      margin-top: 70%;
+    }
+  
+    .logo{
+      height: 50px;
+    }
+  }
