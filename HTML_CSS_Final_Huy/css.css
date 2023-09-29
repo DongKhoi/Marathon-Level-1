@@ -1,0 +1,443 @@
+
+header {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-box button {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+.product-list {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    width: 80%;
+}
+
+.product {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #888;
+}
+
+.product button {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #e64a19;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 80px;
+    height: auto;
+    margin-left: 10vh;
+}
+
+.footer-info p {
+    margin: 5px 50px;
+}
+
+body{
+    margin: 0px;
+}
+
+.Trangchu {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.banner-left {
+    background-color: #f2f2f2; 
+    padding: 20px; 
+    position: sticky;
+    top: 20%; 
+    left: 0;
+    z-index: 1000; 
+    height: 10%;
+}
+
+.banner-right {
+    background-color: #f2f2f2; 
+    padding: 20px; 
+    position: sticky;
+    top: 20%; 
+    right: 0;
+    z-index: 1000; 
+    height: 10%;
+}
+
+.error-message {
+    color: red;
+    display: none;
+}
+
+.loadmore{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15vh;
+    margin-bottom: 10vh;
+}
+
+.loadmore a{
+    text-decoration: none;
+}
+
+.loadmore a:hover{
+    opacity: 0.5;
+}
+.Giohang input[type="number"]{
+    border-radius: 10px;
+    width: 40px;
+    text-align: right;
+    
+}
+.Giohang img{
+    
+    width: 200px;
+    
+}
+.Cart{
+    width: 80%;
+    margin: auto;
+}
+.Giohang{
+    display: flex;
+    font-size: xx-large;
+    align-items: center;
+    border: solid 1px grey;
+    padding: 10px 10px;
+    
+    
+}
+.Giohang button{
+    height: 30px;
+    background-color: #ff5722;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border: #ff5722;
+    border-radius:  5px;
+    
+}
+.Giohang button[type="submit"]{
+    margin:auto;
+    margin-top: 90px;
+    background-color: #ff5722;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border: #ff5722 ;
+    border-radius: 5px;
+}
+.Giohang span{
+    padding-left: 100px;
+}
+.Giohang h3{
+    padding-left: 100px;
+}
+.Giohang p{
+    padding-left: 100px;
+}
+.Thanhtoan{
+    text-align: right;
+    margin-right: 50px;
+
+}
+.Thanhtoan p{
+    color: #ff5722;
+    font-size: xx-large;
+}
+.Thanhtoan button{
+    background-color: #ff5722;
+    border: #ff5722;
+    border-radius: 5px;
+    color: white;
+    font-size: 200%;
+}
+.Cart button:hover{
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.Main1 {
+    display: flex;
+    margin: 10px 80px;
+    padding: 10px;
+    border: solid 1px grey;
+
+}
+
+.SP {
+    padding-left: 30px;
+}
+
+
+.Main1 img {
+    max-width: 100%;
+    height: 500px;
+    display: flex;
+    left: 0;
+}
+
+.SP h1 {
+    color: #ee4d2d;
+}
+
+.Phan1 p {
+    color: #888;
+
+}
+
+.Phan2 span {
+    border: solid #ff5722 5px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 10px;
+}
+
+.Phan3 span {
+    opacity: 0.5;
+}
+
+.Phan4 input {
+    border-radius: 10px;
+    width: 50px;
+
+}
+
+.Phan5 span {
+    border: #ff5722 solid 3px;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 100;
+    color: #ff5722;
+
+}
+
+button[type="add"] {
+    background-color: white;
+    color: #ff5722;
+    border: #ff5722 solid 3px;
+    font-size: larger;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+button[type="muahang"] {
+    background-color: #ff5722;
+    color: white;
+    border: solid white 3px;
+    border-radius: 10px;
+    font-size: larger;
+    padding: 10px;
+}
+
+.Phan5 button:hover {
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.Main2 {
+    border: solid 1px grey;
+    padding: 0px 50px;
+    left: 30%;
+    margin: 10px 80px;
+}
+.Main2 h1{
+    width: 300px;
+    margin: auto;
+}
+
+.Main2 td {
+    padding-left: 10px;
+}
+
+.Main2 table {
+    width: 300px;
+    margin: auto;
+    padding: 10px 0;
+
+}
+
+.Main2 button {
+    background-color: #ff5722;
+    color: white;
+    border: #ff5722 solid 3px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.Main2 img {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+.Thongtin button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+@media (min-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+@media (max-width: 768px){
+    .Main1 img{
+        width: 170px;
+        height: 200px;
+    }
+    .Main1 {
+        border: none;
+        font-size: x-small;
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+    }
+    .Main2{
+        border: none;
+        font-size: xx-small;
+        padding: 0;
+        margin: 0 30px;
+    }
+    .Main2 table{
+        width: 20%;
+        }
+    .Giohang {
+        display: flex;
+        border: none;
+        font-size: x-small;
+        margin: 0;
+        padding: 0;
+    }
+    .Giohang img{
+        width: 100px;
+        height: 100px;
+    }
+    .Giohang p {
+        padding-left: 10px;
+        margin-left: -60px;
+        margin-top: -25px;
+    }
+    .Giohang h3{
+        padding-left: 10px;
+        margin-top: -70px;
+    }
+    .Giohang span{
+        padding-left: 5px;
+        margin-left: -70px;
+    }
+    .Giohang input[type="number"]{
+        height: 15px;
+        width: 20px;
+    }
+    .Giohang button{
+        width: 20px;
+        height: 20px;
+        
+    }
+    .Giohang button[type="submit"]{
+        width: 50px;
+        margin: 0;
+        padding: 0;
+        margin-left:  5px;
+    }
+    .Thanhtoan {
+        font-size: xx-small;
+        text-align: center;
+    }
+    
+}
+.banner-left{
+    background-color: grey;
+    right: 0;
+    top: 20%;
+    position: sticky;
+}
+.banner-right{
+    background-color: grey;
+    left: 0;
+    top: 20%;
+    position: sticky;
+}
+
+
+
