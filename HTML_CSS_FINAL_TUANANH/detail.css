@@ -1,186 +1,183 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  background-color: #ff0000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: auto;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+.logo {
+  height: 70px;
+  cursor: pointer;
+  align-items: center;
   
-  .header{
-    background-color: #ff0000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    margin: auto;
-    position: sticky;
-    z-index: 1;
-    top: 0;
-  }
-  
-  .logo {
-    height: 70px;
-    cursor: pointer;
-    align-items: center;
-    
-  }
-  .price {
-    color: #ff0000;
-    font-size: 50px;
-    text-transform: uppercase;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    position: relative;
-    top: -394px;
-    left: 76px;
-  }
-  
-  .item{
-      background-color: #555;
-      border-radius: 10px;
-      position: relative;
-    top: 85px;
-    left: 5px; 
-    cursor: pointer;
-  }
-  
-  .item:hover{
-      opacity: 0.8;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-  }
-  
-  nav ul li a:hover {
+}
+.price {
+  color: #ff0000;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  position: relative;
+  top: -394px;
+  left: 76px;
+}
+
+.item{
     background-color: #555;
-  }
-  
-  
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .product-description{
-      background-color: white;
-      box-shadow: 5px 5px 10px rgb(93, 93, 93);
-      margin: 10px;
-      padding: 100px;
-      height: 850px;
-      width: 2300px;
-  }
-  
-  
-  .product-description h1 {
-    font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 10px;
     position: relative;
-    color: rgb(0, 0, 0);
-    margin-left: 37px;
-    top: 20px;
-  }
-  
-  .product-description p {
-    font-size: 24px;
-    color: #000000;
+  top: 85px;
+  left: 5px; 
+  cursor: pointer;
+}
+
+.item:hover{
+    opacity: 0.8;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product-description{
+    background-color: white;
+    box-shadow: 5px 5px 10px rgb(93, 93, 93);
+    margin: 10px;
+    padding: 100px;
+    height: 850px;
+    width: 2300px;
+}
+
+
+.product-description h1 {
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: relative;
+  color: rgb(0, 0, 0);
+  margin-left: 37px;
+  top: 20px;
+}
+
+.product-description p {
+  font-size: 24px;
+  color: #000000;
+  margin-left: 470px;
+  position: relative;
+  top: -368px;
+  left: 63px;
+}
+
+.product-description label {
+  font-size: 30px;
+  color: #000000;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.product-description input[type="number"] {
+  width: 40px;
+  font-size: 24px;
+  color: #000000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.product-description button {
+  background-color: rgb(255, 0, 0);
+  color: #333;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  top: 50px;
+  left: -15px;
+  text-transform: uppercase;
+}
+.product-description button a{
+  text-decoration: none;
+}
+.product-description button[type="add-item"] {
+background-color: white;
+}
+
+.product-description button:hover {
+  background-color: #0080ff;
+  color: #fff;
+}
+
+form {
     margin-left: 470px;
     position: relative;
-    top: -368px;
-    left: 63px;
+    top: -348px;
+    left: 76px;
   }
-  
-  .product-description label {
-    font-size: 30px;
-    color: #000000;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  
-  .product-description input[type="number"] {
-    width: 40px;
-    font-size: 24px;
-    color: #000000;
-    border-radius: 10px;
+.contact-info{
+    background-color: white;
+    box-shadow: 5px 5px 10px rgb(93, 93, 93);
+   margin: 20px;
+   padding: 10px;
+} 
+h2{
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-  }
-  
-  .product-description button {
-    background-color: rgb(255, 0, 0);
-    color: #333;
-    padding: 10px 20px;
-    font-size: 24px;
-    border-radius: 10px;
-    cursor: pointer;
     position: relative;
-    top: 50px;
-    left: -15px;
+    bottom: 30px;
+}
+
+.box button{
+    height: 50px;
+    width: 150px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
     text-transform: uppercase;
-  }
-  .product-description button a{
-    text-decoration: none;
-  }
-  .product-description button[type="add-item"] {
-  background-color: white;
-  }
-  
-  .product-description button:hover {
-    background-color: #0080ff;
-    color: #fff;
-  }
-  
-  form {
-      margin-left: 470px;
-      position: relative;
-      top: -348px;
-      left: 76px;
-    }
-  .contact-info{
-      background-color: white;
-      box-shadow: 5px 5px 10px rgb(93, 93, 93);
-     margin: 20px;
-     padding: 10px;
-  } 
-  h2{
-      font-size: 50px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
-      position: relative;
-      bottom: 30px;
-  }
-  
-  .box button{
-      height: 50px;
-      width: 150px;
-      background-color: red;
-      color: white;
-      font-size: 20px;
-      border: none;
-      border-radius: 10px;
-      text-transform: uppercase;
-      position: relative;
-    top: 300px;
-    left: 50px;
-  }
-  
-  .contact-info ul, li{
-      display: flex;
-      justify-content: space-around;
-      text-transform: capitalize;
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: bold;
-  }
-  .box button:hover{
-      background-color: rgb(0, 51, 255);
-  }
-  
-  footer {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 20px;
-    bottom: 0;
-    text-align: center;
-  }
-  
+    position: relative;
+  top: 300px;
+  left: 50px;
+}
+
+.contact-info ul, li{
+    display: flex;
+    justify-content: space-around;
+    text-transform: capitalize;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.box button:hover{
+    background-color: rgb(0, 51, 255);
+}
+
+footer {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 20px;
+  bottom: 0;
+  text-align: center;
+}
