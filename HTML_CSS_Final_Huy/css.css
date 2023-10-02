@@ -47,7 +47,9 @@ nav ul li {
     padding: 5px 10px;
     cursor: pointer;
 }
-
+.card{
+    width: 18rem;
+}
 
 .product-list {
     display: grid;
@@ -78,7 +80,7 @@ nav ul li {
     color: #888;
 }
 
-.product button {
+.card button {
     background-color: #ff5722;
     color: #fff;
     border: none;
@@ -154,6 +156,7 @@ body{
     margin-right: auto;
     width: 15vh;
     margin-bottom: 10vh;
+    padding-top: 10px;
 }
 
 .loadmore a{
