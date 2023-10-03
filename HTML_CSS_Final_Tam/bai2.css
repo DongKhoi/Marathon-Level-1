@@ -54,6 +54,7 @@ input + button {
     width: 80px;
   }
   .header {
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -305,12 +306,12 @@ footer {
   text-align: end;
 }
 .projects p {
-  margin-top: 20px;
+  margin-top: 10px;
   color: #ff5722;
   font-size: 1.3rem;
 }
 .projects button {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 5px;
   background-color: #ff5722;
   color: #fff;
