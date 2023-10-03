@@ -1,14 +1,3 @@
-body{
-    margin:0;
-}
-header{
-    background-color: #f1592a;
-    height:100px;
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
-    /* display:inline-block; */
-}
 
 main{
     margin-top:5px;
@@ -53,6 +42,10 @@ main{
     height:100px;
 }
 
+#nav{
+    background-color: #f1592a;
+}
+
 #navbar{
     display:inline-block;
     position:absolute;
@@ -80,7 +73,7 @@ main{
     background-color: aliceblue;
     position:fixed;
     right:0;
-    top:105px;
+    top:126px;
 }
 .content{
     width:80%;
