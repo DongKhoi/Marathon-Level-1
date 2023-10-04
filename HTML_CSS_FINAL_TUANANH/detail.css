@@ -47,17 +47,15 @@ body {
 nav ul {
   list-style: none;
   display: flex;
+  justify-content: space-between;
 }
 
-nav ul li a {
+.nav-item {
   color: #fff;
   text-decoration: none;
   padding: 10px;
 }
 
-nav ul li a:hover {
-  background-color: #555;
-}
 
 
 main {

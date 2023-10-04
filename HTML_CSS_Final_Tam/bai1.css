@@ -51,6 +51,7 @@ input + button {
     width: 80px;
   }
   .header {
+    height: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -105,13 +106,13 @@ main {
   .main {
     display: grid;
     column-gap: 10px;
-    padding: 0;
+    padding: 30px;
     margin-top: 10px;
   }
 }
 .banner-left {
   background-color: #f2f2f2;
-  padding: 20;
+  padding: 10px;
   position: sticky;
   top: 20%;
   left: 0;
@@ -120,7 +121,7 @@ main {
 }
 .banner-right {
   background-color: #f2f2f2;
-  padding: 20;
+  padding: 10px;
   position: sticky;
   top: 20%;
   right: 0;

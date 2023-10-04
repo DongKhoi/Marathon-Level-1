@@ -50,10 +50,11 @@ nav ul li {
 
 /* Thiết lập kiểu cho danh sách sản phẩm bằng CSS Grid */
 .product-list {
-  display: grid;
-  gap: 20px;
   padding: 20px;
   width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .product {
@@ -93,14 +94,6 @@ nav ul li {
 }
 
 /* Sử dụng media query để giới hạn số cột tối đa là 3 */
-@media (min-width: 768px) {
-  .product-list {
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); /* Hiển thị tối đa 3 cột trên mỗi dòng */
-  }
-}
 
 /* Thiết lập kiểu cho footer */
 footer {
