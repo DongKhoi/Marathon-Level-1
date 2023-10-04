@@ -33,12 +33,23 @@
   font-family: "Times New Roman", Times, serif;
   color: aliceblue;
   cursor: pointer;
+  position: relative;
+  left: 700px;
+}
+.search-button{
+  display: flex;
+  height: 30px;
+  position: relative;
+  left: -35px;
+  top: 45px;
+
 }
 
 .main {
   margin: 10px;
   display: flex;
   gap: 10px;
+  min-height: 75vh;
 }
 
 .product-list {

@@ -62,6 +62,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 75vh;
 }
 .product-description{
     background-color: white;
@@ -138,15 +139,15 @@ form {
 .contact-info{
     background-color: white;
     box-shadow: 5px 5px 10px rgb(93, 93, 93);
-   margin: 20px;
-   padding: 10px;
+   margin: 30px;
+   padding: 20px;
+   height: 200px;
 } 
-h2{
-    font-size: 50px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    position: relative;
-    bottom: 30px;
+
+.contact-info .box{
+  position: relative;
+  left: 400px;
+  top: -200px;
 }
 
 .box button{
