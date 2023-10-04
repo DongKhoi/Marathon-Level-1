@@ -5,6 +5,7 @@ main{
 
 
 }
+
 .description{
     padding-left: 10px;
     font-size: 15px;
@@ -59,6 +60,9 @@ main{
     top:50px;
 }
 
+/* .carousel-item img{
+    display: none;
+} */
 
 #l-banner {
     width:9%;
