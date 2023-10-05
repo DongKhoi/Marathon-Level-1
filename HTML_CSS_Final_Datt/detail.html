@@ -1,74 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>9/22 shopee</title>
-    <link rel="stylesheet" type="text/css" href="style920.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> 
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <a href="shopeehome.html">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9/22 shopee</title>
+  <link rel="stylesheet" type="text/css" href="style920.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="shopeehome.html">
         <img src="logo.png" alt="shoppe" />
-    </a>
-      </div>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link" href="home.html">Trang chủ</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Thời trang</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Điện tử</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Sách</a></li>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="home.html">Trang chủ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Thời trang</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Điện tử</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Sách</a></li>
       </ul>
-        <div class="search-box">
-          <form>
-            <input type="text" placeholder="Tìm kiếm..." />
-            <button type="submit">Tìm Kiếm</button>
-          </form>
-        </div>
-      </nav>
-    </header>
+      <div class="search-box">
+        <form>
+          <input type="text" id="search" placeholder="Tìm kiếm..." />
+          <button id="btnSearch">Tìm kiếm</button>
+        </form>
+      </div>
+    </nav>
+  </header>
 
-    <main>
-      <div class="product-detail">
-        <div class="product-image">
-          <img
-            src="https://cdn.donmai.us/sample/11/26/__hu_tao_and_boo_tao_genshin_impact_drawn_by_ohihil__sample-1126f97a060a7049cc80e82a2995883b.jpg"
-            alt="hutao"
-          />
-        </div>
-        <div class="product-info">
-          <h1 style="margin-bottom: 15px">Figure Hutao</h1>
-          <h2>150$-200$</h2>
-          <p>Đường chủ đời thứ 77 của Vãng Sinh Đường</p>
-          <p>MIHOYO: Tech Otakus Save The World</p>
-          <div class="product-info" style="display: flex">
-            <h3>Mã giảm giá:</h3>
-            <button
-              style="
+  <main>
+    <div class="product-detail">
+      <div class="product-image">
+        <img
+          src="https://cdn.donmai.us/sample/11/26/__hu_tao_and_boo_tao_genshin_impact_drawn_by_ohihil__sample-1126f97a060a7049cc80e82a2995883b.jpg"
+          alt="hutao" />
+      </div>
+      <div class="product-info">
+        <h1 style="margin-bottom: 15px; font-size: 55px;">Figure Hutao</h1>
+        <h2>150$-200$</h2>
+        <p>Đường chủ đời thứ 77 của Vãng Sinh Đường</p>
+        <p>MIHOYO: Tech Otakus Save The World</p>
+        <div class="product-info" style="display: flex">
+          <h3>Mã giảm giá:</h3>
+          <button style="
                 margin-left: 5px;
                 text-align: center;
-                margin-top: 10px;
                 width: 80px px;
                 height: 40px;
-              "
-            >
-              ABC20
-            </button>
-          </div>
-          <div class="product-info" style="display: flex">
-            <h3>Vận chuyển:</h3>
-            <h4 style="color: gray; font-size: 15.5px; margin-left: 5px">
-              Miễn phí
-            </h4>
-          </div>
-          <div class="product-info" style="display: flex">
-            <h3>Số lượng:</h3>
-            <input
-              style="
+              ">
+            ABC20
+          </button>
+        </div>
+        <div class="product-info" style="display: flex">
+          <h3 style="margin-top: 10px;">Vận chuyển:</h3>
+          <h4 style="color: gray; font-size: 15.5px; margin-left: 5px; margin-top: 14px; font-size: 25px; ">
+            Miễn phí
+          </h4>
+        </div>
+        <div class="product-info" style="display: flex">
+          <h3 style="margin-top: 10px; margin-bottom: 15px;">Số lượng:</h3>
+          <input style="
                 background-color: white;
                 color: #e64a19;
                 text-align: center;
@@ -77,66 +74,92 @@
                 margin-top: 13px;
                 width: 40px;
                 height: 30px;
-              "
-              type="number"
-              value="1"
-              min="1"
-              max="100"
-            />
-          </div>
-          <div class="product-info">
-            <a href="cart.html">
-             
-                <button
-                  
-              style="
+              " type="number" value="1" min="1" max="100" />
+        </div>
+        <div class="product-info">
+          <a href="cart.html">
+
+            <button style="
                 background-color: white;
                 color: #e64a19;
                 font-size: 25px;
                 border-color: #e64a19;
                 margin-top: 15px;
                 font-family: Arial, Helvetica, sans-serif;
-              "
-            >
-            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+              ">
+              <i class="fa-sharp fa-solid fa-cart-shopping"></i>
               Thêm vào giỏ hàng
             </button>
-            </a>
-            
-            <button style="font-size: 25px; margin-left: 5px">Mua ngay</button>
-          </div>
-        </div>
-      </div>
-    </main>
+          </a>
 
-    <div class="style">
-      <div class="style-info" style="display: inline-flex">
-        <img
-          src="https://i.pinimg.com/736x/b7/e3/b6/b7e3b6dcb66586b3b1e77027a19c1463.jpg"
-          alt="hutao"
-        />
-        <div>
-          <h1>Kitsune Tony</h1>
-        </div>
-      </div>
-      <div>
-        <div class="style-info">
-          <button>Chat Ngay</button>
-          <button style="margin-left: 10px">Xem shop</button>
+          <button style="font-size: 25px; margin-left: 5px">Mua ngay</button>
         </div>
       </div>
     </div>
+    <div id="chatModal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Chat Ngay</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Tin nhắn: </p>
+            <input style="height: 90px; width:100%;
+            padding: auto;
+            border-radius: 5px;
+            cursor: pointer;" type="text">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <button style="background-color: #e64a19;" type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-    <footer>
-      <div class="footer logo">
-        <img src="logo.png" alt="shopee" />
+  <div class="style">
+    <div class="style-info" style="display: inline-flex">
+      <img src="https://i.pinimg.com/736x/b7/e3/b6/b7e3b6dcb66586b3b1e77027a19c1463.jpg" alt="hutao" />
+      <div>
+        <h1>Kitsune Tony</h1>
       </div>
-      <div class="footer-info">
-        <p>Địa chỉ: Đường ABC, Quận XYZ, Thành Phố HCM</p>
-        <p>Email:Kitsunetony2@gmail.com</p>
-        <p>Điện thoại: 0901234567</p>
+    </div>
+    <div>
+      <div class="style-info">
+        <button id="chatNowButton" type="chatbox">chat ngay</button>
+        <button style="margin-left: 10px">Xem shop</button>
       </div>
-    </footer>
-    <script src="https://kit.fontawesome.com/39bd8d029a.js" crossorigin="anonymous"></script>
-  </body>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer logo">
+      <img src="logo.png" alt="shopee" />
+    </div>
+    <div class="footer-info">
+      <p>Địa chỉ: Đường ABC, Quận XYZ, Thành Phố HCM</p>
+      <p>Email:Kitsunetony2@gmail.com</p>
+      <p>Điện thoại: 0901234567</p>
+    </div>
+  </footer>
+  <script src="https://kit.fontawesome.com/39bd8d029a.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#chatNowButton").click(function () {
+        $("#chatModal").modal("show");
+      });
+
+      $("#btnSearch").click(function () {
+        var searchValue = $("#search").val();
+        alert("Bạn đang tìm kiếm: " + searchValue);
+      });
+    });
+
+  </script>
+</body>
+
 </html>
