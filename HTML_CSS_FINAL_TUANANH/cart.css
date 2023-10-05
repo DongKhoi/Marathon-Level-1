@@ -87,7 +87,8 @@ main{
 .total {
   display: flex;
   margin-top: 20px;
-  padding-right: 10px;
+  text-align: center;
+  justify-content: center;
 }
 .total-label {
   font-size: 20px;
@@ -106,6 +107,9 @@ main{
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  margin: auto;
+  display: block;
+  
 
 }
 .checkout:hover{

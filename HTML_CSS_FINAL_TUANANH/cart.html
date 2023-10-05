@@ -43,13 +43,15 @@
           </div>
           <button id="hideButton" class="cart-delete">Xóa</button>
         </div>
+        </main>
+        <div id="content-show">
+          <button id="showButton" class="checkout">Thanh toán</button>
+        </div>
         <div class="total">
           <p class="total-label">Tổng cộng:</p>
           <p class="total-price">555.555 VND</p>
         </div>
-        <button id="showButton" class="checkout">Thanh toán</button>
       </div>
-    </main>
     <footer>
         <p>Địa chỉ: 123 đường ABC, quận XYZ, TP.HCM</p>
         <p>Điện thoại: 0123456789</p>
@@ -63,6 +65,11 @@
             $("#content").hide();
         });
     </script>
+        <script>
+          $("#showButton").click(function() {
+             $("#content").show();
+         });
+     </script>
 </body>
 
 </html>
