@@ -139,9 +139,10 @@ form {
 .contact-info{
     background-color: white;
     box-shadow: 5px 5px 10px rgb(93, 93, 93);
-   margin: 30px;
+   margin: auto;
    padding: 20px;
    height: 200px;
+   display: block;
 } 
 
 .contact-info .box{
