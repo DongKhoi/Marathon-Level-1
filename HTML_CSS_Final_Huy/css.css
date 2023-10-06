@@ -1,4 +1,6 @@
-
+.card {
+    width: 400px;
+}
 header {
     background-color: #ff5722;
     color: #fff;
