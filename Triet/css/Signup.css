@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid transparent;
+  margin: 0 auto;
+  height: 400px;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 14px grey;
+}
+
+form {
+  padding: 40px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  margin: 50px 0 30px;
+}
+
+label {
+  display: block;
+  font-weight: lighter;
+}
+
+input {
+  border-bottom: 2px solid #00bcd4;
+  outline: none;
+}
+
+#password,
+#name {
+  width: 220px;
+  height: 30px;
+}
+
+.submit {
+  margin-top: 15%;
+  margin-left: 20%;
+  padding: 7px;
+  width: 60%;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  font-weight: 900;
+  font-size: 20px;
+  background: linear-gradient(to right, #d7eae5, #64c7cd);
+}
+
+.submit:hover {
+  color: #ffffff;
+  background: linear-gradient(to right, #97dbdf, #42b5be);
+}
+
+.error {
+  width: 230px;
+  display: block;
+  color: red;
+  margin-top: 5px;
+  font-size: 12.5px;
+}
