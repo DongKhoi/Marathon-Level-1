@@ -3,7 +3,7 @@ body{
 }
 header{
     background-color: #f1592a;
-    height:100px;
+    height:126px;
     /* display: flex; */
     /* justify-content: space-between; */
     /* align-items: center; */
@@ -51,6 +51,9 @@ main{
 }
 #nocolor-icon {
     height:100px;
+}
+#nav{
+    background-color: #f1592a;
 }
 
 #navbar{

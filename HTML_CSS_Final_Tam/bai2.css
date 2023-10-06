@@ -278,26 +278,22 @@ footer {
   height: 18px;
   border-radius: 3px;
 }
-.black__5 p {
+.black__5 button {
   background-color: #ff5722;
   color: #fff;
-  padding: 5px;
-  border: 2px solid black;
-  border-radius: 4px;
-  cursor: pointer;
 }
 .black__5 p:hover {
   opacity: 0.5;
 }
 @madia (min-width:400px) {
-  /* .blackk {
+  .blackk {
     display: grid;
     grid-template-columns: 1fr;
-  } */
+  }
 }
 /* Css cho projects */
 .projects {
-  height: 200px;
+  height: 300px;
   padding: 50px;
   background-color: #fff;
   border: 2px solid #333;
