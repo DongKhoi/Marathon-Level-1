@@ -1,4 +1,3 @@
-/* Css cho header  */
 * {
   padding: 0;
   margin: 0;
@@ -57,7 +56,7 @@ input + button {
     flex-wrap: wrap;
   }
 }
-/* Css cho main */
+
 .main {
   display: grid;
   gap: 20px;
