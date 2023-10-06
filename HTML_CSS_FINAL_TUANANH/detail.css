@@ -147,8 +147,13 @@ form {
 
 .contact-info .box{
   position: relative;
-  left: 400px;
-  top: -200px;
+  bottom: 200px;
+ text-align: center;
+}
+
+.box{
+  margin: auto;
+  display: block;
 }
 
 .box button{
