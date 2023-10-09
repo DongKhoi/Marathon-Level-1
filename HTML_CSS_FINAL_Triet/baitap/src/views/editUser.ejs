@@ -1,0 +1,32 @@
+<form action="/updateUser" method="post">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">full name</label>
+      <input  type="text" class="form-control" id="name" aria-describedby="emailHelp" value="<%=data.rows.fullname %>" name="fullname">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">address</label>
+        <input  type="text" class="form-control" id="address" aria-describedby="emailHelp" value="<%=data.rows.address %>" name="address">
+  
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">email</label>
+        <input  type="text" class="form-control" id="email" aria-describedby="emailHelp" value="<%=data.rows.email %>" name="email">
+  
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">sex</label>
+        <input  type="text" class="form-control" id="sex" aria-describedby="emailHelp" value="<%=data.rows.sex %>" name="sex">
+  
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">password</label>
+        <input  type="text" class="form-control" id="password" aria-describedby="emailHelp" value="<%=data.rows.password %>" name="password">
+  
+      </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

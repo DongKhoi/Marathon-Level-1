@@ -1,0 +1,116 @@
+<title><%= data.title %></title>
+<div class="form-body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Đăng ký ngay</h3>
+          <p>Hãy điền vào những ô bên dưới</p>
+          <form class="requires-validation" novalidate>
+            <div class="col-md-12">
+              <input
+                class="form-control"
+                type="text"
+                name="name"
+                placeholder="Họ Và Tên"
+                required
+              />
+              <div class="valid-feedback">Họ và Tên không hợp lệ</div>
+              <div class="invalid-feedback">Họ và Tên không được bỏ trống</div>
+            </div>
+
+            <div class="col-md-12">
+              <input
+                class="form-control"
+                type="text"
+                name="name-user"
+                placeholder="Tài khoản"
+                required
+              />
+              <div class="valid-feedback">Tài không hợp lệ</div>
+              <div class="invalid-feedback">Tài Khoản không được bỏ trống !</div>
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <label class="mb-3 mr-1" for="gender">Giới tính </label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="gender"
+                id="male"
+                autocomplete="off"
+                required
+              />
+              <label class="btn btn-sm btn-outline-secondary" for="male"
+                >Nam</label
+              >
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="gender"
+                id="female"
+                autocomplete="off"
+                required
+              />
+              <label class="btn btn-sm btn-outline-secondary" for="female"
+                >Nữ</label
+              >
+
+        <div class="col-md-12">
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <div class="valid-feedback">Email không hợp lệ</div>
+          <div class="invalid-feedback">email không được bỏ trống !</div>
+        </div>
+
+
+            <div class="col-md-12">
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="Mật Khẩu"
+                required
+              />
+              <div class="valid-feedback">Password field is valid!</div>
+              <div class="invalid-feedback">Vui lòng không bỏ trống</div>
+            </div>
+
+            <div class="form-button mt-3">
+              <button id="submit" type="submit" class="btn btn-primary">
+                Đăng ký
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    "use strict";
+    const forms = document.querySelectorAll(".requires-validation");
+    Array.from(forms).forEach(function (form) {
+      form.addEventListener(
+        "submit",
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+</script>

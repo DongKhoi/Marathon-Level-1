@@ -1,0 +1,119 @@
+img {
+    width: 100%;
+  
+  }
+  .img-lq {
+    position: relative;
+    top: 60px;
+  }
+  .navbar-brand {
+    letter-spacing: 3px;
+    color: #c24244;
+  }
+  .navbar-brand:hover {
+    color: #c24244;
+  }
+  .navbar-scroll .nav-link,
+  .navbar-scroll .fa-bars {
+    color: #7f4722;
+  }
+  .navbar-scrolled .nav-link,
+  .navbar-scrolled .fa-bars {
+    color: #7f4722;
+  }
+  .navbar-scrolled {
+    background-color: #ffede7;
+  }
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 0;
+  }
+  .btn-circle.btn-lg,
+  .btn-group-lg > .btn-circle.btn {
+    width: 50px;
+    height: 50px;
+    padding: 14px 15px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .text-muted {
+    color: #8898aa !important;
+  }
+  [type="button"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+  .btn-circle {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+  .user-table tbody tr .category-select {
+    max-width: 150px;
+    border-radius: 20px;
+  }
+  :root {
+    --main-bg: #e91e63;
+  }
+
+  .main-bg {
+    background: var(--main-bg) !important;
+  }
+
+  input:focus,
+  button:focus {
+    border: 1px solid var(--main-bg) !important;
+    box-shadow: none !important;
+  }
+
+  .form-check-input:checked {
+    background-color: var(--main-bg) !important;
+    border-color: var(--main-bg) !important;
+  }
+  .card,
+  .btn,
+  input {
+    border-radius: 0 !important;
+  }
+  .lienquan1, p, h6{
+    color: #7f4722;
+  }
+
+  .edit-user {
+    width: 100%;
+    margin-left: 15%;
+  }
+ h1{
+    text-align: center;
+    color: #e91e63;
+  }
+  .edit-user th {
+    font-weight: lighter;
+    color: #7f4722;
+  }
+.edit-user td input {
+width: 70%;
+border: none;
+border-bottom: 1px solid #7f4722;
+}
+.edit-user tr td button {
+ text-align: center;
+  width: 100px;
+  border-radius: 5%;
+  border: none;
+  border-bottom: 1px solid yellowgreen;
+  background-color: pink;
+  color: #ffffff;
+  transition: 0.5s ease;
+  margin: 50px 0 0 400px;
+}
