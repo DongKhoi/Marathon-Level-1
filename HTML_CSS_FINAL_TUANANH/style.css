@@ -25,7 +25,7 @@
   padding: 0;
 }
 
-.menu-item {
+.nav-item {
   display: inline-block;
   margin-right: 20px;
   text-decoration: none;
@@ -35,24 +35,20 @@
   cursor: pointer;
 }
 
-.menu-item:hover {
-  color: rgb(0, 0, 0);
-}
-
 .main {
   margin: 10px;
   display: flex;
+  gap: 10px;
 }
 
 .product-list {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
 }
 
-.product-item {
+.card {
   background-color: white;
   margin: 10px;
   padding: 20px;

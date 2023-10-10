@@ -3,7 +3,7 @@ body{
 }
 header{
     background-color: #f1592a;
-    height:100px;
+    height:126px;
     /* display: flex; */
     /* justify-content: space-between; */
     /* align-items: center; */
@@ -26,6 +26,16 @@ main{
     cursor: pointer;
 }
 
+#header-shop-container{
+    color:white;
+}
+
+#icon-shop{
+    width:30px;
+    height:30px;
+    border-radius: 100%;
+}
+
 #shoppee-name{
     display:inline-block;
     color:white;
@@ -44,6 +54,11 @@ main{
 }
 #nocolor-icon {
     height:100px;
+}
+
+
+#nav{
+    background-color: #f1592a;
 }
 
 #navbar{
