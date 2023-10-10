@@ -69,21 +69,25 @@ nav ul li {
 
 .product-info {
   flex: 1;
+  margin-left: 10px;
 }
 
 .product-info h1 {
   font-size: 25px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 12px;
 }
 .product-info h2 {
   font-size: 35px;
-  margin-bottom: 15px;
+  margin-top: 15px;
   color: red;
+  margin-left: 12px;
 }
 
 .product-info p {
   font-size: 1rem;
   color: #888;
+  margin-left: 12px;
 }
 
 .product-info button {
