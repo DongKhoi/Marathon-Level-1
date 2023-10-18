@@ -10,16 +10,22 @@ header {
   top: 0;
   z-index: 1000;
 }
+
 /* Thiết lập cho body và html để đảm bảo nội dung trang cần phải lấp đầy màn hình */
-html, body {
-  height: 100%; /* Đặt chiều cao cho html và body là 100% */
-  margin: 0; /* Loại bỏ margin mặc định */
-  padding: 0; /* Loại bỏ padding mặc định */
+html,
+body {
+  height: 100%;
+  /* Đặt chiều cao cho html và body là 100% */
+  margin: 0;
+  /* Loại bỏ margin mặc định */
+  padding: 0;
+  /* Loại bỏ padding mặc định */
 }
 
 /* Thiết lập cho main để nó lấp đầy phần còn lại của màn hình */
 main {
-  min-height: calc(100% - 100px); /* Chiều cao tối thiểu của main, trừ đi chiều cao của footer */
+  min-height: calc(100% - 100px);
+  /* Chiều cao tối thiểu của main, trừ đi chiều cao của footer */
 }
 
 .logo img {
@@ -29,13 +35,9 @@ main {
   cursor: pointer;
 }
 
-nav ul {
-  list-style-type: none;
-  display: flex;
-}
-
 nav ul li {
   margin-right: 20px;
+  margin-bottom: 10px;
 }
 
 /* Thiết lập kiểu cho nút tìm kiếm */
@@ -61,8 +63,6 @@ nav ul li {
 
 /* Thiết lập kiểu cho danh sách sản phẩm bằng CSS Grid */
 .product-list {
-  display: grid;
-  gap: 20px;
   padding: 20px;
   width: 80%;
 }
@@ -72,6 +72,7 @@ nav ul li {
   padding: 10px;
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 10px;
 }
 
 .product img {
@@ -130,26 +131,35 @@ body {
 
 main {
   display: flex;
-  justify-content: space-between; /* Các phần tử con sẽ được căn cách đều ở giữa và bên trái và bên phải */
+  justify-content: space-between;
+  /* Các phần tử con sẽ được căn cách đều ở giữa và bên trái và bên phải */
 }
 
 .banner-left {
-  background-color: #f2f2f2; /* Màu nền của banner trái, thay đổi tùy thuộc vào thiết kế của bạn */
-  padding: 20px; /* Khoảng cách nội dung với viền banner */
+  background-color: #f2f2f2;
+  /* Màu nền của banner trái, thay đổi tùy thuộc vào thiết kế của bạn */
+  padding: 20px;
+  /* Khoảng cách nội dung với viền banner */
   position: sticky;
-  top: 20%; /* Đặt giá trị top là 0 để banner trái nằm ở trên cùng khi cuộn */
+  top: 20%;
+  /* Đặt giá trị top là 0 để banner trái nằm ở trên cùng khi cuộn */
   left: 0;
-  z-index: 1000; /* Đảm bảo banner trái hiển thị trên header và các sản phẩm */
+  z-index: 1000;
+  /* Đảm bảo banner trái hiển thị trên header và các sản phẩm */
   height: 10%;
 }
 
 .banner-right {
-  background-color: #f2f2f2; /* Màu nền của banner phải, thay đổi tùy thuộc vào thiết kế của bạn */
-  padding: 20px; /* Khoảng cách nội dung với viền banner */
+  background-color: #f2f2f2;
+  /* Màu nền của banner phải, thay đổi tùy thuộc vào thiết kế của bạn */
+  padding: 20px;
+  /* Khoảng cách nội dung với viền banner */
   position: sticky;
-  top: 20%; /* Đặt giá trị top là 0 để banner phải nằm ở trên cùng khi cuộn */
+  top: 20%;
+  /* Đặt giá trị top là 0 để banner phải nằm ở trên cùng khi cuộn */
   right: 0;
-  z-index: 1000; /* Đảm bảo banner phải hiển thị trên header và các sản phẩm */
+  z-index: 1000;
+  /* Đảm bảo banner phải hiển thị trên header và các sản phẩm */
   height: 10%;
 }
 
@@ -370,10 +380,9 @@ main {
 /* Sử dụng media query để giới hạn số cột tối đa là 3 */
 @media (min-width: 768px) {
   .product-list {
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); /* Hiển thị tối đa 3 cột trên mỗi dòng */
+    grid-template-columns: repeat(3,
+        1fr);
+    /* Hiển thị tối đa 3 cột trên mỗi dòng */
   }
 }
 
@@ -383,11 +392,13 @@ main {
   border: 1px solid #ddd;
   padding: 10px;
   margin-bottom: 10px;
-  justify-content: space-between; /* Để các phần tử nằm cùng hàng và căn đều */
+  justify-content: space-between;
+  /* Để các phần tử nằm cùng hàng và căn đều */
 }
 
 .cart-item-image {
-  flex: 0 0 100px; /* Đảm bảo rằng hình ảnh có kích thước cố định */
+  flex: 0 0 100px;
+  /* Đảm bảo rằng hình ảnh có kích thước cố định */
   margin-right: 10px;
   display: flex;
   align-items: center;
@@ -406,7 +417,8 @@ main {
 .cart-item-info {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Để các phần tử nằm cùng hàng và căn đều */
+  justify-content: space-between;
+  /* Để các phần tử nằm cùng hàng và căn đều */
 }
 
 .product-details {
@@ -416,7 +428,8 @@ main {
 
 .price {
   font-weight: bold;
-  margin-left: auto; /* Đẩy giá tiền sang mép phải */
+  margin-left: auto;
+  /* Đẩy giá tiền sang mép phải */
 }
 
 .quantity {
@@ -490,7 +503,8 @@ main {
 }
 
 .cart-item-actions {
-  margin-left: 10px; /* Khoảng cách giữa quantity và button xóa */
+  margin-left: 10px;
+  /* Khoảng cách giữa quantity và button xóa */
 }
 
 .cart-item-actions button {
@@ -510,7 +524,8 @@ main {
 }
 
 .checkbox {
-  flex: 0 0 20px; /* Đảm bảo rằng ô checkbox có kích thước cố định */
+  flex: 0 0 20px;
+  /* Đảm bảo rằng ô checkbox có kích thước cố định */
   margin-right: 10px;
 }
 
@@ -519,7 +534,7 @@ main {
   height: 16px;
 }
 
-.button-buy a{
+.button-buy a {
   text-decoration: none;
 }
 
@@ -527,12 +542,15 @@ main {
   .product-info h1 {
     font-size: 15px;
   }
+
   .product-info .price {
     font-size: 0.75rem;
   }
+
   .product-info p {
     font-size: 7px;
   }
+
   .button-buy {
     text-align: center;
   }
@@ -544,18 +562,94 @@ main {
     font-size: 14px;
     margin-bottom: 10px;
   }
+
   .footer-info {
     font-size: 10px;
   }
-  .nameProduct{
+
+  .nameProduct {
     font-size: 10px;
     margin-left: 30px;
     margin-right: 5px;
   }
-  .price{
+
+  .price {
     font-size: 10px;
   }
+
   .quantity-button {
+    display: none;
+  }
+}
+
+.crs-header {
+  margin-bottom: 10px;
+}
+
+.img-crs {
+  width: 32% !important;
+}
+
+.user-dropdown .username {
+  color: #fff;
+  /* Màu mặc định của chữ */
+  cursor: default;
+  /* Con trỏ chuột mặc định */
+}
+
+.user-dropdown.active .username {
+  color: #ddd;
+  /* Màu chữ khi hover */
+  cursor: pointer;
+  /* Hình con trỏ chuột khi hover */
+}
+
+.avatar {
+  width: 20px;
+  /* Điều chỉnh kích thước của ảnh avatar */
+  height: auto;
+  /* Để tỷ lệ khung hình */
+  vertical-align: middle;
+  /* Để căn giữa theo chiều dọc */
+  margin-right: 5px;
+  /* Để tạo khoảng cách giữa ảnh và username */
+}
+
+@media (max-width: 768px) {
+  .avatar {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 10px;
+  }
+
+  .username {
+    font-size: 14px;
+    /* Điều chỉnh kích thước font cho username cho di động */
+  }
+
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    /* Căn chỉnh các phần tử về phía bên phải */
+    align-items: center;
+    /* Căn chỉnh các phần tử theo chiều dọc */
+  }
+
+  .nav-item {
+    margin-left: auto;
+    /* Đẩy các nav item về phía bên phải */
+  }
+
+
+  form input {
+    width: 50%;
+  }
+
+  .search-box {
+    margin-left: 10%;
+  }
+
+  .img-crs {
     display: none;
   }
 }

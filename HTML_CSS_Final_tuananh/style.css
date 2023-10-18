@@ -19,6 +19,7 @@
   align-items: center;
 }
 
+<<<<<<< HEAD:HTML_CSS_Final_tuananh/style.css
 .menu-nav {
   list-style-type: none;
   margin: 0;
@@ -31,10 +32,17 @@
   text-decoration: none;
   font-size: 30px;
   font-family: "Times New Roman", Times, serif;
+=======
+.user-info{
+>>>>>>> develop:HTML_CSS_FINAL_TUANANH/style.css
   color: aliceblue;
+  font-family: 'Times New Roman', Times, serif;
+}
+.user-info:hover{
   cursor: pointer;
 }
 
+<<<<<<< HEAD:HTML_CSS_Final_tuananh/style.css
 .menu-item:hover {
   color: rgb(0, 0, 0);
 }
@@ -42,6 +50,37 @@
 .main {
   margin: 10px;
   display: flex;
+=======
+.user-info img{
+  border-radius: 50%;
+  width: 30px;
+}
+.search-button{
+  display: flex;
+  height: 30px;
+  position: relative;
+  left: -35px;
+  top: 20px;
+}
+.image{
+  position: relative;
+  display: block;
+}
+.image img{
+  width: 28%;
+  position: relative;
+  top: 20px;
+  left: 1580px;
+  border-radius: 15px;
+  
+  
+}
+.main {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+  min-height: 100vh;
+>>>>>>> develop:HTML_CSS_FINAL_TUANANH/style.css
 }
 
 .product-list {
@@ -108,10 +147,24 @@ a{
   height: 100%;
 }
 
-.load-more{
-    font-size: 20px;
-    text-align: center;
-    cursor: pointer;
+.load-more button{
+display: block;
+margin: auto;
+height: 40px;
+  width: 10%;
+  border-radius: 10px;
+  background-color: #0D6EFC;
+  color: aliceblue;
+  text-transform: uppercase;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.load-more button:hover{
+  background-color: #165cc6;
+}
+.load{
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .footer {

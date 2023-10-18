@@ -26,6 +26,16 @@ main{
     cursor: pointer;
 }
 
+#header-shop-container{
+    color:white;
+}
+
+#icon-shop{
+    width:30px;
+    height:30px;
+    border-radius: 100%;
+}
+
 #shoppee-name{
     display:inline-block;
     color:white;

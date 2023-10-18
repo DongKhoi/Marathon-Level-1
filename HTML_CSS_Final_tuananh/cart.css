@@ -40,6 +40,10 @@ nav ul li a:hover {
   width: 80%;
   margin: 0 auto;
 }
+
+main{
+  min-height: 75vh;
+}
 .title {
   text-align: center;
   font-size: 25px;
@@ -86,7 +90,8 @@ nav ul li a:hover {
 .total {
   display: flex;
   margin-top: 20px;
-  padding-right: 10px;
+  text-align: center;
+  justify-content: center;
 }
 .total-label {
   font-size: 20px;
@@ -105,6 +110,9 @@ nav ul li a:hover {
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  margin: auto;
+  display: block;
+  
 
 }
 .checkout:hover{
