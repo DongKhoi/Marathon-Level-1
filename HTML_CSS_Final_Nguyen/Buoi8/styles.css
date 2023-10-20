@@ -150,6 +150,10 @@ main{
 
 }
 
+.item-img{
+    height: 196px;
+}
+
 footer{
     margin-top:10px;
     height:100px;
