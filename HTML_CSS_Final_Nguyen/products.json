@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "name": "Sản phẩm 1",
+      "price": 10.99,
+      "image": "item1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Sản phẩm 2",
+      "price": 19.99,
+      "image": "item2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Sản phẩm 3",
+      "price": 24.99,
+      "image": "item3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Sản phẩm 4",
+      "price": 14.49,
+      "image": "item4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Sản phẩm 5",
+      "price": 29.99,
+      "image": "item5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Sản phẩm 6",
+      "price": 12.99,
+      "image": "item6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Sản phẩm 7",
+      "price": 9.99,
+      "image": "item7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Sản phẩm 8",
+      "price": 17.99,
+      "image": "item8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Sản phẩm 9",
+      "price": 22.99,
+      "image": "item9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Sản phẩm 10",
+      "price": 16.99,
+      "image": "items.jpg"
+    }
+  ]
+  
