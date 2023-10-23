@@ -31,7 +31,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="container">
                         <div class="row d-flex justify-content-end">
-                            <ul class="navbar-nav mb-2 mb-lg-0 d-flex col-md-5">
+                            <div class="d-none col-md-5"  id="loginHref">
+                                <a href="../Login/Login.html">Đăng nhập</a>
+                            </div>
+                            <ul class="navbar-nav mb-2 mb-lg-0 d-flex col-md-5" id="shopContainer">
                                 <!-- <div class="col-6"></div> -->
                                 <!-- <li class="nav-item col-2">
                         <div class="row d-flex justify-content-end">
@@ -51,14 +54,14 @@
                                     <a class="nav-link dropdown-toggle" id="header-shop-container" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <img id="icon-shop" src="src/items.jpg" alt="">
-                                        Người miền núi shop
+                                        <span id="ShopName">Người miền núi shop</span>
                                     </a>
                                     <ul id="pop-list" class="dropdown-menu ps-2" style="width: 100%;">
                                         <li><a class="dropdown-item" href="#">Tài khoản </a></li>
                                         <li><a class="dropdown-item" href="#">Đơn mua</a></li>
                                         <!-- <li><hr class="dropdown-divider"></li> -->
                                         <li><a class="dropdown-item" href="#">Đơn bán</a></li>
-                                        <li><a class="dropdown-item" href="../Login/Login.html">Đăng xuất</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="LogOut()">Đăng xuất</a></li>
                                     </ul>
                                 </li>
                             </ul>

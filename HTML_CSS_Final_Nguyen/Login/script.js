@@ -1,4 +1,5 @@
 var AccountListName = "AccountListName";
+var loggedInAccount = "loggedInAccount";
 var username = document.getElementById("inp-username");
 var password = document.getElementById("inp-password");
 var notification = document.getElementById("notification");
@@ -38,11 +39,13 @@ var login = function () {
     var data = getAccount();
     var rs = false;
     var us = false;
+    var index = 0;
     for (let i = 0; i < data.length; i++) {
       if (data[i].username == username.value) {
         us = true;
         if (data[i].password == password.value) {
           rs = true;
+          index = i;
           break;
         } else showNotification("Mật khẩu không đúng");
       }
@@ -52,6 +55,10 @@ var login = function () {
     }
 
     if (rs) {
+      localStorage.setItem(
+        loggedInAccount,
+        JSON.stringify(data[index].username)
+      );
       window.location.href = "../Buoi8/home.html";
     }
   } else {
