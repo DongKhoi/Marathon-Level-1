@@ -29,40 +29,33 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="container">
                         <div class="row d-flex justify-content-end">
-                            <ul class="navbar-nav mb-2 mb-lg-0 d-flex col-md-5">
-                                <!-- <div class="col-6"></div> -->
-                                <!-- <li class="nav-item col-2">
-                                    <a class="nav-link active text-info" aria-current="page" href="#">Trang chủ</a>
-                                </li>
-                                <li class="nav-item col-2">
-                                    <a class="nav-link active text-info" aria-current="page" href="#">Thời trang</a>
-                                </li>
-                                <li class="nav-item col-2">
-                                    <a class="nav-link active text-info" aria-current="page" href="#">Điện tử</a>
-                                </li> -->
+                            <div class="d-none col-md-5" id="loginHref">
+                                <a href="../Login/Login.html">Đăng nhập</a>
+                            </div>
+                            <ul class="navbar-nav mb-2 mb-lg-0 d-flex col-md-5" id="shopContainer">
                                 <li class="nav-item dropdown">
-                                    
-                                    <a class="nav-link dropdown-toggle" id="header-shop-container" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" id="header-shop-container" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <img id="icon-shop" src="../Buoi8/src/items.jpg" alt="">
-                                        Người miền núi shop
+                                        <span id="ShopName"></span>
                                     </a>
                                     <ul class="dropdown-menu ps-2" id="pop-list" style="width: 100%;">
-                                      <li><a class="dropdown-item" href="#">Tài khoản </a></li>
-                                      <li><a class="dropdown-item" href="#">Đơn mua</a></li>
-                                      <!-- <li><hr class="dropdown-divider"></li> -->
-                                      <li><a class="dropdown-item" href="#">Đơn bán</a></li>
+                                        <li><a class="dropdown-item" href="#">Tài khoản </a></li>
+                                        <li><a class="dropdown-item" href="#">Đơn mua</a></li>
+                                        <li><a class="dropdown-item" href="#">Đơn bán</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="LogOut()">Đăng xuất</a></li>
                                     </ul>
-                                  </li>
+                                </li>
                             </ul>
                         </div>
                         <form class="d-flex row justify-content-end" role="search">
-                            <!-- <div class="col-3"></div> -->
                             <div class="col-md-3">
                                 <input class="form-control" id="search-input" type="search" placeholder="Tìm kiếm"
-                                aria-label="Search">
+                                    aria-label="Search">
                             </div>
                             <div class="col-md-2">
-                                <button class="btn btn-outline-success" id="search-button" type="submit">Tìm kiếm</button>
+                                <button class="btn btn-outline-success" id="search-button" type="submit">Tìm
+                                    kiếm</button>
                             </div>
                         </form>
                     </div>
@@ -124,83 +117,7 @@
             <p class="address">Điện thoại: 0123456789</p>
         </div>
     </footer>
-    <script>
-        $("document").ready(function () {
-            var searchButton = $("#search-button");
-            var searchInput = $("#search-input")
-            searchButton.on("click", function (event) {
-                alert("Bạn đã tìm kiếm: " + searchInput.val())
-            });
-
-            var deleteButton = $("#delete-btn");
-            var itemContainer = $("#item-container");
-            deleteButton.on("click", function (event) {
-                event.preventDefault();
-                itemContainer.hide();
-                $('#number').html('0');
-
-            });
-
-            var MyProgress = $("#MyProgress");
-            $("#button-pay").on("click", function (event) {
-                $("#MyProgressContainer").removeClass("d-none");
-                $(this).addClass("d-none");
-                var count = 0;
-                var interval = setInterval(
-                    function () {
-                        count = count + 1;
-                        MyProgress.css("width", count + "%");
-                        $("#MyProgressContainer").attr("aria-valuenow", count);
-                        MyProgress.html(count +"%");
-
-                        if (count > 100) {
-                            $("#MyProgressContainer").addClass("d-none");
-                            $("#button-pay").removeClass("d-none");
-                            MyProgress.css("width", "0%");
-                            $("#MyProgressContainer").attr("aria-valuenow", 0);
-                            alert("Đã thanh toán thành công");
-                            clearInterval(interval);
-                        }
-                    }, 1000);
-            })
-
-            var popList = $('#pop-list');
-        var headerShopContainer = $('#header-shop-container');
-        headerShopContainer.on("mouseenter",function(event){
-            headerShopContainer.attr("aria-expanded","true");
-            headerShopContainer.addClass("show");
-            popList.attr("data-bs-popper","static");
-            popList.addClass("show");
-
-        })
-        headerShopContainer.on("mouseleave ",function(event){
-            headerShopContainer.attr("aria-expanded","false");
-            headerShopContainer.removeClass("show");
-            popList.removeAttr("data-bs-popper");
-            popList.removeClass("show");
-            
-        })
-        popList.on("mouseenter",function(event){
-            headerShopContainer.attr("aria-expanded","true");
-            headerShopContainer.addClass("show");
-            popList.attr("data-bs-popper","static");
-            popList.addClass("show");
-            
-        })
-        popList.on("mouseleave ",function(event){
-            headerShopContainer.attr("aria-expanded","false");
-            headerShopContainer.removeClass("show");
-            popList.removeAttr("data-bs-popper");
-            popList.removeClass("show");
-            
-        })
-
-
-        })
-
-
-
-    </script>
+    <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
