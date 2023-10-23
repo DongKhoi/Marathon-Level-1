@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bai Tap 18/9</title>
+  <title>Clone Cellphone S</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -17,15 +17,17 @@
     </form>
     <nav>
       <div class="user-info">
-        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT_GUra4HJSdkAPY7bH7cfLAQfsJxCLb9XtrvNrP5UN6wJPz-Yj" alt="User Avatar">
-        <span>TRUONG TUAN ANH</span>
-      </div>
-      <div class="dropdown">
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+        <li class="nav-item dropdown" style="list-style: none;">
+          <a class="nav-link dropdown-toggle" id="header-shop-container" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <img id="icon-shop" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT_GUra4HJSdkAPY7bH7cfLAQfsJxCLb9XtrvNrP5UN6wJPz-Yj" alt="User Avatar">
+              TRƯƠNG TUẤN ANH
+          </a>
+          <ul id="pop-list" class="dropdown-menu ps-2" style="width: 100%;">
+              <li><a class="dropdown-item" href="login.html">Tài khoản </a></li>
+              <li><a class="dropdown-item" href="login.html">Đăng Xuất</a></li>
+          </ul>
+        </li>
       </div>
     <div class="search-button">
       <input type="text" name="name" id="search" /><br />
@@ -302,6 +304,38 @@
     $( ".dropdown-menu",this ).removeClass( "show" );
   }
 );
+</script>
+<script>
+          var popList = $('#pop-list');
+        var headerShopContainer = $('#header-shop-container');
+        headerShopContainer.on("mouseenter",function(event){
+            headerShopContainer.attr("aria-expanded","true");
+            headerShopContainer.addClass("show");
+            popList.attr("data-bs-popper","static");
+            popList.addClass("show");
+
+        })
+        headerShopContainer.on("mouseleave ",function(event){
+            headerShopContainer.attr("aria-expanded","false");
+            headerShopContainer.removeClass("show");
+            popList.removeAttr("data-bs-popper");
+            popList.removeClass("show");
+            
+        })
+        popList.on("mouseenter",function(event){
+            headerShopContainer.attr("aria-expanded","true");
+            headerShopContainer.addClass("show");
+            popList.attr("data-bs-popper","static");
+            popList.addClass("show");
+            
+        })
+        popList.on("mouseleave ",function(event){
+            headerShopContainer.attr("aria-expanded","false");
+            headerShopContainer.removeClass("show");
+            popList.removeAttr("data-bs-popper");
+            popList.removeClass("show");
+            
+        })
 </script>
 
     <div class="footer">
