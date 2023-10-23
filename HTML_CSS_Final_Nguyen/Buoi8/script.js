@@ -1,6 +1,8 @@
 var searchButton = $("#search-button");
 var searchInput = $("#search-input");
 var loadMorebtn = $("#loadMore");
+var loggedInAccount = "loggedInAccount";
+var loginHref = $("#loginHref");
 
 searchButton.on("click", function (event) {
   alert("Bạn đã tìm kiếm: " + searchInput.val());
@@ -63,4 +65,23 @@ var getItems = function () {
     });
 };
 
+var getLoggedInAccount = function () {
+  if (localStorage.getItem(loggedInAccount)) {
+    var shopName = document.getElementById("ShopName");
+    shopName.innerText =
+      "Xin chào " + JSON.parse(localStorage.getItem(loggedInAccount));
+    loginHref.addClass("d-none");
+  } else {
+    var shopContainer = $("#shopContainer");
+    shopContainer.addClass("d-none");
+    loginHref.removeClass("d-none");
+  }
+};
+
+var LogOut = function () {
+  localStorage.removeItem(loggedInAccount);
+  window.location.href = "../Buoi8/home.html";
+};
+
+getLoggedInAccount();
 getItems();
