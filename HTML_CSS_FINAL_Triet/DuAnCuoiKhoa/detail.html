@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi tiết sản phẩm - Shopee Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/86c0f1a223.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <!-- Sử dụng header từ trang chủ -->
+  <header>
+    <div class="logo">
+      <a href="home.html">
+        <img src="logo.png" alt="Logo Shopee">
+      </a>
+    </div>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            aria-selected="false">Thời trang</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages"
+            aria-selected="false">Điện tử</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings"
+            aria-selected="false">Sách</a>
+        </li>
+      </ul>
+      <div class="search-box">
+        <form>
+          <input type="text" placeholder="Tìm kiếm..." required pattern=".*\S+.*">
+          <button type="submit">Tìm kiếm</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <main style="display: block">
+    <!-- Nội dung trang chi tiết sản phẩm -->
+    <div class="product-details">
+      <div class="product-image">
+        <img src="" alt="" id="product-img" />
+      </div>
+      <div class="product-info">
+        <h1 id="product-name"></h1>
+        <p class="price" id="product-price"></p>
+        <p id="product-desription">
+        
+        </p>
+        <p id="product-title"></p>
+
+        <!-- Mã giảm giá -->
+        <div>
+          <p class="discount-title">Mã giảm giá:</p>
+          <p class="discount-value">ABC123</p>
+        </div>
+
+        <!-- Vận chuyển -->
+        <div class="shipping">
+          <p class="shipping-title">Vận chuyển:</p>
+          <p class="shipping-value">Miễn phí</p>
+        </div>
+
+        <!-- Số lượng -->
+        <div class="quantity">
+          <p class="quantity-title">Số lượng:</p>
+          <input type="number" value="1" min="1" max="10" />
+        </div>
+
+        <!-- Nút mua hàng -->
+        <div class="button-buy">
+          <a href="cart.html">
+            <button class="add-to-cart">
+              <i class="fas fa-shopping-cart"></i><!-- Biểu tượng giỏ hàng -->
+              Thêm vào giỏ hàng
+            </button>
+          </a>
+          <button class="buy-now">Mua hàng</button>
+        </div>
+      </div>
+    </div>
+    <!-- Thông tin về shop và đánh giá -->
+    <div class="shop-info">
+      <div class="shop-name">
+        <img src="logoshop.png" alt="Logo Shop" />
+        <h2>Miền Núi Shop</h2>
+      </div>
+      <div class="shop-buttons">
+        <button id="chatNowButton">Chat ngay</button>
+        <button>Xem Shop</button>
+      </div>
+      <div class="rating-info">
+        <p class="rating">Đánh Giá: 18.4k</p>
+        <p class="response-rate">Tỉ Lệ Phản Hồi: 83%</p>
+        <p class="join-date">Tham Gia: 16 tháng trước</p>
+        <p class="product-count">Sản Phẩm: 125</p>
+        <p class="response-time">Thời Gian Phản Hồi: trong vài giờ</p>
+        <p class="follower-count">Người Theo Dõi: 40.4k</p>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="chatModal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="storeName"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <textarea id="messageTextarea" class="form-control" rows="4"
+              placeholder="Nhập tin nhắn của bạn..."></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="sendMessageBtn">Gửi tin nhắn</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sử dụng footer từ trang chủ -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Logo Shopee" />
+    </div>
+    <div class="footer-info">
+      <p>Địa chỉ: Đường ABC, Quận XYZ, Thành phố ABC</p>
+      <p>Email: contact@example.com</p>
+      <p>Điện thoại: 0123 456 789</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="calldetail.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Khi nút "Chat ngay" được nhấp, hiển thị modal
+      $("#chatNowButton").click(function () {
+        $("#chatModal").modal("show");
+        var shopName = $(".shop-name h2").text(); // Trích xuất tên cửa hàng từ phần tử HTML
+        $("#storeName").text(shopName); // Đặt tiêu đề của modal
+        $("#chatModal").modal("show");
+      });
+    });
+  </script>
+
+</body>
+
+</html>

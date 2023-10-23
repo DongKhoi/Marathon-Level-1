@@ -1,0 +1,37 @@
+let listData = [];
+
+async function loadData() {
+    await axios.get('/getdata').then(response => {
+        const data = response.data
+        console.log('data', data);
+        data.forEach((item, index) => {
+            listData.push(item);
+        })
+        displayProductDetail();
+    })
+    .catch(error => {
+        console.log('lỗi rồi nha !', error);
+    })
+};
+
+function displayProductDetail() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const productId = urlParams.get("id");
+    if(productId) {
+        console.log('listData', listData);
+        const product = listData.find(item => item.id.toString() === productId);
+        console.log('product', product);
+        if(product) {
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = product.price;
+            document.getElementById('product-img').src = product.img;
+            document.getElementById('product-desription').textContent = product.desription;
+            document.getElementById('product-title').textContent = product.title;
+        } else {
+            alert('không tìm thấy sản phẩm !')
+        }
+    }
+}
+
+loadData()
