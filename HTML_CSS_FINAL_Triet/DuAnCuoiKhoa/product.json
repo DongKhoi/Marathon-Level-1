@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "name": "san pham 1",
+      "price": "100$",
+      "img": "product.jpg",
+      "desription": "đây là sản phẩm 1",
+      "title": "đây là sản phẩm 1"
+    },
+    {
+      "id": 2,
+      "name": "san pham 2",
+      "price": "200$",
+      "img": "product.jpg",
+      "desription": "đây là sản phẩm 2",
+      "title": "đây là sản phẩm 2"
+    },
+    {
+      "id": 3,
+      "name": "san pham 3",
+      "price": "150$",
+      "img": "product.jpg",
+      "desription": "đây là sản phẩm 3",
+      "title": "đây là sản phẩm 3"
+    },
+    {
+      "id": 4,
+      "name": "san pham 4",
+      "price": "120$",
+      "img": "product.jpg",
+      "desription": "đây là sản phẩm 4",
+      "title": "đây là sản phẩm 4"
+    },
+    {
+      "id": 5,
+      "name": "san pham 5",
+      "price": "180$",
+      "img": "product.jpg",
+      "desription": "đây là sản phẩm 5",
+      "title": "đây là sản phẩm 5"
+    },
+    {
+      "id": 6,
+      "name": "san pham 6",
+      "price": "90$",
+      "img": "product.jpg",
+      "desription": "đây là sản phẩm 6",
+      "title": "đây là sản phẩm 6"
+    }
+  ]
