@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppe</title>
+    <link rel="stylesheet" href="shoppe.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="http://127.0.0.1:5500/Marathon/shoppe.html">
+                <img src="https://i.ibb.co/tH59cgv/logo.png" alt="logo">
+            </a>
+            <nav>
+                <a href="#">Trang chủ</a>
+                <a href="#">Thời trang</a>
+                <a href="#">Điện tử</a>
+                <a href="#">Sách</a>
+                <div class="search-box">
+                    <form >
+                    <input type="text" placeholder="Tìm kiếm..." required pattern=".*\S+.*" >
+                    <button>Tìm kiếm</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="cart">Giỏ hàng của bạn</h1>
+        <div class="cart-item">
+            <div>
+                <input type="checkbox" name="" id="">
+                <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lk1xgyhory827a" alt="Ảnh">
+            </div>
+            <h2>Laptop HP VICTUS 16-e1107AX <br> 7C140PA R5-6600H 8GB 512GB <br> RTX™ 3050 4GB 16.1' 144Hz</h2>
+            <p><del style="color: rgba(173, 162, 162, 0.964);">₫25.490.000</del> <span style="color:#ee4d2d ; font-size: larger;">₫18.890.000</span></p>
+            <form>
+                <button>-</button>
+                <input type="number">
+                <button>+</button>
+            </form>
+            <div class="del">
+                <button>Xóa</button>
+            </div>
+        </div>
+        <div class="pay">
+                <h1>Tổng tiền</h1>
+                <p>₫18.890.000</p>
+                <button>Thanh toán</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <img src="https://i.ibb.co/tH59cgv/logo.png" alt="logo">
+            <nav>
+                <p>Địa chỉ: Đường ABC, Quận XYZ, Thành phố ABC</p>
+                <p>Email: contact@example.com</p>
+                <p>Điện thoại: 0123 456 789</p>
+            </nav>
+        </div>    
+    </footer>
+</body>
+</html>
