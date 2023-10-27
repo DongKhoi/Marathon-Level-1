@@ -87,11 +87,22 @@ main{
     
 }
 
-.content button , #total button{
+#total button{
     background-color: #ff5722;
     border: none;
     border-radius: 10%;
     padding:10px;
+    color:white;
+}
+
+.delete-btn{
+    padding:10px;
+}
+
+.content button{
+    background-color: #ff5722;
+    border: none;
+    border-radius: 10%;
     color:white;
 }
 
@@ -101,17 +112,17 @@ main{
 }
 
 
-#amount-input-container{
+.amount-input-container{
     display: flex;
     /* jus */
     align-items: center;
 }
 
-#amount-input-container > input{
+.amount-input-container > input{
     width: 30px;
 }
 
-#amount-input-container >button{
+.amount-input-container >button{
     width: 30px;
     height:30px;
     margin: 5px;
@@ -122,20 +133,20 @@ main{
     
 }
 
-#item-price,#item-name{
+.item-price,.item-name{
     text-align: center;
 }
 
-#item-name{
+.item-name{
     font-size: 20px;
     font-weight: bold;
 }
 
-#item-price{
+.item-price{
     font-weight: bold;
 }
 
-#delete-container{
+.delete-container{
     display: flex;
     align-items: center;
 }
@@ -152,14 +163,16 @@ main{
     grid-template-columns: repeat(5,1fr);
 }
 
-#item-img-container {
+.item-img-container {
     display: flex;
+    padding: 10px;
 }
 
 
-#item-img-container > img{
+.item-img-container > img{
     display: inline-block;
     width: 70%;
+    height: 100px;
 }
 
 #total-container{
@@ -223,14 +236,14 @@ footer{
 
 
 @media (max-width: 800px) and (min-width:600px){
-    #item-name{
+    .item-name{
         font-size: 16px;
     }
 
 }
 
 @media (max-width: 599px){
-    #item-name{
+    .item-name{
         font-size: 16px;
     }
     .midd-line{

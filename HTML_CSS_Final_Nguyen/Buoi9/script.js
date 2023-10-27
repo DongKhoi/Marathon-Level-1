@@ -104,6 +104,7 @@ var addToCart = async function () {
     data.push(newPr);
   }
   localStorage.setItem(cartList, JSON.stringify(data));
+  alert("Thêm vào giỏ hàng thành công");
 };
 
 var getLoggedInAccount = function () {
@@ -121,6 +122,7 @@ var getLoggedInAccount = function () {
 
 var LogOut = function () {
   localStorage.removeItem(loggedInAccount);
+  localStorage.removeItem(cartList);
   window.location.href = "../Buoi8/home.html";
 };
 
