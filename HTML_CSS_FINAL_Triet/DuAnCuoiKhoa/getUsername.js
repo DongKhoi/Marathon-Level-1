@@ -12,5 +12,6 @@ if (username) {
 
 document.getElementById("log-out").addEventListener("click", function () {
     localStorage.removeItem("name");
+    localStorage.removeItem('cart')
     window.location.href = "home.html";
   });
