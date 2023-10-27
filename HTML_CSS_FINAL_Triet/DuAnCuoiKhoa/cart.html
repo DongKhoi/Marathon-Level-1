@@ -48,44 +48,14 @@
 
   <main style="display: block;">
     <h1>Giỏ hàng của bạn</h1>
-    <div class="cart-items">
-      <!-- Hiển thị danh sách các sản phẩm trong giỏ hàng -->
-      <!-- Mỗi sản phẩm có thể được thêm vào giỏ hàng -->
-      <!-- Ví dụ: -->
-      <div class="cart-item">
-        <div class="cart-item-image">
-          <div class="checkbox">
-            <input type="checkbox" class="product-checkbox" />
-          </div>
-          <img src="product.jpg" alt="Sản phẩm 1" />
-        </div>
-        <div class="nameProduct">
-          <h2>Sản phẩm 1</h2>
-        </div>
-        <div class="cart-item-info">
-          <div class="price">
-            <p>
-              <del>₫60000</del>
-              ₫54500
-            </p>
-          </div>
-        </div>
-        <div class="quantity">
-          <button class="quantity-button subtract">-</button>
-          <input type="number" value="1" min="1" max="10" class="quantity-input" />
-          <button class="quantity-button add">+</button>
-        </div>
-        <div class="cart-item-actions">
-          <button class="remove-from-cart">Xóa</button>
-        </div>
-      </div>
-      <!-- Thêm các sản phẩm khác tương tự ở đây -->
+    <div class="cart-items" id="cart-items">
+     
     </div>
 
     <!-- Tổng tiền và nút thanh toán -->
     <div class="cart-summary">
       <h2>Tổng tiền:</h2>
-      <p class="total-price">₫54500</p>
+      <p class="total-price"></p>
       <button class="checkout">Thanh toán</button>
     </div>
     <!-- Progress Bar -->
@@ -108,6 +78,7 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="callCard.js"></script>
   <script>
     $(document).ready(function () {
       //Ẩn sản phẩm khi bấm xóa

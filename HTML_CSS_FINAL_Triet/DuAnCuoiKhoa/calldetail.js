@@ -3,7 +3,6 @@ let listData = [];
 async function loadData() {
     await axios.get('/getdata').then(response => {
         const data = response.data
-        console.log('data', data);
         data.forEach((item, index) => {
             listData.push(item);
         })
@@ -19,7 +18,6 @@ function displayProductDetail() {
     const urlParams = new URLSearchParams(queryString);
     const productId = urlParams.get("id");
     if(productId) {
-        console.log('listData', listData);
         const product = listData.find(item => item.id.toString() === productId);
         console.log('product', product);
         if(product) {
@@ -33,5 +31,6 @@ function displayProductDetail() {
         }
     }
 }
+
 
 loadData()

@@ -19,6 +19,9 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     var password = document.getElementById("loginPassword").value;
     if (checkMatch(username, password)) {
       alert("Đăng nhập thành công!");
+      
+      localStorage.setItem("name", username)
+
       window.location.href = "home.html";
     } else {
       alert("Tài khoản và mật khẩu không đúng!");
