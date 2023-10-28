@@ -1,7 +1,10 @@
 var searchButton = $("#search-button");
 var searchInput = $("#search-input");
 var loadMorebtn = $("#loadMore");
+
 var loggedInAccount = "loggedInAccount";
+var cartList = "cartList";
+
 var loginHref = $("#loginHref");
 
 searchButton.on("click", function (event) {
@@ -80,6 +83,7 @@ var getLoggedInAccount = function () {
 
 var LogOut = function () {
   localStorage.removeItem(loggedInAccount);
+  localStorage.removeItem(cartList);
   window.location.href = "../Buoi8/home.html";
 };
 

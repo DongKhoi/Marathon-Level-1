@@ -2,8 +2,16 @@ var searchButton = $("#search-button");
 var searchInput = $("#search-input");
 var chatNowBtn = $("#button-chatNow");
 var shopName = $("#shopName");
+
 var loggedInAccount = "loggedInAccount";
+var cartList = "cartList";
+
 var loginHref = $("#loginHref");
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const productId = urlParams.get("index");
+
 searchButton.on("click", function (event) {
   alert("Bạn đã tìm kiếm: " + searchInput.val());
 });
@@ -38,11 +46,10 @@ popList.on("mouseleave ", function (event) {
   popList.removeClass("show");
 });
 
-var getProductByID = function () {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const productId = urlParams.get("index");
-  axios.get("http://localhost:3000/getListItems").then((rs) => {
+var getProductByID = async function () {
+  try {
+    const rs = await axios.get("http://localhost:3000/getListItems");
+
     const data = rs.data;
     var productInfo;
     for (let i = 0; i < data.length; i++) {
@@ -53,26 +60,51 @@ var getProductByID = function () {
     }
     var imgItem = document.getElementById("img-item");
     imgItem.setAttribute("src", "../Buoi8/src/" + productInfo.image);
-    console.log("../Buoi8/src/" + data.image);
-    var itemInfoContainer = document.getElementById("item-info-container");
-    itemInfoContainer.innerHTML = `<h3 >${productInfo.name}</h3>
-    <p id="price"><span class="underline-span">đ</span>54500-<span class="underline-span">đ</span>${productInfo.price}</p>
-    <p id="item-description">Điện thoại thông minh , độ bền ngang kim cương . Chức năng nghe , gọi và chọi  </p>
-    <p>NGUYEN-PHONE MASTER</p>
-    <p class="bold">Mã giảm giá: <span id="discount">ABC123</span></p>
-    <p id="item-delivery"><span  class="bold">Vận chuyển</span>
-        : Miễn phí</p>
-        <form action="">
-            <p class="bold amount">Số lượng: </p>
-            <div class="amount"><input class="amount" type="number" value="1"></div>
-        </form>
-    <div id="button-container">
-        <a href="../Buoi10/cart.html"><button id="button-addToCart">
-            <i class="fa-solid fa-cart-shopping" style="color: #eb5f14;"></i>
-            Thêm vào giỏ hàng</button></a>
-        <button id="button-buy">Mua hàng</button>
-    </div>`;
-  });
+    var productName = document.getElementById("productName");
+    productName.innerText = productInfo.name;
+    var productPrice = document.getElementById("productPrice");
+    productPrice.innerText = productInfo.price;
+    var productPrePrice = document.getElementById("productPrePrice");
+    productPrePrice.innerText = (parseFloat(productInfo.price) - 1).toString();
+    return productInfo;
+  } catch (err) {
+    console.log("Error get product by id", err);
+    return null;
+  }
+};
+
+var addToCart = async function () {
+  var quantity = $("#quantity");
+  if (!localStorage.getItem(cartList)) {
+    localStorage.setItem(cartList, JSON.stringify([]));
+  }
+  const data = JSON.parse(localStorage.getItem(cartList));
+  var isExist = false;
+  var index = -1;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].Id == productId) {
+      isExist = true;
+      index = i;
+      break;
+    }
+  }
+  if (isExist) {
+    // alert(parseInt(quantity.val(), data[index].quatity));
+    data[index].quantity = data[index].quantity + parseInt(quantity.val());
+  } else {
+    var product = await getProductByID();
+    console.log(product);
+    var newPr = {
+      Id: productId,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: parseInt($("#quantity").val()),
+    };
+    data.push(newPr);
+  }
+  localStorage.setItem(cartList, JSON.stringify(data));
+  alert("Thêm vào giỏ hàng thành công");
 };
 
 var getLoggedInAccount = function () {
@@ -90,6 +122,7 @@ var getLoggedInAccount = function () {
 
 var LogOut = function () {
   localStorage.removeItem(loggedInAccount);
+  localStorage.removeItem(cartList);
   window.location.href = "../Buoi8/home.html";
 };
 

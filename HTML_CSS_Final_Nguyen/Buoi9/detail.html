@@ -48,6 +48,9 @@
                             </ul>
                         </div>
                         <form class="d-flex row justify-content-end" role="search">
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="../Buoi10/cart.html"><img src="../Buoi8/src/Icon/cart.svg" alt="" style="width: 40px; height: 40px;"></a>
+                            </div>
                             <div class="col-md-3">
                                 <input class="form-control" id="search-input" type="search" placeholder="Tìm kiếm"
                                 aria-label="Search">
@@ -67,7 +70,23 @@
                 <div id="img"><img id ="img-item" src="../Buoi8/src/items.jpg" alt="item-img"></div>
 
                 <div id="item-info-container">
-                    
+                    <h3 id="productName"></h3>
+                    <p id="price"><span class="underline-span">đ</span><span id="productPrePrice"></span>-<span class="underline-span">đ</span><span id="productPrice"></span></p>
+                    <p id="item-description">Điện thoại thông minh , độ bền ngang kim cương . Chức năng nghe , gọi và chọi  </p>
+                    <p>NGUYEN-PHONE MASTER</p>
+                    <p class="bold">Mã giảm giá: <span id="discount">ABC123</span></p>
+                    <p id="item-delivery"><span  class="bold">Vận chuyển</span>
+                        : Miễn phí</p>
+                        <form action="">
+                            <p class="bold amount" >Số lượng: </p>
+                            <div class="amount"><input id="quantity" class="amount" type="number" value="1"></div>
+                        </form>
+                    <div id="button-container">
+                        <button id="button-addToCart" onclick="addToCart()">
+                            <i class="fa-solid fa-cart-shopping" style="color: #eb5f14;"></i>
+                            Thêm vào giỏ hàng</button>
+                        <button id="button-buy">Mua hàng</button>
+                    </div>
                 </div>
             </div>
             <div id="shop-container">

@@ -49,6 +49,9 @@
                             </ul>
                         </div>
                         <form class="d-flex row justify-content-end" role="search">
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="../Buoi10/cart.html"><img src="../Buoi8/src/Icon/cart.svg" alt="" style="width: 40px; height: 40px;"></a>
+                            </div>
                             <div class="col-md-3">
                                 <input class="form-control" id="search-input" type="search" placeholder="Tìm kiếm"
                                     aria-label="Search">
@@ -68,28 +71,8 @@
         <div class="content">
             <h3>Giỏ hàng của bạn</h3>
             <div id="item-container">
-                <form action="">
-                    <div class="cart-item">
-                        <div id="item-img-container">
-                            <input type="checkbox">
-                            <img src="../Buoi8/src/items.jpg" alt="img">
-                        </div>
-                        <div>
-                            <p class="center-vertical" id="item-name">Sản phẩm 1</p>
-                        </div>
-                        <div>
-                            <p class="center-vertical" id="item-price"><span class="midd-line"><span
-                                        class="underline">đ</span>60000</span><span class="underline">đ</span>54500</p>
-                        </div>
-                        <div id="amount-input-container">
-                            <button>-</button>
-                            <input type="text" value="1">
-                            <button>+</button>
-                        </div>
-                        <div id="delete-container">
-                            <button id="delete-btn">Xóa</button>
-                        </div>
-                    </div>
+                <form action="" id="form-item-container">
+                   
 
                 </form>
             </div>
@@ -98,7 +81,7 @@
         <div id="total">
             <div id="total-container">
                 <h3>Tổng tiền</h3>
-                <p id="total-price"><span class="underline">đ</span><span id="number">54500</span></p>
+                <p id="total-price"><span class="underline">đ</span><span id="number"></span></p>
                 <button id="button-pay">Thanh toán</button>
             </div>
         </div>

@@ -1,6 +1,9 @@
 var shopName = $("#shopName");
 var loggedInAccount = "loggedInAccount";
 var loginHref = $("#loginHref");
+
+var cartList = "cartList";
+
 $("document").ready(function () {
   var searchButton = $("#search-button");
   var searchInput = $("#search-input");
@@ -81,7 +84,95 @@ var getLoggedInAccount = function () {
 
 var LogOut = function () {
   localStorage.removeItem(loggedInAccount);
+  localStorage.removeItem(cartList);
   window.location.href = "../Buoi8/home.html";
 };
 
+var loadCart = function () {
+  if (localStorage.getItem(cartList)) {
+    const data = JSON.parse(localStorage.getItem(cartList));
+    // console.log(data);
+    var innerHTML = "";
+    var totalPrice = 0;
+    for (let i = 0; i < data.length; i++) {
+      totalPrice += parseFloat(data[i].price) * parseFloat(data[i].quantity);
+      var prePrice = (parseFloat(data[i].price) + 1).toString();
+      innerHTML += ` <div class="cart-item">
+            <div class="item-img-container">
+                <input type="checkbox">
+                <img src="../Buoi8/src/${data[i].image}" alt="img">
+            </div>
+            <div class="d-flex align-items-center">   
+                <p class="center-vertical item-name">${data[i].name}</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <p class="center-vertical item-price"><span class="midd-line"><span
+                            class="underline">đ</span>${prePrice}</span><span class="underline">đ</span>${data[i].price}</p>
+            </div>
+            <div class="amount-input-container">
+                <button class="${data[i].Id}" onclick="minus(event, this)">-</button>
+                <input type="text" value="${data[i].quantity}">
+                <button class="${data[i].Id}" onclick="add(event,this)">+</button>
+            </div>
+            <div class="delete-container">
+                <button myAtt="${data[i].Id}" class="delete-btn" onclick="del(event, this)">Xóa</button>
+            </div>
+        </div>`;
+    }
+    var formItemContainer = document.getElementById("form-item-container");
+    document.getElementById("total-price").innerText = totalPrice
+      .toFixed(2)
+      .toString();
+    formItemContainer.innerHTML = innerHTML;
+  }
+};
+var add = function (e, btn) {
+  e.preventDefault();
+  var idProduct = btn.getAttribute("class");
+  if (localStorage.getItem(cartList)) {
+    var data = JSON.parse(localStorage.getItem(cartList));
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].Id == idProduct) {
+        data[i].quantity += 1;
+        break;
+      }
+    }
+    localStorage.setItem(cartList, JSON.stringify(data));
+    loadCart();
+  }
+};
+
+var del = function (e, btn) {
+  e.preventDefault();
+  var idProduct = btn.getAttribute("myAtt");
+  if (localStorage.getItem(cartList)) {
+    var data = JSON.parse(localStorage.getItem(cartList));
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].Id == idProduct) {
+        data.splice(i, 1);
+        break;
+      }
+    }
+    localStorage.setItem(cartList, JSON.stringify(data));
+    loadCart();
+  }
+};
+
+var minus = function (e, btn) {
+  e.preventDefault();
+  var idProduct = btn.getAttribute("class");
+  if (localStorage.getItem(cartList)) {
+    var data = JSON.parse(localStorage.getItem(cartList));
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].Id == idProduct && data[i].quantity > 1) {
+        data[i].quantity -= 1;
+        break;
+      }
+    }
+    localStorage.setItem(cartList, JSON.stringify(data));
+    loadCart();
+  }
+};
+
 getLoggedInAccount();
+loadCart();
