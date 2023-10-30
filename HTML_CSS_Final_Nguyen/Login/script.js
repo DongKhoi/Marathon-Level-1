@@ -26,7 +26,7 @@ var showNotification = function (mess) {
     notification.innerText = mess;
     notification.classList.remove("d-none");
     notification.style.opacity = "1";
-  }, 1000);
+  }, 100);
   setTimeout(function () {
     notification.classList.add("d-none");
     notification.style.opacity = "0";
@@ -57,7 +57,7 @@ var login = function () {
     if (rs) {
       localStorage.setItem(
         loggedInAccount,
-        JSON.stringify(data[index].username)
+        JSON.stringify({username:data[index].username , AmountOfMoney:data[index].AmountOfMoney ,orderNumber: data[index].OrderNumber})
       );
       window.location.href = "../Buoi8/home.html";
     }

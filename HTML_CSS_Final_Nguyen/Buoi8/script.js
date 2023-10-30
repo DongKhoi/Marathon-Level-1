@@ -3,6 +3,8 @@ var searchInput = $("#search-input");
 var loadMorebtn = $("#loadMore");
 
 var loggedInAccount = "loggedInAccount";
+var AccountListName = "AccountListName";
+
 var cartList = "cartList";
 
 var loginHref = $("#loginHref");
@@ -72,7 +74,7 @@ var getLoggedInAccount = function () {
   if (localStorage.getItem(loggedInAccount)) {
     var shopName = document.getElementById("ShopName");
     shopName.innerText =
-      "Xin chào " + JSON.parse(localStorage.getItem(loggedInAccount));
+      "Xin chào " + JSON.parse(localStorage.getItem(loggedInAccount)).username;
     loginHref.addClass("d-none");
   } else {
     var shopContainer = $("#shopContainer");
@@ -81,10 +83,51 @@ var getLoggedInAccount = function () {
   }
 };
 
+var  AccountInf= function(){
+  var loggedAccount = JSON.parse(localStorage.getItem(loggedInAccount));
+  document.getElementById("usernameModal").innerText= loggedAccount.username;
+  document.getElementById("PayedOrderModal").innerText= loggedAccount.orderNumber;
+  document.getElementById("AmountOfMoney").innerText= loggedAccount.AmountOfMoney;
+  document.getElementById("depositAmount").value =0;
+}
+
+var deposit =function(){
+  if(parseInt(document.getElementById("depositAmount").value)>=0){
+    var Account = JSON.parse(localStorage.getItem(loggedInAccount));
+  var data = JSON.parse(localStorage.getItem(AccountListName));
+  Account.AmountOfMoney =parseInt(Account.AmountOfMoney)+ parseInt(document.getElementById("depositAmount").value);
+  for (let i = 0 ; i < data.length ; i++){
+    if(data[i].username == Account.username){
+      data[i].AmountOfMoney =parseInt(data[i].AmountOfMoney) +parseInt(document.getElementById("depositAmount").value);
+    }
+  }
+  localStorage.setItem(AccountListName,JSON.stringify(data));
+  localStorage.setItem(loggedInAccount,JSON.stringify(Account));
+  showNotification("Nạp tiền thành công");
+  AccountInf();
+  }
+  else{
+    showNotification("Số tiền không được âm")
+  }
+}
+
+
 var LogOut = function () {
   localStorage.removeItem(loggedInAccount);
   localStorage.removeItem(cartList);
   window.location.href = "../Buoi8/home.html";
+};
+
+var showNotification = function (mess) {
+  setTimeout(function () {
+    notification.innerText = mess;
+    notification.classList.remove("d-none");
+    notification.style.opacity = "1";
+  }, 100);
+  setTimeout(function () {
+    notification.classList.add("d-none");
+    notification.style.opacity = "0";
+  }, 4000);
 };
 
 getLoggedInAccount();
