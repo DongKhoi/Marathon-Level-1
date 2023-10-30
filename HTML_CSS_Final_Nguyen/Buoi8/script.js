@@ -88,7 +88,7 @@ var  AccountInf= function(){
   document.getElementById("usernameModal").innerText= loggedAccount.username;
   document.getElementById("PayedOrderModal").innerText= loggedAccount.orderNumber;
   document.getElementById("AmountOfMoney").innerText= loggedAccount.AmountOfMoney;
-
+  document.getElementById("depositAmount").value =0;
 }
 
 var deposit =function(){
