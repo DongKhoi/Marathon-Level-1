@@ -42,7 +42,7 @@ var showNotification = function (mess) {
     notification.innerText = mess;
     notification.classList.remove("d-none");
     notification.style.opacity = "1";
-  }, 1000);
+  }, 100);
   setTimeout(function () {
     notification.classList.add("d-none");
     notification.style.opacity = "0";
@@ -64,6 +64,8 @@ var createAccount = function () {
       data.push({
         username: username.value,
         password: password.value,
+        AmountOfMoney: 0,
+        OrderNumber:0,
       });
       localStorage.setItem(AccountListName, JSON.stringify(data));
       showNotification("Đăng ký thành công");
