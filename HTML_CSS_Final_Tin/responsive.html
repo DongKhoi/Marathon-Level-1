@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewpor" content="width=device=width, initial=scale=1.0">
+        <link rel="stylesheet" href="style.css" >
+        <title>Demo</title>
+    </head>
+    <body>
+        <header style="background-color: #ea3e13;">
+            <div class="logo">
+                <a href="demo.html">
+                    <img src="logo.png" alt="Logo Shopee">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Trang chủ</a>
+                        <a href="#">Thời Trang</a>
+                        <a href="#">Điện tử</a>
+                        <a href="#">Sách</a>
+                    </li>                   
+                </ul>
+                <div class="search-box">
+                    <form>
+                        <input type="text" placeholder="Tìm kiếm..."required pattern=".'\S+.">
+                        <button type="submit">Tìm kiếm</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <main style="display: block;width: 90%;margin-left: auto;margin-right: auto;">
+            <h1 style="font-size: larger;">Giỏ hàng hiện tại</h1>
+            <div class="item">
+                <div class="checkbox">
+                    <input type="checkbox" class="product-checkbox">
+                </div>
+                <div class="item-img">
+                    <img src="product.jpg" alt="Sản phẩm">
+                </div>
+                <div class="tensanpham">
+                    <h>Sản phẩm</h>
+                </div>
+                <div class="thongtinsanpham">
+                    <div class="giatien">
+                        <p style="font-size: larger;">
+                            <del style="font-size: large;">$100</del>
+                            78$
+                        </p>
+                    </div>
+                </div>
+                <div class ="soluong">
+                    <button style="background-color: #ea3e13;color: aliceblue;border: none;">+</button>
+                    <td label for="quantity"></label>
+                        <select id="quantity" name="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    <button style="background-color: #ea3e13;color: aliceblue;border: none;">-</button>                    
+                </div>
+                <div class="delete">
+                    <button style="background-color: #ea3e13;color: aliceblue;border: none;">Xóa</button>
+                </div>
+            </div>
+            <div class="total">
+                <div class="tongtien">
+                    <h style="font-size:larger;">Tổng tiền:</h>
+                </div>
+                <div class="sotien">
+                    <h style="font-size: larger;">$78</h>
+                </div>
+                <div class="pay">
+                    <button style="background-color: #ea3e13;color: aliceblue;border: none;font-size: larger;border: none;border-radius: 5px;">Thanh toán</button>
+                </div>
+            </div>
+        
+        </main>
+        <footer style="background-color: rgb(27, 19, 19);">
+            <div class="logo">
+                <a href="home.html">
+                    <img src="logo.png" alt="Logo Shopee">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <h2>Địa chỉ:Đường ABC,Quận XYZ,Thành Phố ABC</h2>
+                    </li>
+                    <li>
+                        <h2>Email:Contact@gmail.com</h2>
+                    </li>
+                    <li>
+                        <h2>SĐT:0123 456 789</h2>
+                    </li>
+                </ul>
+        </footer>
+    </body>
