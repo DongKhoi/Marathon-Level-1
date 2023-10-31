@@ -13,6 +13,35 @@
 
 <body>
     <header>
+        <div id="notification" class="d-none">
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h1 class="modal-title fs-5" id="accountModal">Thông tin tài khoản</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><span class="fw-bold">Username: </span><span id="usernameModal"></span></p>
+                        <p><span class="fw-bold">Số lượng đơn hàng đã thanh toán: </span><span
+                                id="PayedOrderModal"></span>
+                        </p>
+                        <p><span class="fw-bold">Số dư tài khoản: </span><span id="AmountOfMoney"></span></p>
+                        <hr>
+                        <p><span class="fw-bold">Nạp tiền</span></p>
+                        <input id="depositAmount" type="number" placeholder="Số tiền cần nạp" style="width: 100%;">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" onclick="deposit()">Nạp tiền</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg " id="nav">
             <div class="container">
                 <a class="navbar-brand text-white" href="../Buoi8/home.html">
@@ -39,8 +68,11 @@
                                         <img id="icon-shop" src="../Buoi8/src/items.jpg" alt="">
                                         <span id="ShopName"></span>
                                     </a>
-                                    <ul class="dropdown-menu ps-2" id="pop-list" style="width: 100%;">
-                                        <li><a class="dropdown-item" href="#">Tài khoản </a></li>
+                                    <ul class="dropdown-menu ps-2" id="pop-list" style="width: 100%;margin: 0;">
+                                        <li><a class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#accountModal" href="#" onclick="AccountInf()">Tài
+                                                khoản
+                                            </a></li>
                                         <li><a class="dropdown-item" href="#">Đơn mua</a></li>
                                         <li><a class="dropdown-item" href="#">Đơn bán</a></li>
                                         <li><a class="dropdown-item" href="#" onclick="LogOut()">Đăng xuất</a></li>
@@ -50,7 +82,8 @@
                         </div>
                         <form class="d-flex row justify-content-end" role="search">
                             <div class="col-md-1 d-flex align-items-center justify-content-center">
-                                <a href="../Buoi10/cart.html"><img src="../Buoi8/src/Icon/cart.svg" alt="" style="width: 40px; height: 40px;"></a>
+                                <a href="../Buoi10/cart.html"><img src="../Buoi8/src/Icon/cart.svg" alt=""
+                                        style="width: 40px; height: 40px;"></a>
                             </div>
                             <div class="col-md-3">
                                 <input class="form-control" id="search-input" type="search" placeholder="Tìm kiếm"
@@ -72,7 +105,7 @@
             <h3>Giỏ hàng của bạn</h3>
             <div id="item-container">
                 <form action="" id="form-item-container">
-                   
+
 
                 </form>
             </div>

@@ -15,6 +15,35 @@
 
 <body>
     <header>
+        <div id="notification" class="d-none">
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin tài khoản</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><span class="fw-bold">Username: </span><span id="usernameModal"></span></p>
+                        <p><span class="fw-bold">Số lượng đơn hàng đã thanh toán: </span><span
+                                id="PayedOrderModal"></span>
+                        </p>
+                        <p><span class="fw-bold">Số dư tài khoản: </span><span id="AmountOfMoney"></span></p>
+                        <hr>
+                        <p><span class="fw-bold">Nạp tiền</span></p>
+                        <input id="depositAmount" type="number" placeholder="Số tiền cần nạp" style="width: 100%;">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" onclick="deposit()">Nạp tiền</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg " id="nav">
             <div class="container">
                 <a class="navbar-brand text-white" href="#">
@@ -30,20 +59,22 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="container">
-                        <div class="row d-flex justify-content-end">
-                            
+                        <div class="row d-flex justify-content-end mb-3">
+
                             <div class="d-none col-md-5" id="loginHref">
                                 <a href="../Login/Login.html">Đăng nhập</a>
                             </div>
-                            <ul class="navbar-nav mb-2 mb-lg-0 d-flex col-md-5" id="shopContainer">
+                            <ul class="navbar-nav mb-lg-0 d-flex col-md-5" id="shopContainer">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" id="header-shop-container" href="#"
                                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <img id="icon-shop" src="src/items.jpg" alt="">
                                         <span id="ShopName"></span>
                                     </a>
-                                    <ul id="pop-list" class="dropdown-menu ps-2" style="width: 100%;">
-                                        <li><a class="dropdown-item" href="#">Tài khoản </a></li>
+                                    <ul id="pop-list" class="dropdown-menu ps-2" style="width: 100%; margin:0">
+                                        <li><a class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal" href="#" onclick="AccountInf()">Tài khoản
+                                            </a></li>
                                         <li><a class="dropdown-item" href="#">Đơn mua</a></li>
                                         <li><a class="dropdown-item" href="#">Đơn bán</a></li>
                                         <li><a class="dropdown-item" href="#" onclick="LogOut()">Đăng xuất</a></li>
@@ -53,7 +84,8 @@
                         </div>
                         <form class="d-flex row justify-content-end" role="search">
                             <div class="col-md-1 d-flex align-items-center justify-content-center">
-                                <a href="../Buoi10/cart.html"><img src="./src/Icon/cart.svg" alt="" style="width: 40px; height: 40px;"></a>
+                                <a href="../Buoi10/cart.html"><img src="./src/Icon/cart.svg" alt=""
+                                        style="width: 40px; height: 40px;"></a>
                             </div>
                             <div class="col-md-3">
                                 <input class="form-control" id="search-input" type="search" placeholder="Tìm kiếm"

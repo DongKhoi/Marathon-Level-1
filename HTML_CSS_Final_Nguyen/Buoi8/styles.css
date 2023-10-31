@@ -84,6 +84,7 @@ main{
 
 #header-shop-container{
     color:white;
+    padding:0;
 }
 
 #item-container{
@@ -179,6 +180,20 @@ footer{
     text-align: center;
 }
 
+#notification {
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    z-index: 99;
+    border-radius: 5px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 2s linear;
+
+}
 
 #loadMore:hover{
     background-color: aliceblue;
