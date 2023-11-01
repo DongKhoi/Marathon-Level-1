@@ -1,9 +1,9 @@
-var username = localStorage.getItem("name");
+var usernames = localStorage.getItem("name");
 var userdropdown = document.getElementById("user-dropdown")
 var dropdown = document.getElementById("login")
-if (username) {
+if (usernames) {
   var usernameElement = document.getElementById("username");
-  usernameElement.innerHTML = ('Xin chào ' + username);
+  usernameElement.innerHTML = ('Xin chào ' + usernames + ' !');
   dropdown.style.display = 'none'
 } else {
     userdropdown.style.display = 'none';

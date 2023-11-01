@@ -1,32 +1,32 @@
 document.getElementById("registerForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-    var username = document.getElementById("registerName").value;
-    var password = document.getElementById("registerPassword").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
-    if (getUser(username)) {
-      alert("Tài khoản đã tồn tại!");
-    } else if (password !== confirmPassword) {
-      alert("Hai mật khẩu không khớp!");
-    } else {
-      saveUser(username, password);
-      alert("Đăng ký thành công!");
-    }
-  });
+  event.preventDefault();
+  var username = document.getElementById("registerName").value;
+  var password = document.getElementById("registerPassword").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
+  if (getUser(username)) {
+    alert("Tài khoản đã tồn tại!");
+  } else if (password !== confirmPassword) {
+    alert("Hai mật khẩu không khớp!");
+  } else {
+    saveUser(username, password, 0, 0); // Lưu balance và order với giá trị ban đầu là 0
+    alert("Đăng ký thành công!");
+  }
+});
 
 document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-    var username = document.getElementById("loginName").value;
-    var password = document.getElementById("loginPassword").value;
-    if (checkMatch(username, password)) {
-      alert("Đăng nhập thành công!");
-      
-      localStorage.setItem("name", username)
+  event.preventDefault();
+  var username = document.getElementById("loginName").value;
+  var password = document.getElementById("loginPassword").value;
+  if (checkMatch(username, password)) {
+    alert("Đăng nhập thành công!");
 
-      window.location.href = "home.html";
-    } else {
-      alert("Tài khoản và mật khẩu không đúng!");
-    }
-  });
+    localStorage.setItem("name", username);
+
+    window.location.href = "home.html";
+  } else {
+    alert("Tài khoản và mật khẩu không đúng!");
+  }
+});
 
 function getUser(username) {
   var users = JSON.parse(localStorage.getItem("users")) || [];
@@ -36,9 +36,15 @@ function getUser(username) {
   return user;
 }
 
-function saveUser(username, password) {
+function saveUser(username, password, balance, order) {
   var users = JSON.parse(localStorage.getItem("users")) || [];
-  users.push({ username: username, password: password });
+  var user = getUser(username);
+  if (user) {
+    user.balance = balance;
+    user.order = order;
+  } else {
+    users.push({ username: username, password: password, balance: balance, order: order });
+  }
   localStorage.setItem("users", JSON.stringify(users));
 }
 

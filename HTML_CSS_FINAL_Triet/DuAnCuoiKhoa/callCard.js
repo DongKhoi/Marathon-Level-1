@@ -57,4 +57,85 @@ function loadData() {
   totalPriceElement.textContent = `₫${totalPrice}`;
 }
 
+function saveData() {
+  localStorage.setItem("cart", JSON.stringify(listData));
+}
+
+function removeItemFromCart(itemId) {
+  listData = listData.filter(item => item.id !== itemId);
+  saveData();
+}
+
+function updateQuantity(itemId, newQuantity) {
+  listData.forEach(item => {
+    if (item.id === itemId) {
+      item.quantity = newQuantity;
+    }
+  });
+  saveData();
+}
+
+function handleQuantityButtonClick(e) {
+  const itemId = e.target.dataset.id;
+  const inputElement = e.target.parentElement.querySelector('.quantity-input');
+  let newQuantity = parseInt(inputElement.value);
+
+  if (e.target.classList.contains('subtract')) {
+    newQuantity = Math.max(1, newQuantity - 1);
+  } else if (e.target.classList.contains('add')) {
+    newQuantity = Math.min(10, newQuantity + 1);
+  }
+
+  inputElement.value = newQuantity;
+  updateQuantity(itemId, newQuantity);
+}
+
+function handleRemoveButtonClick(e) {
+  const itemId = e.target.dataset.index;
+  removeItemFromCart(itemId);
+  e.target.closest(".cart-item").remove();
+}
+
+function handleCheckoutButtonClick() {
+  const totalPrice = calculator();
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+const username = localStorage.getItem("name");
+const user = users.find(user => user.username === username);
+console.log(user, username);
+const balance = user.balance || 0;
+console.log(totalPrice, balance);
+
+if (totalPrice <= balance) {
+  alert("Thanh toán thành công!");
+  
+
+  const orderKey = "order";
+  let orderValue = parseInt(localStorage.getItem(orderKey) || 0);
+  orderValue++;
+  localStorage.setItem(orderKey, orderValue);
+
+
+  localStorage.removeItem("cart");
+} else {
+  alert("Thanh toán thất bại. Số dư không đủ!");
+}
+ }
+
+
+document.addEventListener("click", function (e) {
+  if (e.target && e.target.classList.contains("remove-from-cart")) {
+    handleRemoveButtonClick(e);
+  }
+});
+
+document.addEventListener("click", function (e) {
+  if (e.target && e.target.classList.contains("quantity-button")) {
+    handleQuantityButtonClick(e);
+  }
+});
+
+document.getElementById("checkout").addEventListener("click", handleCheckoutButtonClick);
+
+
 loadData();
