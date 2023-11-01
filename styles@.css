@@ -1,0 +1,200 @@
+.detail{
+    display: flex;
+    padding: 100px;
+    border: 1px;
+    background-color: rgb(222, 214, 214) 
+    ; margin: 100px;
+ }
+ .detail-image{
+    display: inline;
+ } 
+ .detail-info{
+    display: inline;
+    padding-left: 10px;
+ }
+ .sp1{
+    font-size: 108;
+    color: #ff5722;
+    text-emphasis-style: bold;
+    font-weight: 100;
+    
+    
+ }
+ p{ 
+    color: #888
+    ;
+ }
+
+    
+ 
+ .price{
+    display: flex;
+    font-size: large;
+    font-style: normal;
+    
+ }
+ .detail2{
+    display: flex;
+    padding: 100px;
+    border: 1px;
+    background-color: rgb(222, 214, 214) 
+    ; margin: 100px;}
+ 
+    .d2{
+    display: flex;
+    text-align: center;
+    padding-left: 200px;
+    
+   
+ }
+ .buttonn{
+    background-color: #ff5722;
+    color: aliceblue;
+    opacity: 0.5;
+    cursor: pointer;
+    
+}
+
+.button1{
+    display: flex;
+    background-color: #ff5722;
+    color: aliceblue;
+    opacity: 0.5;
+    cursor: pointer;
+   
+}
+a{
+    margin: 15px;
+}
+/*mainly DETAIL)))))))))))))))*/
+.cart1{
+    display: flex;
+    justify-content: space-between;
+    border: 1px;
+    background-color: rgb(253, 247, 247) ;
+    width: 100vw;
+    
+   
+    }
+.cart2{
+    text-align: end;
+    right: 0;
+    height: max-content;
+    
+}
+.sum{margin: 0 40px 40px 0;}
+.ftk{margin: 0 40px 40px 0;}
+
+
+
+.cart1-image{
+   padding-left: 10px;
+   width: 60px;
+   height: 60px;
+   
+}
+
+.center-me{margin: 0 auto;
+text-align: right;}
+.center-me.q{margin: 0 auto;
+    width: 10px;height: 10px;}
+    .center-me.Q{margin: 0 auto;
+        width: 30px;height: 10px;
+    text-align: right;}
+@media(min-width: 768px){
+
+   .cart1{
+        width: 100vw;
+        height: 10vh;
+    }
+    .cart2{
+        display: inline;
+        width: 100vw;
+        height: 20vh;
+
+    }
+    
+
+}
+@media(max-width: 480px){.cart1{
+    display: block;
+    width: 100vw;
+    height: 10vh;
+}
+.cart2{
+    display: block;
+    width: 90vw;
+    height: 20vh;
+}
+.sp1{ text-justify: right;}
+}
+/*STYLE CARTPAGE+)))))))))))))*/
+html, body {
+    height: 100%; /* Đặt chiều cao cho html và body là 100% */
+    margin: 0; /* Loại bỏ margin mặc định */
+    padding: 0; /* Loại bỏ padding mặc định */
+  }
+.sticky-menu{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #333;
+}
+.sticky-menu ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+
+}
+.sticky-menu li{
+    padding: 10px
+}
+.sticky-menu a {
+    text-decoration: none;
+    color: white
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.grid-item{
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 20vw;
+   ;
+} 
+html, body{ height: 100%; margin: 0;padding: 0;}
+main { min-height: 100%-100px;}
+main {
+    display: flex;
+    justify-content: space-between; /* Các phần tử con sẽ được căn cách đều ở giữa và bên trái và bên phải */
+  }
+/*styles.css sticky-grid*/ 
+/*style.css sticky-grid*/
+.banner-left {
+    background-color: #f2f2f2; /* Màu nền của banner trái, thay đổi tùy thuộc vào thiết kế của bạn */
+    padding: 20px; /* Khoảng cách nội dung với viền banner */
+    position: sticky;
+    top: 20%; /* Đặt giá trị top là 0 để banner trái nằm ở trên cùng khi cuộn */
+    left: 0;
+    z-index: 1000; /* Đảm bảo banner trái hiển thị trên header và các sản phẩm */
+    height: 10%;
+    width: 10%;
+  }
+  .banner-right {
+    background-color: #f2f2f2; /* Màu nền của banner phải, thay đổi tùy thuộc vào thiết kế của bạn */
+    padding: 20px; /* Khoảng cách nội dung với viền banner */
+    position: sticky;
+    top: 20%; /* Đặt giá trị top là 0 để banner phải nằm ở trên cùng khi cuộn */
+    right: 0;
+    z-index: 1000; /* Đảm bảo banner phải hiển thị trên header và các sản phẩm */
+    height: 10%;
+    width: 10%;
+  }
+  /*banner.css*/
+/*mainly! HOME))))))))))))))))*/
+
+
