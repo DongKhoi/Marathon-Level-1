@@ -57,7 +57,7 @@ var login = function () {
     if (rs) {
       localStorage.setItem(
         loggedInAccount,
-        JSON.stringify({username:data[index].username , AmountOfMoney:data[index].AmountOfMoney ,orderNumber: data[index].OrderNumber})
+        JSON.stringify({username:data[index].username , AmountOfMoney:data[index].AmountOfMoney ,orderNumber: data[index].orderNumber})
       );
       window.location.href = "../Buoi8/home.html";
     }
