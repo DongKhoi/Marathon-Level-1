@@ -20,28 +20,7 @@ $("document").ready(function () {
     $("#number").html("0");
   });
 
-  var MyProgress = $("#MyProgress");
-  $("#button-pay").on("click", function (event) {
-    $("#MyProgressContainer").removeClass("d-none");
-    $(this).addClass("d-none");
-    var count = 0;
-    var interval = setInterval(function () {
-      count = count + 1;
-      MyProgress.css("width", count + "%");
-      $("#MyProgressContainer").attr("aria-valuenow", count);
-      MyProgress.html(count + "%");
-
-      if (count > 100) {
-        $("#MyProgressContainer").addClass("d-none");
-        $("#button-pay").removeClass("d-none");
-        MyProgress.css("width", "0%");
-        $("#MyProgressContainer").attr("aria-valuenow", 0);
-        alert("Đã thanh toán thành công");
-        clearInterval(interval);
-      }
-    }, 1000);
-  });
-
+  
   var popList = $("#pop-list");
   var headerShopContainer = $("#header-shop-container");
   headerShopContainer.on("mouseenter", function (event) {
@@ -125,6 +104,11 @@ var loadCart = function () {
       .toFixed(2)
       .toString();
     formItemContainer.innerHTML = innerHTML;
+  }
+  else {
+    var formItemContainer = document.getElementById("form-item-container");
+    formItemContainer.innerHTML='';
+    document.getElementById("total-price").innerText='0';
   }
 };
 var add = function (e, btn) {
@@ -217,6 +201,51 @@ var showNotification = function (mess) {
     notification.style.opacity = "0";
   }, 4000);
 };
+
+var MyProgress = $("#MyProgress");
+  $("#button-pay").on("click", function (event) {
+    var Account = JSON.parse(localStorage.getItem(loggedInAccount));
+    if(Account.AmountOfMoney >= parseFloat(document.getElementById("total-price").innerText)){
+      if(document.getElementById("total-price").innerText!="0"){
+        $("#MyProgressContainer").removeClass("d-none");
+    $(this).addClass("d-none");
+    var count = 0;
+    var interval = setInterval(function () {
+      count = count + 20;
+      MyProgress.css("width", count + "%");
+      $("#MyProgressContainer").attr("aria-valuenow", count);
+      MyProgress.html(count + "%");
+
+      if (count > 100) {
+        $("#MyProgressContainer").addClass("d-none");
+        $("#button-pay").removeClass("d-none");
+        MyProgress.css("width", "0%");
+        $("#MyProgressContainer").attr("aria-valuenow", 0);
+        Account.AmountOfMoney -=parseFloat(document.getElementById("total-price").innerText);
+        Account.orderNumber+=1;
+        localStorage.setItem(loggedInAccount,JSON.stringify(Account));
+        localStorage.removeItem(cartList);
+        var data = JSON.parse(localStorage.getItem(AccountListName));
+        for (let i= 0 ; i < data.length ; i++){
+          if(data[i].username == Account.username) {
+            data[i].AmountOfMoney=Account.AmountOfMoney;
+            data[i].orderNumber=Account.orderNumber;
+          }
+        }
+        localStorage.setItem(AccountListName,JSON.stringify(data));
+
+        alert("Đã thanh toán thành công");
+        loadCart();
+        clearInterval(interval);
+      }
+    }, 1000);
+      }
+    }
+    else{
+      showNotification("Số dư tài khoản không đủ")
+    }
+  });
+
 
 getLoggedInAccount();
 loadCart();
