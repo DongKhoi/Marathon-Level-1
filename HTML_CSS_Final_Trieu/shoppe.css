@@ -64,6 +64,7 @@ nav a{
 
 /* Phần Home */
 
+
 .banner{
     position: sticky;
     position: -webkit-sticky;
@@ -92,6 +93,10 @@ nav a{
 .banner-right img{
     width: 200px;
     height: 100%;
+}
+
+.row>* {
+    margin: 20px 0;
 }
 
 .product{
@@ -214,6 +219,10 @@ nav a{
 }
 
 /* Phần detail */
+
+.fa-solid{
+    margin-right: 5px;
+}
 
 .product-detail img{
     width: 400px;
