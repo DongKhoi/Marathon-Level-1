@@ -37,7 +37,7 @@ function loadData() {
       <div class="cart-item-info">
           <div class="price">
               <p>
-                  ₫${item.price}
+                  ₫ ${item.price}
               </p>
           </div>
       </div>

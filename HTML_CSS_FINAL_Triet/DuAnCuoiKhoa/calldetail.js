@@ -19,7 +19,6 @@ function displayProductDetail() {
     const productId = urlParams.get("id");
     if(productId) {
         const product = listData.find(item => item.id.toString() === productId);
-        console.log('product', product);
         if(product) {
             document.getElementById('product-name').textContent = product.name;
             document.getElementById('product-price').textContent = product.price;
