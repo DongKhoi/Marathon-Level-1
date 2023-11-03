@@ -52,40 +52,13 @@
       <!-- Hiển thị danh sách các sản phẩm trong giỏ hàng -->
       <!-- Mỗi sản phẩm có thể được thêm vào giỏ hàng -->
       <!-- Ví dụ: -->
-      <div class="cart-item">
-        <div class="cart-item-image">
-          <div class="checkbox">
-            <input type="checkbox" class="product-checkbox" />
-          </div>
-          <img src="product.jpg" alt="Sản phẩm 1" />
-        </div>
-        <div class="nameProduct">
-          <h2>Sản phẩm 1</h2>
-        </div>
-        <div class="cart-item-info">
-          <div class="price">
-            <p>
-              <del>₫60000</del>
-              ₫54500
-            </p>
-          </div>
-        </div>
-        <div class="quantity">
-          <button class="quantity-button subtract">-</button>
-          <input type="number" value="1" min="1" max="10" class="quantity-input" />
-          <button class="quantity-button add">+</button>
-        </div>
-        <div class="cart-item-actions">
-          <button class="remove-from-cart">Xóa</button>
-        </div>
-      </div>
       <!-- Thêm các sản phẩm khác tương tự ở đây -->
     </div>
 
     <!-- Tổng tiền và nút thanh toán -->
     <div class="cart-summary">
       <h2>Tổng tiền:</h2>
-      <p class="total-price">₫54500</p>
+      <p class="total-price" id="total-price"></p>
       <button class="checkout">Thanh toán</button>
     </div>
     <!-- Progress Bar -->
@@ -108,39 +81,48 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="loadAccount.js"></script>
+  <script src="cartData.js"></script>
   <script>
     $(document).ready(function () {
-      //Ẩn sản phẩm khi bấm xóa
-      $(".remove-from-cart").click(function () {
-        // Sử dụng phương thức hide() để ẩn div
-        $(this).closest(".cart-item").hide(); // Để ẩn sản phẩm cụ thể khi bấm nút "Xóa"
-      });
-
       // Xử lý khi nút thanh toán được nhấn
       $(".checkout").click(function () {
         // Ẩn nút thanh toán
-        $(this).hide();
-        // Hiển thị Progress Bar
-        $(".progress").show();
+        var totalPriceElement = document.getElementById("total-price").textContent;
+        if (account && parseFloat(account.fund) > parseFloat(totalPriceElement.replace("₫", "").trim())) {
+          $(this).hide();
+          // Hiển thị Progress Bar
+          $(".progress").show();
 
-        // Khởi tạo giá trị ban đầu của Progress Bar
-        let progressValue = 0;
+          // Khởi tạo giá trị ban đầu của Progress Bar
+          let progressValue = 0;
 
-        // Sử dụng setInterval để tăng giá trị Progress Bar mỗi 1 giây
-        const progressInterval = setInterval(function () {
-          if (progressValue < 100) {
-            progressValue += 10; // Tăng 10% sau mỗi lần
-            $(".progress-bar").css("width", progressValue + "%");
-            $(".progress-bar").attr("aria-valuenow", progressValue);
-          } else {
-            // Đạt 100%, hiển thị thông báo và ẩn Progress Bar cũng như hiện lại button và trả về 0%
-            clearInterval(progressInterval);
-            alert("Thanh toán thành công!");
-            $(".progress").hide();
-            $(".checkout").show();
-            $(".progress-bar").css("width", "0%");
-          }
-        }, 1000); // Mỗi 1 giây
+          // Sử dụng setInterval để tăng giá trị Progress Bar mỗi 1 giây
+          const progressInterval = setInterval(function () {
+            if (progressValue < 100) {
+              progressValue += 10; // Tăng 10% sau mỗi lần
+              $(".progress-bar").css("width", progressValue + "%");
+              $(".progress-bar").attr("aria-valuenow", progressValue);
+            } else {
+              // Đạt 100%, hiển thị thông báo và ẩn Progress Bar cũng như hiện lại button và trả về 0%
+              clearInterval(progressInterval);
+
+              account.fund -= parseFloat(totalPriceElement.replace("₫", "").trim());
+              account.orderNumber += 1;
+              // Cập nhật thông tin tài khoản trong storage
+              localStorage.setItem("accounts", JSON.stringify(accounts));
+              localStorage.removeItem("cart");
+              displayCartItems();
+
+              alert("Thanh toán thành công!");
+              $(".progress").hide();
+              $(".checkout").show();
+              $(".progress-bar").css("width", "0%");
+            }
+          }, 1000); // Mỗi 1 giây
+        }
+        else
+          alert("Số dư không đủ !");
       });
     });
   </script>

@@ -653,3 +653,6 @@ main {
     display: none;
   }
 }
+.cart-button:hover{
+  cursor: pointer;
+}
