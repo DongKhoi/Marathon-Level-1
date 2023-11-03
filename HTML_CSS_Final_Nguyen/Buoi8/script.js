@@ -10,7 +10,8 @@ var cartList = "cartList";
 var loginHref = $("#loginHref");
 
 searchButton.on("click", function (event) {
-  alert("Bạn đã tìm kiếm: " + searchInput.val());
+  event.preventDefault();
+  getItems(searchInput.val());
 });
 
 loadMorebtn.on("click", function (event) {
@@ -44,17 +45,20 @@ popList.on("mouseleave ", function (event) {
   popList.removeClass("show");
 });
 
-var getItems = function () {
+var getItems = function (name) {
   axios
     .get("http://localhost:3000/getListItems")
     .then((rs) => {
       const data = rs.data;
       console.log(rs);
       var listItem = document.getElementById("listItem");
-      var listItemInnerHTML = listItem.innerHTML;
+      var listItemInnerHTML = "";
       //   console.log(listItemInnerHTML);
       data.forEach((element) => {
-        listItemInnerHTML += `<div class="mt-2 card col-md-4 text-center">
+        var a = "asdasd";
+        a.toLowerCase;
+        if (element.name.toLowerCase().includes(name.toLowerCase())) {
+          listItemInnerHTML += `<div class="mt-2 card col-md-4 text-center">
       <img class="item-img" src="./src/${element.image}" class="card-img-top" alt="img">
       <div class="card-body">
           <h5 class="card-title"> ${element.name}</h5>
@@ -62,6 +66,7 @@ var getItems = function () {
           <a href="../Buoi9/detail.html?index=${element.id}" class="btn btn-primary">Mua hàng</a>
       </div>
   </div>`;
+        }
       });
       listItem.innerHTML = listItemInnerHTML;
     })
@@ -83,34 +88,38 @@ var getLoggedInAccount = function () {
   }
 };
 
-var  AccountInf= function(){
+var AccountInf = function () {
   var loggedAccount = JSON.parse(localStorage.getItem(loggedInAccount));
-  document.getElementById("usernameModal").innerText= loggedAccount.username;
-  document.getElementById("PayedOrderModal").innerText= loggedAccount.orderNumber;
-  document.getElementById("AmountOfMoney").innerText= loggedAccount.AmountOfMoney;
-  document.getElementById("depositAmount").value =0;
-}
+  document.getElementById("usernameModal").innerText = loggedAccount.username;
+  document.getElementById("PayedOrderModal").innerText =
+    loggedAccount.orderNumber;
+  document.getElementById("AmountOfMoney").innerText =
+    loggedAccount.AmountOfMoney;
+  document.getElementById("depositAmount").value = 0;
+};
 
-var deposit =function(){
-  if(parseInt(document.getElementById("depositAmount").value)>=0){
+var deposit = function () {
+  if (parseInt(document.getElementById("depositAmount").value) >= 0) {
     var Account = JSON.parse(localStorage.getItem(loggedInAccount));
-  var data = JSON.parse(localStorage.getItem(AccountListName));
-  Account.AmountOfMoney =parseInt(Account.AmountOfMoney)+ parseInt(document.getElementById("depositAmount").value);
-  for (let i = 0 ; i < data.length ; i++){
-    if(data[i].username == Account.username){
-      data[i].AmountOfMoney =parseInt(data[i].AmountOfMoney) +parseInt(document.getElementById("depositAmount").value);
+    var data = JSON.parse(localStorage.getItem(AccountListName));
+    Account.AmountOfMoney =
+      parseInt(Account.AmountOfMoney) +
+      parseInt(document.getElementById("depositAmount").value);
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].username == Account.username) {
+        data[i].AmountOfMoney =
+          parseInt(data[i].AmountOfMoney) +
+          parseInt(document.getElementById("depositAmount").value);
+      }
     }
+    localStorage.setItem(AccountListName, JSON.stringify(data));
+    localStorage.setItem(loggedInAccount, JSON.stringify(Account));
+    showNotification("Nạp tiền thành công");
+    AccountInf();
+  } else {
+    showNotification("Số tiền không được âm");
   }
-  localStorage.setItem(AccountListName,JSON.stringify(data));
-  localStorage.setItem(loggedInAccount,JSON.stringify(Account));
-  showNotification("Nạp tiền thành công");
-  AccountInf();
-  }
-  else{
-    showNotification("Số tiền không được âm")
-  }
-}
-
+};
 
 var LogOut = function () {
   localStorage.removeItem(loggedInAccount);
@@ -131,4 +140,4 @@ var showNotification = function (mess) {
 };
 
 getLoggedInAccount();
-getItems();
+getItems("");
