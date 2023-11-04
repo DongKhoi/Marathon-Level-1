@@ -69,6 +69,7 @@ nav a{
     position: sticky;
     position: -webkit-sticky;
     top: 20%;
+    z-index: 1000;
 }
 
 .banner .banner-left{
@@ -219,6 +220,7 @@ nav a{
 }
 
 /* Phần detail */
+
 
 .fa-solid{
     margin-right: 5px;
