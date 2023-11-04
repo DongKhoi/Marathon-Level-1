@@ -1,3 +1,8 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
 main{
     display: flex;
     justify-content:space-between
@@ -9,6 +14,9 @@ main{
     cursor: pointer;
 
 }
+nav {
+  text-align: right;
+}
 header{
     color:#fff;
     padding:10px;
@@ -17,11 +25,9 @@ header{
     position:sticky;
     top:0;
     display: flex;
-    z-index: 1000 rgb(4, 4, 90);
+    z-index: 1;
 }
-body{
-    margin:0px;
-}
+
 .banner-left {
     background-color: #f2f2f2; 
     padding: 20px; 
@@ -186,4 +192,7 @@ button:hover {
   line-height: 40px;
   height: 300px;
   margin-top: 20px;
+}
+p{
+  color: #ccc;
 }
