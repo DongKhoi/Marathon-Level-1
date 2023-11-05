@@ -1,6 +1,6 @@
 *{
   margin:0px;
-  padding:0px;
+  padding:0px;  
 }
 
 main{
@@ -195,4 +195,9 @@ button:hover {
 }
 p{
   color: #ccc;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

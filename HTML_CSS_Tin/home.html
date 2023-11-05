@@ -6,9 +6,8 @@
     <meta name="viewpor" content="width=device=width, initial=scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Demo</title>
 </head>
@@ -30,7 +29,7 @@
             </ul>
             <div class="search-box">
                 <form>
-                    <input type="text" placeholder="Tìm kiếm..." required pattern=".*\S+.*">
+                    <input id="changeInput" type="text" placeholder="Tìm kiếm..." required pattern=".*\S+.*">
                     <button>Tìm kiếm</button>
                 </form>
             </div>
@@ -39,9 +38,32 @@
     <main>
         <div class="banner-left">Banner bên trái</div>
         <div class="container">
-            <div class="row">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="image.jpg" class="d-block w-100" alt="..." width="100px;" height="200px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image2.jpg" class="d-block w-100" alt="..." width="100px;" height="200px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image3.jpg" class="d-block w-100" alt="..." width="100px;" height="200px;">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="row justify-content-center">
                 <div class="col-md-4 my-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width:23rem;">
                         <img class="card-img-top" src="product.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Sản phẩm 1</h5>
@@ -51,7 +73,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width:23rem;">
                         <img class="card-img-top" src="product.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Sản phẩm 2</h5>
@@ -61,7 +83,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 23rem;">
                         <img class="card-img-top" src="product.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Sản phẩm 3</h5>
@@ -71,7 +93,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 23rem;">
                         <img class="card-img-top" src="product.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Sản phẩm 4</h5>
@@ -81,7 +103,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 23rem;">
                         <img class="card-img-top" src="product.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Sản phẩm 5</h5>
@@ -91,7 +113,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 23rem;">
                         <img class="card-img-top" src="product.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Sản phẩm 6</h5>
@@ -101,7 +123,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 23rem;">
                         <img class="card-img-top" src="product.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Sản phẩm 7</h5>
@@ -111,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 23rem;">
                         <img class="card-img-top" src="product.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Sản phẩm 8</h5>
@@ -121,7 +143,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 23rem;">
                         <img class="card-img-top" src="product.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Sản phẩm 9</h5>
@@ -151,6 +173,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Lặp tự động qua các slide sau mỗi 2 giây
+            $('#carouselExample').carousel({
+                interval: 2000 // 2 giây
+            });
+            $("#changeInput").change(function () {
+                var searchValue = $("#changeInput").val();
+                alert("Bạn đã tìm kiếm: "+searchValue );
+            });
+        });            
+    </script>
 </body>
-
 </html>
