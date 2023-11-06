@@ -614,6 +614,20 @@ main {
   margin-right: 5px;
   /* Để tạo khoảng cách giữa ảnh và username */
 }
+.banner-left,
+.banner-right {
+width: 30%;
+padding: 20px;
+box-sizing: border-box;
+position: sticky;
+top: 20vh;
+}
+.banner-left {
+float: left;
+}
+.banner-right {
+float: right;
+}
 
 @media (max-width: 768px) {
   .avatar {
@@ -653,3 +667,68 @@ main {
     display: none;
   }
 }
+@media (max-width: 500px) {
+  header {
+  flex-direction: column;
+  }
+  .logo {
+  margin-bottom: 10px;
+  }
+  nav {
+  flex-direction: column;
+  }
+  .nav-item {
+  margin: 5px 0;
+  }
+  main {
+  flex-direction: column;
+  }
+  .banner-left,
+  .banner-right {
+  width: 80%;
+  margin: 10px auto;
+  }
+  .product-list {
+  grid-template-columns: 1fr;
+  }
+  .product {
+  width: 80%;
+  margin: 10px auto;
+  }
+  .product-details {
+  flex-direction: column;
+  }
+  .product-image {
+  margin-bottom: 10px;
+  }
+  .product-info {
+  text-align: center;
+  }
+  .cart-item {
+  flex-direction: column;
+  }
+  .cart-item-image {
+  margin-bottom: 10px;
+  }
+  .cart-item-info {
+  text-align: center;
+  }
+  .checkout {
+  width: 100%;
+  margin-top: 10px;
+  }
+  footer {
+  flex-direction: column;
+  }
+  .footer-logo {
+  margin-bottom: 10px;
+  }
+  .footer-info {
+  text-align: center;
+  }
+  .banner-left,
+.banner-right {
+width: 100%;
+float: none;
+}
+  }

@@ -8,7 +8,7 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
   } else if (password !== confirmPassword) {
     alert("Hai mật khẩu không khớp!");
   } else {
-    saveUser(username, password, 0, 0); // Lưu balance và order với giá trị ban đầu là 0
+    saveUser(username, password, 0, 0); 
     alert("Đăng ký thành công!");
   }
 });

@@ -26,10 +26,7 @@ document.getElementById("addtocart").addEventListener("click", function () {
         }) 
       }
 
-      // Lưu đối tượng giỏ hàng vào local storage
       localStorage.setItem("cart", JSON.stringify(cartItems));
-
-      // Thông báo thành công
       alert("Sản phẩm đã được thêm vào giỏ hàng!");
 
     } else {

@@ -140,7 +140,35 @@
     <script src="calldata.js"></script>
     <script src="getUsername.js"></script>
     <script src="getDetail.js"></script>
-
+    <script>
+        $(document).ready(function () {
+            // Khi nút "Tìm kiếm" được nhấp
+            $("#searchButton").click(function () {
+                // Lấy giá trị từ ô input
+                var searchText = $("#searchInput").val();
+                // Hiển thị thông tin trong alert
+                alert("Bạn đã tìm kiếm: " + searchText);
+            });
+            // Lặp tự động qua các slide sau mỗi 2 giây
+            $('#carouselExample').carousel({
+                interval: 2000 // 2 giây
+            });
+            $('.user-dropdown').hover(
+                function () {
+                    $(this).addClass('active');
+                    $('.dropdown-menu', this).addClass('show');
+                },
+                function () {
+                    $(this).removeClass('active');
+                    $('.dropdown-menu', this).removeClass('show');
+                }
+            );
+            $(".placeholder").hide();
+            $(".loadmore").click(function () {
+                $(".placeholder").show();
+            });
+        });
+    </script>
 </body>
 
 </html>

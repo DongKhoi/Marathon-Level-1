@@ -98,29 +98,21 @@ function handleRemoveButtonClick(e) {
 
 function handleCheckoutButtonClick() {
   const totalPrice = calculator();
-
   const users = JSON.parse(localStorage.getItem("users")) || [];
-const username = localStorage.getItem("name");
-const user = users.find(user => user.username === username);
-console.log(user, username);
-const balance = user.balance || 0;
-console.log(totalPrice, balance);
-
-if (totalPrice <= balance) {
-  alert("Thanh toán thành công!");
-  
-
-  const orderKey = "order";
-  let orderValue = parseInt(localStorage.getItem(orderKey) || 0);
-  orderValue++;
-  localStorage.setItem(orderKey, orderValue);
-
-
-  localStorage.removeItem("cart");
-} else {
-  alert("Thanh toán thất bại. Số dư không đủ!");
+  const username = localStorage.getItem("name");
+  const user = users.find((user) => user.username === username);
+  console.log(user, username);
+  const balance = user.balance || 0;
+  const orderValue = user.order || 0;
+  if (totalPrice <= balance) {
+    alert("Thanh toán thành công!");
+    user.order = orderValue + 1; // Cộng thêm 1 vào giá trị hiện tại
+    localStorage.setItem("users", JSON.stringify(users)); // Lưu lại danh sách users vào localStorage
+    localStorage.removeItem("cart");
+  } else {
+    alert("Thanh toán thất bại. Số dư không đủ!");
+  }
 }
- }
 
 
 document.addEventListener("click", function (e) {
