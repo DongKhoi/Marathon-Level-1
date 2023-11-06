@@ -103,13 +103,13 @@ var deposit = function () {
     var Account = JSON.parse(localStorage.getItem(loggedInAccount));
     var data = JSON.parse(localStorage.getItem(AccountListName));
     Account.AmountOfMoney =
-      parseInt(Account.AmountOfMoney) +
-      parseInt(document.getElementById("depositAmount").value);
+      parseFloat(Account.AmountOfMoney) +
+      parseFloat(document.getElementById("depositAmount").value);
     for (let i = 0; i < data.length; i++) {
       if (data[i].username == Account.username) {
         data[i].AmountOfMoney =
-          parseInt(data[i].AmountOfMoney) +
-          parseInt(document.getElementById("depositAmount").value);
+          parseFloat(data[i].AmountOfMoney) +
+          parseFloat(document.getElementById("depositAmount").value);
       }
     }
     localStorage.setItem(AccountListName, JSON.stringify(data));
