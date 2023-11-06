@@ -268,4 +268,25 @@ footer{
 
 }
 
+@media (max-width: 664px) {
+    #quantity{
+        width: 200px;
+        display: block;
+    }
+}
+@media (max-width: 646px) {
+    #quantity {
+        width: 200px;
+        display: block;
+    }
+    #button-addToCart{
+        margin-top: 10px;
+        width: 200px;
+        margin-bottom:10px;
+    }
+    #button-buy{
+        width: 200px;
+    }
+}
+
 
