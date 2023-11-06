@@ -66,7 +66,9 @@ var getProductByID = async function () {
     var productPrice = document.getElementById("productPrice");
     productPrice.innerText = productInfo.price;
     var productPrePrice = document.getElementById("productPrePrice");
-    productPrePrice.innerText = (parseFloat(productInfo.price) - 1).toString();
+    productPrePrice.innerText = (parseFloat(productInfo.price) - 1)
+      .toFixed(2)
+      .toString();
     return productInfo;
   } catch (err) {
     console.log("Error get product by id", err);

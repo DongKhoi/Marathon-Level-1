@@ -75,7 +75,7 @@ var loadCart = function () {
     var totalPrice = 0;
     for (let i = 0; i < data.length; i++) {
       totalPrice += parseFloat(data[i].price) * parseFloat(data[i].quantity);
-      var prePrice = (parseFloat(data[i].price) + 1).toString();
+      var prePrice = (parseFloat(data[i].price) + 1).toFixed(2).toString();
       innerHTML += ` <div class="cart-item">
             <div class="item-img-container">
                 <input type="checkbox">
@@ -108,7 +108,6 @@ var loadCart = function () {
     formItemContainer.innerHTML = "";
     document.getElementById("total-price").innerText = "0";
   }
-
 };
 var add = function (e, btn) {
   e.preventDefault();
