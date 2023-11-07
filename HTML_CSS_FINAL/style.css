@@ -1,4 +1,4 @@
-html, body {
+hhhhtml,bbbbody {
     height: 100%; /* Đặt chiều cao cho html và body là 100% */
     margin: 0; /* Loại bỏ margin mặc định */
     padding: 0; /* Loại bỏ padding mặc định */
@@ -35,7 +35,7 @@ html, body {
     width: 20vw;
    ;
 } 
-main {
+mainn {
     display: flex;
     justify-content: space-between; /* Các phần tử con sẽ được căn cách đều ở giữa và bên trái và bên phải */
   }

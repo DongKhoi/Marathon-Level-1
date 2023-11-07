@@ -101,7 +101,7 @@ text-align: right;}
     .center-me.Q{margin: 0 auto;
         width: 30px;height: 10px;
     text-align: right;}
-@media(min-width: 768px){
+/*@media(min-width: 768px){
 
    .cart1{
         width: 100vw;
@@ -127,9 +127,9 @@ text-align: right;}
     height: 20vh;
 }
 .sp1{ text-justify: right;}
-}
+} */
 /*STYLE CARTPAGE+)))))))))))))*/
-html, body {
+hhhtml, bbbody {
     height: 100%; /* Đặt chiều cao cho html và body là 100% */
     margin: 0; /* Loại bỏ margin mặc định */
     padding: 0; /* Loại bỏ padding mặc định */
@@ -153,11 +153,7 @@ html, body {
     text-decoration: none;
     color: white
 }
-.grid-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
+
 .grid-item{
     text-align: center;
     padding: 10px;
@@ -166,9 +162,9 @@ html, body {
     width: 20vw;
    ;
 } 
-html, body{ height: 100%; margin: 0;padding: 0;}
-main { min-height: 100%-100px;}
-main {
+hhtml, bbody{ height: 100%; margin: 0;padding: 0;}
+mmain { min-height: 100%-100px;}
+mmain {
     display: flex;
     justify-content: space-between; /* Các phần tử con sẽ được căn cách đều ở giữa và bên trái và bên phải */
   }
@@ -187,7 +183,7 @@ main {
   .banner-right {
     background-color: #f2f2f2; /* Màu nền của banner phải, thay đổi tùy thuộc vào thiết kế của bạn */
     padding: 20px; /* Khoảng cách nội dung với viền banner */
-    position: sticky;
+    position:relative;
     top: 20%; /* Đặt giá trị top là 0 để banner phải nằm ở trên cùng khi cuộn */
     right: 0;
     z-index: 1000; /* Đảm bảo banner phải hiển thị trên header và các sản phẩm */
