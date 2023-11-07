@@ -96,7 +96,7 @@
         progressValue +=10;
         progressBar.css("width", progressValue + "%").attr("aria-valuenow", progressValue);
 
-      if (progressValue >= 100) {
+      if (progressValue > 100) {
         clearInterval(interval);
         $('.progress').hide();
         $('#paymentButton').show();
