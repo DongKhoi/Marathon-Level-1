@@ -17,6 +17,17 @@ body{
 }
 /* header */
 
+.nav-hover{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.nav-hover:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
 header{
     min-height: 50px;
     background: #ff5722;
@@ -64,12 +75,18 @@ nav a{
 
 /* Phần Home */
 
+.main-carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+
 
 .banner{
     position: sticky;
     position: -webkit-sticky;
     top: 20%;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 .banner .banner-left{
@@ -219,6 +236,10 @@ nav a{
     margin-bottom: 50px;
 }
 
+.Link:hover{
+    cursor: pointer;
+}
+
 /* Phần detail */
 
 
@@ -357,7 +378,7 @@ ul{
 /* Footer */
 footer {
     width: 100%;
-    height: 150px;
+    height: 160px;
     background-color: #333333;
     position: absolute;
 }

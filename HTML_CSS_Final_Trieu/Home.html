@@ -15,56 +15,31 @@
             <a href="http://127.0.0.1:5500/Marathon-Level-1/HTML_CSS_Final_Trieu/Home.html#">
                 <img src="https://i.ibb.co/tH59cgv/logo.png" alt="logo">
             </a>
-            <nav>
-               
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Trang chủ</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Thời trang</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Điện tử</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Sách</a>
-                    </li>
-                  </ul>
-                <div class="search-box">
+            <nav> 
+                  <div class="user-dropdown" style="position: relative;">
+                    <div class="nav-hover">
+                      <img src="logo.png" alt="">
+                      <a>GeForce Official Store</a>
+                    </div>
+
+                    <div class="dropdown-menu">
+                      <button class="dropdown-item" type="button">Trang chủ</button>
+                      <button class="dropdown-item" type="button">Thời trang</button>
+                      <button class="dropdown-item" type="button">Sách</button>
+                    </div>
+                  </div>
+                  <div class="search-box">
                     <form >
                       <input type="text" id="searchInput" />
                       <button id="searchButton">Tìm kiếm</button>                      
                     </form>
-                </div>
+                  </div>
             </nav>
         </div>
     </header>
 
     <!-- Carousel -->
-    <section>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://cdn.nguyenkimmall.com/images/detailed/820/laptop-gaming-la-gi-thumbnail.jpg" class="d-block w-100" alt="..." height="500px" >
-          </div>
-          <div class="carousel-item">
-            <img src="https://laptophainam.com/wp-content/uploads/2022/07/laptop-gaming-cu-tai-tphcm.jpg" class="d-block w-100" alt="..." height="500px">
-          </div>
-          <div class="carousel-item">
-            <img src="https://file.hstatic.net/1000345160/file/laptop_k1__2__grande.jpg" class="d-block w-100" alt="..." height="500px">
-          </div>
-        </div>
-       <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </button>
-      </div>
-    </section>
+    
 <div class="page-container">
  
         <section class="banner">
@@ -75,7 +50,54 @@
                 <img src="banner right.png" alt="">
             </div>
         </section>
-
+        <section class="main-carousel" >
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 760px;">
+            <div class="carousel-inner" >
+              <div class="carousel-item active">
+                <img src="https://cdn.nguyenkimmall.com/images/detailed/820/laptop-gaming-la-gi-thumbnail.jpg" class="d-block w-80" alt="..." height="500px" width="760px">
+              </div>
+              <div class="carousel-item">
+                <img src="https://laptophainam.com/wp-content/uploads/2022/07/laptop-gaming-cu-tai-tphcm.jpg" class="d-block w-80" alt="..." height="500px" width="760px">
+              </div>
+              <div class="carousel-item">
+                <img src="https://file.hstatic.net/1000345160/file/laptop_k1__2__grande.jpg" class="d-block w-80" alt="..." height="500px" width="760px">
+              </div>
+            </div>
+          </div>
+          
+          <div class="add-carousel">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 300px;">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://cdn.nguyenkimmall.com/images/detailed/820/laptop-gaming-la-gi-thumbnail.jpg" class="d-block " alt="..."  height="250px" width="300px">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://laptophainam.com/wp-content/uploads/2022/07/laptop-gaming-cu-tai-tphcm.jpg" class="d-block " alt="..."  height="250px" width="300px">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://file.hstatic.net/1000345160/file/laptop_k1__2__grande.jpg" class="d-block" alt="..."  height="250px" width="300px"  >
+                </div>
+              </div>
+            
+            </div>
+      
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 300px;">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://cdn.nguyenkimmall.com/images/detailed/820/laptop-gaming-la-gi-thumbnail.jpg" class="d-block" alt="..."  height="250px" width="300px"   >
+                </div>
+                <div class="carousel-item">
+                  <img src="https://laptophainam.com/wp-content/uploads/2022/07/laptop-gaming-cu-tai-tphcm.jpg" class="d-block" alt="..."  height="250px" width="300px"  >
+                </div>
+                <div class="carousel-item">
+                  <img src="https://file.hstatic.net/1000345160/file/laptop_k1__2__grande.jpg" class="d-block" alt="..."  height="250px" width="300px"  >
+                </div>
+              </div>
+             
+          </div>
+          </div>
+      
+        </section>
     <main class="main">
         <section>
             <div class="container">
@@ -140,13 +162,72 @@
                         </div>
                       </div>
                   </div>
-                </div>   
-            </div> 
+                  <div class="col-md-4">
+                    <div class="card card-hidden text-center align-items-lg-center" aria-hidden="true" style="width: 18rem;">
+                      <img src="https://www.steaua-dunarii.ro/client/img/image-not-found.png" class="card-img-top w-100" alt="..." >
+                      <div class="card-body">
+                        <h5 class="card-title placeholder-glow">
+                          <span class="placeholder col-6"></span>
+                        </h5>
+                        <p class="card-text placeholder-glow">
+                          <span class="placeholder col-7"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-6"></span>
+                          <span class="placeholder col-8"></span>
+                        </p>
+                        <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card card-hidden text-center align-items-lg-center" aria-hidden="true" style="width: 18rem;">
+                      <img src="https://www.steaua-dunarii.ro/client/img/image-not-found.png" class="card-img-top w-100" alt="..." >
+                      <div class="card-body">
+                        <h5 class="card-title placeholder-glow">
+                          <span class="placeholder col-6"></span>
+                        </h5>
+                        <p class="card-text placeholder-glow">
+                          <span class="placeholder col-7"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-6"></span>
+                          <span class="placeholder col-8"></span>
+                        </p>
+                        <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card card-hidden text-center align-items-lg-center" aria-hidden="true" style="width: 18rem;">
+                      <img src="https://www.steaua-dunarii.ro/client/img/image-not-found.png" class="card-img-top w-100" alt="..." >
+                      <div class="card-body">
+                        <h5 class="card-title placeholder-glow">
+                          <span class="placeholder col-6"></span>
+                        </h5>
+                        <p class="card-text placeholder-glow">
+                          <span class="placeholder col-7"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-4"></span>
+                          <span class="placeholder col-6"></span>
+                          <span class="placeholder col-8"></span>
+                        </p>
+                        <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
         </section>
+        <div class="Link">
+          <a>Link more >>> </a>
+      </div>
+      
     </main>
-    <div class="Link">
-        <a href="https://shopee.vn/search?category=11035954&keyword=geforce%20official%20store">Link more >>> </a>
-    </div>
+    
+
+   
+
     <div class="footer">
     <footer>
         <div class="container">
@@ -175,6 +256,25 @@
     alert('Giá trị đã nhập: ' + searchValue);
   });
 });
+
+// Dropdown
+$('.user-dropdown').hover(
+  function(){
+    $(this).addClass('active');
+    $('.dropdown-menu', this).addClass('show');
+  },
+  function(){
+    $(this).removeClass('active');
+    $('.dropdown-menu', this).removeClass('show');
+  }
+);
+
+// placeholder
+$(".card-hidden").hide()
+
+$(".Link").click(function (){
+  $(".card-hidden").show()
+})
 </script>
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
