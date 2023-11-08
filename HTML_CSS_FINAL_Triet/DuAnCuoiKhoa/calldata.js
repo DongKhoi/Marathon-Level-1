@@ -58,7 +58,6 @@ async function performSearch(name) {
 function resetPage() {
   const productContainer = document.getElementById('list-product');
   productContainer.innerHTML = '';
-
   loadData();
 }
 

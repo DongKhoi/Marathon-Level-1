@@ -64,6 +64,9 @@ function saveData() {
 function removeItemFromCart(itemId) {
   listData = listData.filter(item => item.id !== itemId);
   saveData();
+  const total = calculator()
+  const totalPriceEl = document.querySelector('.total-price');
+  totalPriceEl.innerText = total;
 }
 
 function updateQuantity(itemId, newQuantity) {
@@ -88,6 +91,9 @@ function handleQuantityButtonClick(e) {
 
   inputElement.value = newQuantity;
   updateQuantity(itemId, newQuantity);
+  const total = calculator();
+  const totalPriceEl = document.querySelector('.total-price');
+  totalPriceEl.innerText = total;
 }
 
 function handleRemoveButtonClick(e) {
@@ -101,13 +107,13 @@ function handleCheckoutButtonClick() {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const username = localStorage.getItem("name");
   const user = users.find((user) => user.username === username);
-  console.log(user, username);
   const balance = user.balance || 0;
   const orderValue = user.order || 0;
   if (totalPrice <= balance) {
     alert("Thanh toán thành công!");
-    user.order = orderValue + 1; // Cộng thêm 1 vào giá trị hiện tại
-    localStorage.setItem("users", JSON.stringify(users)); // Lưu lại danh sách users vào localStorage
+    user.order = orderValue + 1; 
+    user.balance = balance - totalPrice;
+    localStorage.setItem("users", JSON.stringify(users));
     localStorage.removeItem("cart");
   } else {
     alert("Thanh toán thất bại. Số dư không đủ!");
