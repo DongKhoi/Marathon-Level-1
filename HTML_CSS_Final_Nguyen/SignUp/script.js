@@ -65,7 +65,7 @@ var createAccount = function () {
         username: username.value,
         password: password.value,
         AmountOfMoney: 0,
-        OrderNumber:0,
+        orderNumber: 0,
       });
       localStorage.setItem(AccountListName, JSON.stringify(data));
       showNotification("Đăng ký thành công");

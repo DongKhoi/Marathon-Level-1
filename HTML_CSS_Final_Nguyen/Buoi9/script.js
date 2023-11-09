@@ -66,7 +66,9 @@ var getProductByID = async function () {
     var productPrice = document.getElementById("productPrice");
     productPrice.innerText = productInfo.price;
     var productPrePrice = document.getElementById("productPrePrice");
-    productPrePrice.innerText = (parseFloat(productInfo.price) - 1).toString();
+    productPrePrice.innerText = (parseFloat(productInfo.price) - 1)
+      .toFixed(2)
+      .toString();
     return productInfo;
   } catch (err) {
     console.log("Error get product by id", err);
@@ -127,35 +129,38 @@ var LogOut = function () {
   window.location.href = "../Buoi8/home.html";
 };
 
-var  AccountInf= function(){
+var AccountInf = function () {
   var loggedAccount = JSON.parse(localStorage.getItem(loggedInAccount));
-  document.getElementById("usernameModal").innerText= loggedAccount.username;
-  document.getElementById("PayedOrderModal").innerText= loggedAccount.orderNumber;
-  document.getElementById("AmountOfMoney").innerText= loggedAccount.AmountOfMoney;
-  document.getElementById("depositAmount").value =0;
+  document.getElementById("usernameModal").innerText = loggedAccount.username;
+  document.getElementById("PayedOrderModal").innerText =
+    loggedAccount.orderNumber;
+  document.getElementById("AmountOfMoney").innerText =
+    loggedAccount.AmountOfMoney;
+  document.getElementById("depositAmount").value = 0;
+};
 
-
-}
-
-var deposit =function(){
-  if(parseInt(document.getElementById("depositAmount").value)>=0){
+var deposit = function () {
+  if (parseInt(document.getElementById("depositAmount").value) >= 0) {
     var Account = JSON.parse(localStorage.getItem(loggedInAccount));
-  var data = JSON.parse(localStorage.getItem(AccountListName));
-  Account.AmountOfMoney =parseInt(Account.AmountOfMoney)+ parseInt(document.getElementById("depositAmount").value);
-  for (let i = 0 ; i < data.length ; i++){
-    if(data[i].username == Account.username){
-      data[i].AmountOfMoney =parseInt(data[i].AmountOfMoney) +parseInt(document.getElementById("depositAmount").value);
+    var data = JSON.parse(localStorage.getItem(AccountListName));
+    Account.AmountOfMoney =
+      parseFloat(Account.AmountOfMoney) +
+      parseFloat(document.getElementById("depositAmount").value);
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].username == Account.username) {
+        data[i].AmountOfMoney =
+          parseFloat(data[i].AmountOfMoney) +
+          parseFloat(document.getElementById("depositAmount").value);
+      }
     }
+    localStorage.setItem(AccountListName, JSON.stringify(data));
+    localStorage.setItem(loggedInAccount, JSON.stringify(Account));
+    showNotification("Nạp tiền thành công");
+    AccountInf();
+  } else {
+    showNotification("Số tiền không được âm");
   }
-  localStorage.setItem(AccountListName,JSON.stringify(data));
-  localStorage.setItem(loggedInAccount,JSON.stringify(Account));
-  showNotification("Nạp tiền thành công");
-  AccountInf();
-  }
-  else{
-    showNotification("Số tiền không được âm")
-  }
-}
+};
 
 var showNotification = function (mess) {
   setTimeout(function () {

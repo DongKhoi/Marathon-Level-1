@@ -63,6 +63,10 @@
                             <div class="d-none col-md-5" id="loginHref">
                                 <a href="../Login/Login.html">Đăng nhập</a>
                             </div>
+                            <div class="col-md-1 d-flex align-items-center ">
+                                <a href="../Buoi10/cart.html"><img src="../Buoi8/src/Icon/cart.svg" alt=""
+                                        style="width: 40px; height: 40px;"></a>
+                            </div>
                             <ul class="navbar-nav mb-2 mb-lg-0 d-flex col-md-5" id="shopContainer">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" id="header-shop-container" href="#"
@@ -75,27 +79,13 @@
                                                 data-bs-target="#accountModal" href="#" onclick="AccountInf()">Tài
                                                 khoản
                                             </a></li>
-                                        <li><a class="dropdown-item" href="#">Đơn mua</a></li>
-                                        <li><a class="dropdown-item" href="#">Đơn bán</a></li>
+                                        <!-- <li><a class="dropdown-item" href="#">Đơn mua</a></li> -->
+                                        <!-- <li><a class="dropdown-item" href="#">Đơn bán</a></li> -->
                                         <li><a class="dropdown-item" href="#" onclick="LogOut()">Đăng xuất</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
-                        <form class="d-flex row justify-content-end" role="search">
-                            <div class="col-md-1 d-flex align-items-center justify-content-center">
-                                <a href="../Buoi10/cart.html"><img src="../Buoi8/src/Icon/cart.svg" alt=""
-                                        style="width: 40px; height: 40px;"></a>
-                            </div>
-                            <div class="col-md-3">
-                                <input class="form-control" id="search-input" type="search" placeholder="Tìm kiếm"
-                                    aria-label="Search">
-                            </div>
-                            <div class="col-md-2">
-                                <button class="btn btn-outline-success" id="search-button" type="submit">Tìm
-                                    kiếm</button>
-                            </div>
-                        </form>
                     </div>
                 </div>
 
@@ -124,7 +114,7 @@
                     <button id="button-addToCart" onclick="addToCart()">
                         <i class="fa-solid fa-cart-shopping" style="color: #eb5f14;"></i>
                         Thêm vào giỏ hàng</button>
-                    <button id="button-buy">Mua hàng</button>
+                    <button class="" id="button-buy">Mua hàng</button>
                 </div>
             </div>
         </div>
