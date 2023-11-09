@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: red;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.logo {
+  height: 70px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.user-info{
+  color: aliceblue;
+  font-family: 'Times New Roman', Times, serif;
+}
+.user-info:hover{
+  cursor: pointer;
+}
+
+.user-info img{
+  border-radius: 50%;
+  width: 30px;
+}
+.search-button{
+  display: flex;
+  height: 30px;
+  position: relative;
+  left: -35px;
+  top: 20px;
+}
+.image{
+  position: relative;
+  display: block;
+}
+.image img{
+  width: 28%;
+  position: relative;
+  top: 20px;
+  left: 1580px;
+  border-radius: 15px;
+  
+  
+}
+.main {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+  min-height: 100vh;
+}
+
+.product-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+
+.card {
+  background-color: white;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 5px 5px 10px grey;
+  text-align: center;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.button {
+  height: 50px;
+  width: 50%;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: blue;
+}
+
+a{
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.button:hover {
+  background-color: red;
+  color: white;
+}
+
+.product-image {
+  width: 200px;
+  height: auto;
+}
+
+.product-name {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.product-price {
+  color: green;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.banner {
+  width: 200px;
+  height: 600px;
+  cursor: pointer;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+}
+
+.load-more button{
+display: block;
+margin: auto;
+height: 40px;
+  width: 10%;
+  border-radius: 10px;
+  background-color: #0D6EFC;
+  color: aliceblue;
+  text-transform: uppercase;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.load-more button:hover{
+  background-color: #165cc6;
+}
+.load{
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer {
+  background-color: red;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 20px;
+  color: aliceblue;
+}
+@media (max-width: 768px) {
+  .header {
+    margin: auto;
+  }
+
+  .footer{
+    margin: auto;
+  }
+}

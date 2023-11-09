@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake shoppee</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/df7e895264.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="notification" class="d-none">
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h1 class="modal-title fs-5" id="accountModal">Thông tin tài khoản</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><span class="fw-bold">Username: </span><span id="usernameModal"></span></p>
+                        <p><span class="fw-bold">Số lượng đơn hàng đã thanh toán: </span><span
+                                id="PayedOrderModal"></span>
+                        </p>
+                        <p><span class="fw-bold">Số dư tài khoản: </span><span id="AmountOfMoney"></span></p>
+                        <hr>
+                        <p><span class="fw-bold">Nạp tiền</span></p>
+                        <input id="depositAmount" type="number" placeholder="Số tiền cần nạp" style="width: 100%;">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" onclick="deposit()">Nạp tiền</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg " id="nav">
+            <div class="container">
+                <a class="navbar-brand text-white" href="../Buoi8/home.html">
+                    <img id="color-icon" src="../Buoi8/src/shoppeeIcon.jpg" alt="icon"
+                        class="d-inline-block align-text-middle">
+                    shoppee
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="container">
+                        <div class="row d-flex justify-content-end">
+                            <div class="d-none col-md-5" id="loginHref">
+                                <a href="../Login/Login.html">Đăng nhập</a>
+                            </div>
+                            <div class="col-md-1 d-flex align-items-center ">
+                                <a href="../Buoi10/cart.html"><img src="../Buoi8/src/Icon/cart.svg" alt=""
+                                        style="width: 40px; height: 40px;"></a>
+                            </div>
+                            <ul class="navbar-nav mb-2 mb-lg-0 d-flex col-md-5" id="shopContainer">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="header-shop-container" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img id="icon-shop" src="../Buoi8/src/items.jpg" alt="">
+                                        <span id="ShopName"></span>
+                                    </a>
+                                    <ul class="dropdown-menu ps-2" id="pop-list" style="width: 100%;margin:0">
+                                        <li><a class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#accountModal" href="#" onclick="AccountInf()">Tài
+                                                khoản
+                                            </a></li>
+                                        <!-- <li><a class="dropdown-item" href="#">Đơn mua</a></li> -->
+                                        <!-- <li><a class="dropdown-item" href="#">Đơn bán</a></li> -->
+                                        <li><a class="dropdown-item" href="#" onclick="LogOut()">Đăng xuất</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            <div id="img"><img id="img-item" src="../Buoi8/src/items.jpg" alt="item-img"></div>
+
+            <div id="item-info-container">
+                <h3 id="productName"></h3>
+                <p id="price"><span class="underline-span">đ</span><span id="productPrePrice"></span>-<span
+                        class="underline-span">đ</span><span id="productPrice"></span></p>
+                <p id="item-description">Điện thoại thông minh , độ bền ngang kim cương . Chức năng nghe , gọi và chọi
+                </p>
+                <p>NGUYEN-PHONE MASTER</p>
+                <p class="bold">Mã giảm giá: <span id="discount">ABC123</span></p>
+                <p id="item-delivery"><span class="bold">Vận chuyển</span>
+                    : Miễn phí</p>
+                <form action="">
+                    <p class="bold amount">Số lượng: </p>
+                    <div class="amount"><input id="quantity" class="amount" type="number" value="1"></div>
+                </form>
+                <div id="button-container">
+                    <button id="button-addToCart" onclick="addToCart()">
+                        <i class="fa-solid fa-cart-shopping" style="color: #eb5f14;"></i>
+                        Thêm vào giỏ hàng</button>
+                    <button class="" id="button-buy">Mua hàng</button>
+                </div>
+            </div>
+        </div>
+        <div id="shop-container">
+            <div id="name-container">
+                <img src="../Buoi8/src/items.jpg" alt="">
+                <h3 id="shopName">Miền Núi Shop</h3>
+            </div>
+            <div>
+                <button id="button-chatNow" data-bs-toggle="modal" data-bs-target="#exampleModal">Chat ngay</button>
+                <button id="button-viewShop">Xem shop</button>
+                <p id="shop-desc"><span>Đánh Giá: 18.4k</span><span>Tỉ Lệ Phản Hồi: 83%</span>
+                    <span>Tham Gia: 16 tháng trước</span><span>Sản Phẩm: 125</span>
+                    <span>Thời Gian Phản Hồi: trong vài giờ</span><span>Người theo dõi: 40.4k</span>
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <img id="nocolor-icon" src="../Buoi8/src/shoppeeIcon2.jpg" alt="shoppee icon">
+        <div id="shoppee-name2">shoppee</div>
+
+        <div id="address-container">
+            <p class="address">Địa chỉ: Đường ABC, Quận XYZ, Thành phố ABC</p>
+            <p class="address">Email: contact@example.com</p>
+            <p class="address">Điện thoại: 0123456789</p>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Chat ngay</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <textarea name="" id="" cols="50" rows="10" placeholder="Nhập tin nhắn của bạn..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Gửi tin nhắn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
