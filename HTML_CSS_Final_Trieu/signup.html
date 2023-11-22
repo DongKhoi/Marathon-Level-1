@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký và Đăng Nhập</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 400px;
+        }
+
+        .tab {
+            display: flex;
+        }
+
+        .tab button {
+            flex: 1;
+            padding: 15px;
+            cursor: pointer;
+            background-color: #f2f2f2;
+            border: none;
+            outline: none;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .form {
+            padding: 20px;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'signupForm')">Đăng Ký</button>
+        <button class="tablinks" onclick="openTab(event, 'loginForm')">Đăng Nhập</button>
+    </div>
+
+    <div id="signupForm" class="form">
+        <h2>Đăng Ký</h2>
+        <form onsubmit="register(event)">
+            <label for="signupUsername">Tài khoản:</label>
+            <input type="text" id="signupUsername" required>
+
+            <label for="signupPassword">Mật khẩu:</label>
+            <input type="password" id="signupPassword" required>
+
+            <label for="signupRePassword">Nhập lại mật khẩu:</label>
+            <input type="password" id="signupRePassword" required>
+
+            <button type="submit">Đăng Ký</button>
+        </form>
+    </div>
+
+    <div id="loginForm" class="form" style="display:none;">
+        <h2>Đăng Nhập</h2>
+        <form onsubmit="login(event)">
+            <label for="loginUsername">Tài khoản:</label>
+            <input type="text" id="loginUsername" required>
+
+            <label for="loginPassword">Mật khẩu:</label>
+            <input type="password" id="loginPassword" required>
+
+            <button type="submit">Đăng Nhập</button>
+        </form>
+    </div>
+</div>
+
+<script src="main.js"></script>
+<script>
+    function openTab(evt, tabName) {
+        var i, forms, tablinks;
+        forms = document.getElementsByClassName("form");
+        for (i = 0; i < forms.length; i++) {
+            forms[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+
+   
+</script>
+
+</body>
+</html>
