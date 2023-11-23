@@ -79,11 +79,24 @@
   }
 }
 
-  function login() {
-    // Xử lý logic đăng nhập ở đây
-    // Lưu ý: Cần kiểm tra và xử lý local storage theo yêu cầu của bạn
-    // Sau khi đăng nhập thành công, chuyển hướng đến trang home.html
-    // window.location.href = "home.html";
+function login() {
+    var username = document.getElementById('loginUsername').value;
+    var password = document.getElementById('loginPassword').value;
+
+    var storedUser = localStorage.getItem(username);
+
+    if (storedUser) {
+      var user = JSON.parse(storedUser);
+
+      if (user.password === password) {
+        alert("Đăng nhập thành công");
+        window.location.href = "home.html";
+      } else {
+        alert("Đăng nhập không thành công. Vui lòng kiểm tra tài khoản và mật khẩu.");
+      }
+    } else {
+      alert("Đăng nhập không thành công. Vui lòng kiểm tra tài khoản và mật khẩu.");
+    }
   }
 </script>
 

@@ -24,8 +24,9 @@
                         <span class="username" id="dropdownMenuLink">Người miền Nam</span>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="#" id="info">Tài khoản</a>
-                            <a class="dropdown-item" href="#" id="info">Đơn mua</a>
-                            <a class="dropdown-item" href="#" id="info">Đơn bán</a>
+                            <div id="accountDropdown">
+                                <button onclick="logout()">Đăng Xuất</button>
+                              </div>
                         </div>
                     </div>
                 </li>
@@ -161,7 +162,7 @@
                     </div>
                 </div>
             </div>
-            <div id="placeholder" class="row">
+            <div id="placeholder" class="row        ">
                 <div class="col-md-4 my-3" aria-hidden="true">
                     <div class="card" style="width: 23rem;">
                         <img class="card-img-top" src="load.png" alt="Card image cap">
@@ -261,9 +262,12 @@
 
             $("#loadmore").click(function () {
                 $("#placeholder").show();
-                }
+            }
             );
         });            
+        function logout() {
+                window.location.href = "Signin.html";
+            }
     </script>
 </body>
 
