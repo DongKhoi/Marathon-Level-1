@@ -119,8 +119,6 @@ footer {
 button:hover {
   background-color: #ff5722;
   color: #fff;
-
-
   padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s;
