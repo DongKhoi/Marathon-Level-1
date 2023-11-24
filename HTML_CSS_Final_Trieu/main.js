@@ -10,6 +10,7 @@ function createUser(username, password) {
     localStorage.setItem("accounts", JSON.stringify(accounts))
 }
 
+
 document.getElementById("signupForm").addEventListener("submit", function(event){
     event.preventDefault()
     const username = document.getElementById("signupUsername").value
@@ -32,8 +33,6 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     }
 })
 
-
-
 document.getElementById("loginForm").addEventListener("submit", function(event){
     event.preventDefault()
     const username = document.getElementById("loginUsername").value
@@ -41,8 +40,10 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
     let accounts = JSON.parse(localStorage.getItem("accounts")) || []
     if(accounts.find(x => x.password === password)) {
         alert("Đăng nhập thành công")
-        window.location.href = "home.html"      
+        window.location.href = "home.html"
     } else {  
         alert("Đăng nhập không thành công. Vui lòng kiểm tra tài khoản và mật khẩu.")
     }
+
 })
+

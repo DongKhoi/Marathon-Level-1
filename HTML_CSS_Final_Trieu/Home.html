@@ -17,17 +17,16 @@
                 <img src="https://i.ibb.co/tH59cgv/logo.png" alt="logo">
             </a>
             <nav> 
+              <a id="loginLink" href="signup.html" style="display: none;">Đăng nhập</a>  
                   <div class="user-dropdown" style="position: relative;">
-                    <div class="nav-hover">
+                    <div id="nav-hover" class="nav-hover">
                       <img src="logo.png" alt="">
-                      <a>GeForce Official Store</a>
+                      <span id="username"></span>
                     </div>
 
-                    <div class="dropdown-menu">
+                    <div id="dropdown-menu" class="dropdown-menu">
                       <button class="dropdown-item" type="button">Tài khoản</button>
-                      <a href="signup.html">
-                        <button class="dropdown-item" type="button">Đăng xuất</button>
-                      </a>
+                      <button onclick="logout()" class="dropdown-item">Đăng xuất</button>
                     </div>
                   </div>
                   <div class="search-box">
@@ -245,6 +244,7 @@
 </div>
 
 <!-- Script -->
+<script src="account.js"></script>
 <script src="main.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
