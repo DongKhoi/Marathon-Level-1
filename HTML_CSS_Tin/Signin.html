@@ -1,104 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>sign up or sign in</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container mt-5">
-  <ul class="nav nav-tabs" id="myTabs">
-    <li class="nav-item">
-      <a class="nav-link active" id="register-tab" data-toggle="tab" href="#register">Đăng Ký</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="login-tab" data-toggle="tab" href="#login">Đăng Nhập</a>
-    </li>
-  </ul>
+  <div class="container mt-5">
+    <ul class="nav nav-tabs" id="myTabs">
+      <li class="nav-item">
+        <a class="nav-link active" id="register-tab" data-toggle="tab" href="#register">Đăng Ký</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="login-tab" data-toggle="tab" href="#login">Đăng Nhập</a>
+      </li>
+    </ul>
 
-  <div class="tab-content mt-2">
-    <div class="tab-pane fade show active" id="register">
-      <form id="registerForm">
-        <div class="form-group">
-          <label for="registerUsername">Tài Khoản:</label>
-          <input type="text" class="form-control" id="registerUsername" required>
-        </div>
-        <div class="form-group">
-          <label for="registerPassword">Mật Khẩu:</label>
-          <input type="password" class="form-control" id="registerPassword" required>
-        </div>
-        <div class="form-group">
-          <label for="confirmPassword">Xác Nhận Mật Khẩu:</label>
-          <input type="password" class="form-control" id="confirmPassword" required>
-        </div>
-        <button type="button" class="btn btn-primary" onclick="register()">Đăng Ký</button>
-      </form>
-    </div>
-    <div class="tab-pane fade" id="login">
-      <form id="loginForm">
-        <div class="form-group">
-          <label for="loginUsername">Tài Khoản:</label>
-          <input type="text" class="form-control" id="loginUsername" required>
-        </div>
-        <div class="form-group">
-          <label for="loginPassword">Mật Khẩu:</label>
-          <input type="password" class="form-control" id="loginPassword" required>
-        </div>
-        <button type="button" class="btn btn-primary" onclick="login()">Đăng Nhập</button>
-      </form>
+    <div class="tab-content mt-2">
+      <div class="tab-pane fade show active" id="register">
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerUsername">Tài Khoản:</label>
+            <input type="text" class="form-control" id="registerUsername" required>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Mật Khẩu:</label>
+            <input type="password" class="form-control" id="registerPassword" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Xác Nhận Mật Khẩu:</label>
+            <input type="password" class="form-control" id="confirmPassword" required>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="register()">Đăng Ký</button>
+        </form>
+      </div>
+      <div class="tab-pane fade" id="login">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginUsername">Tài Khoản:</label>
+            <input type="text" class="form-control" id="loginUsername" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Mật Khẩu:</label>
+            <input type="password" class="form-control" id="loginPassword" required>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="login()">Đăng Nhập</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<script>
- function register() {
-  var username = document.getElementById('registerUsername').value;
-  var password = document.getElementById('registerPassword').value;
-  var confirmPassword = document.getElementById('confirmPassword').value;
+  <script>
+    let accounts = JSON.parse(localStorage.getItem('accounts')) || []
 
-  if (password !== confirmPassword) {
-    alert("Mật khẩu và mật khẩu nhập lại không trùng khớp");
-    return;
-  }
-  var existingUser = localStorage.getItem(username);
-  if (existingUser) {
-    alert("Tài khoản đã tồn tại");
-  } else {
-    var user = {
-      username: username,
-      password: password
-    };
-    localStorage.setItem(username, JSON.stringify(user));
-    alert("Đăng ký thành công");
-  }
-}
+    function register() {
+      var username = document.getElementById('registerUsername').value;
+      var password = document.getElementById('registerPassword').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
 
-function login() {
-    var username = document.getElementById('loginUsername').value;
-    var password = document.getElementById('loginPassword').value;
+      if (password !== confirmPassword) {
+        alert("Mật khẩu và mật khẩu nhập lại không trùng khớp");
+        return;
+      }
+      var existingUser = localStorage.getItem(username);
+      if (existingUser) {
+        alert("Tài khoản đã tồn tại");
+      } else {
+        var user = {
+          username: username,
+          password: password
+        };
+        accounts.push(user)
+        localStorage.setItem("accounts", JSON.stringify(accounts));
+        alert("Đăng ký thành công");
+      }
+    }
 
-    var storedUser = localStorage.getItem(username);
+    function login() {
+      var username = document.getElementById('loginUsername').value;
+      var password = document.getElementById('loginPassword').value;
 
-    if (storedUser) {
-      var user = JSON.parse(storedUser);
-
-      if (user.password === password) {
+      var existUser = accounts.find(x => x.username === username && x.password === password)
+      console.log(existUser)
+      if (existUser) {
         alert("Đăng nhập thành công");
+        localStorage.setItem('account',JSON.stringify(username));
         window.location.href = "home.html";
       } else {
         alert("Đăng nhập không thành công. Vui lòng kiểm tra tài khoản và mật khẩu.");
       }
-    } else {
-      alert("Đăng nhập không thành công. Vui lòng kiểm tra tài khoản và mật khẩu.");
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

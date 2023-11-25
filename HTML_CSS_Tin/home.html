@@ -19,9 +19,10 @@
         <nav>
             <ul class="nav">
                 <li class="nav-item">
+                    <a id="LoginLink" href="Signin.html" style="display: none;">Đăng Nhập</a>
                     <div class="user-dropdown" id="user-dropdown">
                         <img src="product.jpg" alt="Avatar" class="avatar">
-                        <span class="username" id="dropdownMenuLink">Người miền Nam</span>
+                        <span class="username" id="dropdownMenuLink"></span>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="#" id="info">Tài khoản</a>
                             <a class="dropdown-item" onclick="logout()">Đăng xuất</a>
@@ -262,10 +263,23 @@
                 $("#placeholder").show();
             }
             );
-        });            
+        });
+        
+        const username = JSON.parse(localStorage.getItem("account"))
         function logout() {
-                window.location.href = "Signin.html";
-            }
+            localStorage.removeItem("account")
+            window.location.href = "Signin.html";
+        }
+        const dropdownMenuLink = document.getElementById("dropdownMenuLink");
+        const accountDropdown = document.getElementById("user-dropdown");
+        const hyperLink = document.getElementById("LoginLink");
+
+        if (username) {
+            dropdownMenuLink.textContent = "Xin chào" + username;
+        } else {
+            hyperLink.style.display = "block"
+            accountDropdown.style.display = "none";
+        }
     </script>
 </body>
 
