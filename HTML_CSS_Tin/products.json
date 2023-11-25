@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "sản phẩm 1",
+        "price": "18.50",
+        "image": "product.jpg"
+    },
+    {
+        "id": 2,
+        "name": "sản phẩm 2",
+        "price": "20.87",
+        "image": "product.jpg"
+    },
+    {
+        "id": 3,
+        "name": "sản phẩm 3",
+        "price": "10.69",
+        "image": "product.jpg"
+    },
+    {
+        "id": 4,
+        "name": "sản phẩm 4",
+        "price": "30.00",
+        "image": "product.jpg"
+    },
+    {
+        "id": 5,
+        "name": "sản phẩm 5",
+        "price": "6.50",
+        "image": "product.jpg"
+    },
+    {
+        "id": 6,
+        "name": "sản phẩm 6",
+        "price": "16.32",
+        "image": "product.jpg"
+    }
+]
