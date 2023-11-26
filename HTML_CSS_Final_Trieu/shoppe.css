@@ -74,6 +74,29 @@ nav a{
 
 
 /* Phần Home */
+.product {
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #555;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
 
 .main-carousel{
     display: flex;
@@ -118,7 +141,7 @@ nav a{
 }
 
 .product{
-    height: 1200px;
+    height: 300px;
     
 }
 .product-list{
