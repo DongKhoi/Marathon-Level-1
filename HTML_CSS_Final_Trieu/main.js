@@ -10,7 +10,6 @@ function createUser(username, password) {
     localStorage.setItem("accounts", JSON.stringify(accounts))
 }
 
-
 document.getElementById("signupForm").addEventListener("submit", function(event){
     event.preventDefault()
     const username = document.getElementById("signupUsername").value
