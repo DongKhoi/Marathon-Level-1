@@ -16,25 +16,31 @@
             <a href="Home.html">
                 <img src="https://i.ibb.co/tH59cgv/logo.png" alt="logo">
             </a>
-            <nav> 
-              <a id="loginLink" href="signup.html" style="display: none;">Đăng nhập</a>  
-                  <div class="user-dropdown" style="position: relative;">
-                    <div id="nav-hover" class="nav-hover">
-                      <img src="logo.png" alt="">
-                      <span id="username"></span>
+            <nav>
+              <div class="logo-cart">
+                <a href="Cart.html">
+                  <i class="fa-solid fa-cart-shopping"> </i>
+                </a>                
+                    <a id="loginLink" href="signup.html" style="display: none;">Đăng nhập</a> 
+                    <div class="user-dropdown" style="position: relative;">
+                      <div id="nav-hover" class="nav-hover">
+                        <img src="logo.png" alt="">
+                        <span id="username"></span>
+                      </div>
+  
+                      <div id="dropdown-menu" class="dropdown-menu">
+                        <button class="dropdown-item" type="button">Tài khoản</button>
+                        <button onclick="logout()" class="dropdown-item">Đăng xuất</button>
+                      </div>
                     </div>
-
-                    <div id="dropdown-menu" class="dropdown-menu">
-                      <button class="dropdown-item" type="button">Tài khoản</button>
-                      <button onclick="logout()" class="dropdown-item">Đăng xuất</button>
+                    
+              </div>
+              <div class="search-box">
+                      <form >
+                        <input type="text" id="searchInput" />
+                        <button id="searchButton">Tìm kiếm</button>                      
+                      </form>
                     </div>
-                  </div>
-                  <div class="search-box">
-                    <form >
-                      <input type="text" id="searchInput" />
-                      <button id="searchButton">Tìm kiếm</button>                      
-                    </form>
-                  </div>
             </nav>
         </div>
     </header>

@@ -6,6 +6,7 @@
     <title>Cart</title>
     <link rel="stylesheet" href="shoppe.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <header>
@@ -17,6 +18,7 @@
                 <div class="user-dropdown" style="position: relative;">
                   <div class="nav-hover">
                     <img src="logo.png" alt="">
+                    <i class="fa fa-shopping-cart"></i>
                     <a>GeForce Official Store</a>
                   </div>
 
@@ -38,36 +40,23 @@
 
     <main>
         <h1 class="cart">Giỏ hàng của bạn</h1>
-        <div class="cart-item">
-            <div>
-                <input type="checkbox" name="" id="">
-                <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lhx4j4tudfgl9e" alt="Ảnh sản phẩm">
-            </div>
-            <h2>Laptop Acer Nitro 5 <br>AN515-57-5669 i5-11400H <br> 8GB 512GB GTX 1650 15.6'144Hz</h2>
-            <p><del style="color: rgba(173, 162, 162, 0.964);">₫23.990.000</del> <span style="color:#ee4d2d ; font-size: larger;">₫17.631.000</span></p>
-            <form>
-                <button>-</button>
-                <input type="number">
-                <button>+</button>
-            </form>
-            <div class="del">
-                <button>Xóa</button>
-            </div>
+        <div class="cart-item" id="cart-item">
+            
         </div>
         <div class="pay">
-                <h1>Tổng tiền</h1>
-                <p>₫17.631.000</p>
+                <h2>Tổng tiền: </h2>
+                <p class="total-price" id="total-price"></p>
                 <!-- <button id="#paymentButton">Thanh toán</button>
                 <div class="progress">
                         <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
                 </div> -->
-                <div class="container mt-4">
+                <!-- <div class="container mt-4">
                     <button id="paymentButton" class="btn btn-primary">Thanh Toán</button>
                     <div class="progress mt-3" style="display: none;">
                       <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                  </div>
-                  
+                  </div> -->
+                  <button class="checkout" id="checkout">Thanh toán</button>
         </div>
     </main>
 
@@ -83,6 +72,7 @@
     </footer>
     <!-- Script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         // $(document).ready(function(){
         //     var progressBar=$("#progress-bar");
@@ -133,6 +123,8 @@ $(document).ready(function() {
     }
     );
     </script>
+    <script src="cartData.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </body>
