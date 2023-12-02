@@ -62,13 +62,12 @@
       <div class="detail2">
         <p>Mã giảm giá: <span class="box">ABC123</span></p>
         <p class="center">Vận chuyển: <span>miễn phí</span></p>
-        <div class="input"></div>
-        <form>
-          <p>Số lượng: </p>
-          <div class="input">
-            <input type="number">
-          </div>
-        </form>
+
+        <div class="quantity">
+          <p class="quantity-tilte">Số lượng</p>
+          <input type="number" id="product-quantity" value="1" min="1" max="10" />
+        </div>
+        
         <button class="button1" id="add-to-cart"><i class="fa-solid fa-cart-shopping"> </i>Thêm vào giỏ hàng</button>
         <button class="button2">Mua hàng</button>
       </div>

@@ -35,16 +35,19 @@ document.getElementById("add-to-cart").addEventListener("click", function() {
         const product = listData.find(item => item.id == productId)
         if (product) {
             const cart = JSON.parse(localStorage.getItem("cart")) || []
+            const quantityInput = document.getElementById("product-quantity")
+            let quantity = parseInt(quantityInput.value)
+
             const existingProduct = cart.find(item => item.id === productId)
             if (existingProduct) {
-                existingProduct.quantity ++; //=<chỉ cần cộng 1
+                existingProduct.quantity += quantity; //=<chỉ cần cộng 1
             } else {
                 cart.push({
                     id: productId,
                     name: product.name,
                     price: product.price,
                     image: product.image,
-                    quantity: 1, // nếu chưa có thì mặc định là 1
+                    quantity: quantity, // nếu chưa có thì mặc định là 1
                 })
             }
             localStorage.setItem("cart", JSON.stringify(cart))
