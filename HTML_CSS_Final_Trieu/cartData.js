@@ -3,6 +3,7 @@ function getCartFromLocalStorage() {
     return cartData ? JSON.parse(cartData) : []
 }
 
+
 function displayCartItems() {
     const cart = getCartFromLocalStorage()
     const cartItemsContainer = document.querySelector(".cart-item")
@@ -42,18 +43,41 @@ function displayCartItems() {
             </div>
         `
         cartItemsContainer.appendChild(cartItem)
+        const removeButton = cartItem.querySelector(".remove-from-cart");
+        removeButton.addEventListener("click", () => {
+            removeItemFromCart(item.id);
+        });
     })
     
-    totalPrice = calculator()
+    totalPrice = calculator(cart)
     totalPriceElement.textContent = `₫${totalPrice}`
+    removeItemFromCart(itemId) 
 }
 
-function calculator() {
-  let totalPrice = 0;
-  listData.forEach((item) => {
-    const itemTotal = item.price * item.quantity;
-    totalPrice += itemTotal;
-  });
-  return totalPrice;
+function calculator(cart) {
+    let totalPrice = 0;
+    cart.forEach((item) => {
+      const itemTotal = item.price * item.quantity;
+      totalPrice += itemTotal;
+    });
+    return totalPrice;
+}
+
+function removeItemFromCart(itemId) {
+    let cart = getCartFromLocalStorage();
+
+    cart = cart.filter(item => item.id !== itemId);
+
+    saveData(cart);
+
+    displayCartItems();
+}
+
+function saveData(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 displayCartItems()
+
+
+  
+
