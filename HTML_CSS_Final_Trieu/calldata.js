@@ -1,35 +1,38 @@
 let listData = [];
 
-async function loadData() {
+async function loadData(name) {
     await axios.get('/getdata').then(response => {
         const data = response.data;
         const productContainer = document.getElementById('list-product');
         let productsHTML = '';
+        const filteredData = data.filter(item => {
+            return item.name.includes(name)
+        })
   
-        data.forEach((item, index) => {
+        filteredData.forEach((item, index) => {
             productsHTML += `
             <div class="col-md-4 product">
-                    <div class="card">
-                        <img src="${item.image}" alt="Card image cap">
-                        <div class="card-body">
+                <div class="card card-hidden text-center align-items-lg-center" aria-hidden="true" style="width: 18rem;">
+                    <img src="${item.image}" alt="Card image cap" class="card-img-top w-50">
+                    <div class="card-body">
                             <h5 class="card-title">${item.name}</h5>
                             <p class="card-text">${item.price}</p>
                             <a href="detail.html?id=${item.id}" class="btn btn-primary">Mua Hàng</a>
-                        </div>
                     </div>
                 </div>
+            </div>
             `
         })
         productContainer.innerHTML = productsHTML
       })
       .catch(error => console.error('Lỗi khi tải dữ liệu:', error));
-  }
- loadData();
-  
+    }  
 
 document.addEventListener("DOMContentLoaded", function () {
     checkLoginStatus();
 });
+
+loadData()
 
 function login() {
     var username = document.getElementById("loginUsername").value;
@@ -94,3 +97,14 @@ function displayUserInfo(username, storageKey) {
     // Lưu storage key vào một biến toàn cục để sử dụng sau này
     window.currentStorageKey = storageKey;
 }
+
+const searchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", function () {
+    const searchInput = document.getElementById("searchInput");
+    const name = searchInput.value;
+    console.log(name)
+    loadData(name);
+});
+
+loadData("");
+

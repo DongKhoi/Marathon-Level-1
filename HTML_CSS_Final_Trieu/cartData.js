@@ -25,7 +25,7 @@ function displayCartItems() {
                 </div>
                 <img src="${item.image}" alt="${item.name}" />
             </div>
-            <div class="nameProduct">
+            <div    class="nameProduct">
                 <h2>${item.name}</h2>
             </div>
             <div class="cart-item-info">

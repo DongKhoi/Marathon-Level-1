@@ -36,11 +36,11 @@
                     
               </div>
               <div class="search-box">
-                      <form >
-                        <input type="text" id="searchInput" />
-                        <button id="searchButton">Tìm kiếm</button>                      
+                      <form class="search-box" >
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm..."/>
+                        <button type="button" id="searchButton">Tìm kiếm</button>                      
                       </form>
-                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -200,17 +200,17 @@
 <script src="main.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  $(document) .ready(function() {
-    $('#carouselExampleControls').carousel({
-      interval: 2000
-    }); 
-  });
-  $(document).ready(function() {
-  $('#searchButton').click(function() {
-    var searchValue = $('#searchInput').val();
-    alert('Giá trị đã nhập: ' + searchValue);
-  });
-});
+//   $(document) .ready(function() {
+//     $('#carouselExampleControls').carousel({
+//       interval: 2000
+//     }); 
+//   });
+//   $(document).ready(function() {
+//   $('#searchButton').click(function() {
+//     var searchValue = $('#searchInput').val();
+//     alert('Giá trị đã nhập: ' + searchValue);
+//   });
+// });
 
 // Dropdown
 $('.user-dropdown').hover(
