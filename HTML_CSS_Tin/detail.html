@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewpor" content="width=device=width, initial=scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Demo</title>
@@ -31,11 +32,14 @@
                 </li>
             </ul>
             <div class="search-box">
+                <a class="nav-link active cart-button" id="cart-button" role="tab" aria-controls="home" aria-selected="true" href="cart.html">
+                  <i class="fa fa-shopping-cart"></i>
+                </a>
                 <form>
-                    <input id="changeInput" type="text" placeholder="Tìm kiếm..." required pattern=".*\S+.*">
-                    <button>Tìm kiếm</button>
+                  <input type="text" placeholder="Tìm kiếm..." required pattern=".*\S+.*">
+                  <button type="submit">Tìm kiếm</button>
                 </form>
-            </div>
+              </div>
         </nav>
     </header>
     <main>
@@ -47,7 +51,7 @@
             <div>
                 <h3>Sản phẩm</h3>
 
-                <h4 class="price">$50-$100</h4>
+                <h4 class="price" id="product-price"></h4>
                 <h5 class="detail">Tạp chí AVG:END GAME của MARVEL</h5>
                 <h6 class="magazines">MARVEL'S OFFICIAL-MAGAZINES</h6>
                 <table>
@@ -59,25 +63,17 @@
                     </tr>
                 </table>
                 <h7>Vận chuyển: miễn phí</h7>
+                <div class="quantity">
+                    <h7 class="quantity-title">số lượng: </h7>
+                    <input id="product-quantity" type="number" min="1" max="10">
+                </div>
                 <table>
                     <tr>
-                        <td label for="quantity">Số lượng:</label>
-                            <select id="quantity" name="quantity">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <td><a href="cart.html">
-                                <button style="font-size: larger;border: none;border-radius: 5px;"><i
-                                        class="fa-solid fa-cart-shopping" style="color: #f5740a;"></i>Thêm vào giỏ
-                                    hàng</button></a></td>
+                        <td>
+                            <button class="add-to-cart" id="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i><!-- Biểu tượng giỏ hàng -->
+                                Thêm vào giỏ hàng
+                              </button></td>
                         <td colspan="1">
                             <button class="KM"
                                 style="background-color: #ea3e13;color: aliceblue;font-size: larger;border: none;border-radius: 5px">Mua
@@ -143,6 +139,8 @@
             <p>Điện thoại: 0123 456 789</p>
         </div>
     </footer>
+    <script src="calldata.js"></script>
+    <script src="detailData.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a1a2440d7e.js" crossorigin="anonymous"></script>
@@ -172,9 +170,9 @@
         var span = document.getElementsByClassName("close")[0];
 
         // Khi người dùng nhấn vào nút đóng modal, đóng modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
+        //span.onclick = function () {
+          //  modal.style.display = "none";
+        //}
 
         // Khi người dùng nhấn bất kỳ đâu bên ngoài modal, đóng modal
         window.onclick = function (event) {
