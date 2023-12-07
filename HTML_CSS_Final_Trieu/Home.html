@@ -26,11 +26,12 @@
                       <div id="nav-hover" class="nav-hover">
                         <img src="logo.png" alt="">
                         <span id="username"></span>
+                        <div id="user"></div>
                       </div>
-  
+
                       <div id="dropdown-menu" class="dropdown-menu">
-                        <button class="dropdown-item" type="button">Tài khoản</button>
-                        <button onclick="logout()" class="dropdown-item">Đăng xuất</button>
+                        <button id="info" class="dropdown-item" type="button">Tài khoản</button>
+                        <button id="logout" class="dropdown-item">Đăng xuất</button>
                       </div>
                     </div>
                     
@@ -195,9 +196,29 @@
     </div>
 </div>
 
+<div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="accountModalLabel">Thông tin tài khoản</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p><strong>UserName:</strong> <span id="usernameInfo"></span></p>
+              <p><strong>Số Đơn Hàng đã thanh toán:</strong> <span id="orderCountInfo"></span></p>
+              <p><strong>Số dư tài khoản:</strong> <span id="accountBalanceInfo"></span></p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" id="accountInfook">Nạp Tiền</button>
+          </div>
+      </div>
+  </div>
+</div>
+
 <!-- Script -->
 <script src="calldata.js"></script>
-<script src="main.js"></script>
+<script src="loadAccount.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 //   $(document) .ready(function() {
@@ -230,6 +251,12 @@ $(".card-hidden").hide()
 $(".Link").click(function (){
   $(".card-hidden").show()
 })
+
+ // Khi nhấp vào "Tài Khoản" trong dropdown
+ $("#info").on("click", function (e) {
+  e.preventDefault(); // Ngăn chặn chuyển hướng đến "#"
+  $("#accountModal").modal("show");
+});
 </script>
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

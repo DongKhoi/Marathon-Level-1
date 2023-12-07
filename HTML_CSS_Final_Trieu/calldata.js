@@ -23,80 +23,40 @@ async function loadData(name) {
             </div>
             `
         })
-        productContainer.innerHTML = productsHTML
-      })
-      .catch(error => console.error('Lỗi khi tải dữ liệu:', error));
-    }  
+        // Sau khi tạo chuỗi HTML cho tất cả sản phẩm, thêm nó vào phần tử productList
+        productContainer.innerHTML = productsHTML;
+    })
+        .catch(error => {
+            console.error('Lỗi:', error);
+        });
 
-document.addEventListener("DOMContentLoaded", function () {
-    checkLoginStatus();
+    const dropdownMenuLink = document.getElementById("user");
+    const accountDropdown = document.getElementById("user-dropdown");
+    const loginLink = document.getElementById("loginLink");
+
+    if (username) {
+        // Nếu dữ liệu tài khoản tồn tại và có username, gán username lên span.
+        dropdownMenuLink.textContent = "Xin chào " + username;
+    } else {
+        // Nếu dữ liệu tài khoản không tồn tại hoặc không có username, hiển thị hyperlink "Đăng Nhập".
+        loginLink.style.display = "block";
+        accountDropdown.style.display = "none";
+    }
+
+}
+
+const logoutButton = document.getElementById("logout");
+logoutButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    // Xóa dữ liệu từ Local Storage có tên "account"
+    localStorage.removeItem("account");
+    localStorage.removeItem("cart");
+
+    // Chuyển người dùng đến trang "login.html" sau khi xóa dữ liệu
+    window.location.href = "signup.html";
 });
 
-loadData()
-
-function login() {
-    var username = document.getElementById("loginUsername").value;
-
-    if (username.trim() !== "") {
-        // Tạo storage mới cho mỗi lần đăng nhập
-        var storageKey = "user";
-        localStorage.setItem(storageKey, username);
-
-        // Hiển thị thông tin người dùng và ẩn form đăng nhập
-        displayUserInfo(username, storageKey);
-    }
-}
-
-function logout() {
-    // Xác định storage key hiện tại
-    var currentStorageKey = getCurrentStorageKey();
-
-    // Kiểm tra và xóa storage nếu tồn tại
-    if (currentStorageKey) {
-        localStorage.removeItem(currentStorageKey);
-    }
-
-    // Ẩn thông tin người dùng và hiển thị form đăng nhập
-    document.getElementById("nav-hover").style.display = "none";
-    document.getElementById("loginLink").style.display = "block";
-}
-
-function checkLoginStatus() {
-    var currentStorageKey = getCurrentStorageKey();
-
-    if (currentStorageKey) {
-        // Nếu storage tồn tại, hiển thị thông tin người dùng
-        var username = localStorage.getItem(currentStorageKey);
-        displayUserInfo(username, currentStorageKey);
-    } else {
-        // Nếu không có storage, ẩn thông tin người dùng và hiển thị form đăng nhập
-        document.getElementById("loginLink").style.display = "none";
-        document.getElementById("nav-hover").style.display = "block";
-    }
-}
-
-function getCurrentStorageKey() {
-    // Lặp qua tất cả các items trong localStorage để tìm storage key
-    for (var i = 0; i < localStorage.length; i++) {
-        var key = localStorage.key(i);
-
-        if (key.startsWith("user")) {
-            return key;
-        }
-    }
-
-    return null;
-}
-
-function displayUserInfo(username, storageKey) {
-    // Hiển thị thông tin người dùng và ẩn form đăng nhập
-    document.getElementById("username").innerText = "Xin chào, " + username;
-    document.getElementById("account-info").style.display = "block";
-    document.getElementById("login-form").style.display = "none";
-
-    // Lưu storage key vào một biến toàn cục để sử dụng sau này
-    window.currentStorageKey = storageKey;
-}
 
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", function () {
@@ -106,5 +66,45 @@ searchButton.addEventListener("click", function () {
     loadData(name);
 });
 
+
+function loadInfo() {
+    // Check if the user variable is defined
+    if (account) {
+        // Cập nhật thông tin trên giao diện
+        document.getElementById("usernameInfo").textContent = username;
+        document.getElementById("orderCountInfo").textContent = account.orderNumber || 0;
+        document.getElementById("accountBalanceInfo").textContent = account.fund || 0;
+    } else {
+        // Xử lý khi không tìm thấy tài khoản
+        alert("Không tìm thấy thông tin tài khoản.");
+    }
+}
+
+
+
+var accountModal = document.getElementById('info');
+
+// Sử dụng sự kiện "show.bs.modal" của Bootstrap để theo dõi khi modal được hiển thị
+accountModal.addEventListener("click", function () {
+    loadInfo();
+});
+
+document.getElementById("accountInfook").addEventListener("click", function () {
+    if (account) {
+        // Nạp thêm 10,000$ vào số dư tài khoản
+        account.fund += 10000;
+
+        // Cập nhật thông tin tài khoản trong storage
+        localStorage.setItem("accounts", JSON.stringify(accounts));
+
+        loadInfo()
+    } else {
+        alert("Không tìm thấy tài khoản với username: " + username);
+    }
+});
 loadData("");
+ 
+
+
+
 
