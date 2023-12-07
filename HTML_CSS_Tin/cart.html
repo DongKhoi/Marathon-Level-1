@@ -40,23 +40,19 @@
     </header>
     <main style="display: block;width: 90%;margin-left: auto;margin-right: auto;">
         <h1 style="font-size: larger;">Giỏ hàng hiện tại</h1>
-        <div class="cart-item" id="cart-items">
-           
+        <div class="item" id="cart-items">
+
         </div>
         <div class="total">
-            <div class="tongtien" id="total-price">
-               
-            </div>
-            <div class="sotien">
-                <h style="font-size: larger;"></h>
-            </div>
-            <div class="pay">
-                <button
-                    style="background-color: #ea3e13;color: aliceblue;border: none;font-size: larger;border: none;border-radius: 5px;">Thanh
-                    toán</button>
-            </div>
+            <h2>Tổng tiền:</h2>
+            <p class="total-price" id="total-price"></p>
+            <button class="checkout">Thanh toán</button>
         </div>
-
+        <!-- Progress Bar -->
+        <div class="progress" style="display: none;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"
+                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
     </main>
     <footer style="background-color: rgb(27, 19, 19);">
         <div class="logo">
@@ -90,7 +86,26 @@
                     $('.dropdown-menu', this).removeClass('show');
                 }
             );
-        });            
+            $(".progress").show();
+            $(".checkout").click(function () {
+
+                // Khởi tạo giá trị ban đầu của Progress Bar
+                let progressValue = 0;
+
+                // Sử dụng setInterval để tăng giá trị Progress Bar mỗi 1 giây
+                const progressInterval = setInterval(function () {
+                    if (progressValue < 100) {
+                        progressValue += 10; // Tăng 10% sau mỗi lần
+                        $(".progress-bar").css("width", progressValue + "%");
+                        $(".progress-bar").attr("aria-valuenow", progressValue);
+                    } else {
+                        // Đạt 100%, hiển thị thông báo và ẩn Progress Bar cũng như hiện lại button và trả về 0%
+                        clearInterval(progressInterval);
+                    }
+                });
+            });  
+        });          
     </script>
 </body>
+
 </html>

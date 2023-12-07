@@ -2,37 +2,37 @@
     {
         "id": 1,
         "name": "sản phẩm 1",
-        "price": "180.000đ",
+        "price": "180.000",
         "image": "itempicture.jpg"
     },
     {
         "id": 2,
         "name": "sản phẩm 2",
-        "price": "165.000đ",
+        "price": "165.000",
         "image": "itempicture.jpg"
     },
     {
         "id": 3,
         "name": "sản phẩm 3",
-        "price": "90.000đ",
+        "price": "90.000",
         "image": "itempicture.jpg"
     },
     {
         "id": 4,
         "name": "sản phẩm 4",
-        "price": "265.000đ",
+        "price": "265.000",
         "image": "itempicture.jpg"
     },
     {
         "id": 5,
         "name": "sản phẩm 5",
-        "price": "470.000đ",
+        "price": "470.000",
         "image": "itempicture.jpg"
     },
     {
         "id": 6,
         "name": "sản phẩm 6",
-        "price": "279.000đ",
+        "price": "279.000",
         "image": "itempicture.jpg"
     }
 ]

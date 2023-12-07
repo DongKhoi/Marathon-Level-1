@@ -202,13 +202,91 @@ button:hover {
 }
 
 .item {
-  justify-content: space-between;
-  border: 1px solid #ccc;
-  display: flex;
+
   margin-bottom: 10px;
   align-items: center;
 }
+.nameProduct {
+  font-size: 10px;
+  margin-left: 30px;
+  margin-right: 5px;
+}
+.cart-item-image {
+  flex: 0 0 100px;
+  /* Đảm bảo rằng hình ảnh có kích thước cố định */
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
 
+.cart-item-image img {
+  max-width: 100%;
+  height: auto;
+}
+.cart-item-info h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.cart-item-actions {
+  margin-left: 10px;
+  /* Khoảng cách giữa quantity và button xóa */
+}
+.quantity {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.add-to-cart {
+  background-color: #fff;
+  color: #ff5722;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  border: 1px solid #ff5722;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  /* Để các phần tử nằm cùng hàng và căn đều */
+}
+
+.cart-item-actions button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cart-item-actions button.remove-from-cart {
+  background-color: #f44336;
+}
+
+.cart-item-actions button.remove-from-cart:hover {
+  background-color: #d32f2f;
+}
+.cart-summary {
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: right;
+}
+.gia{
+  color: orangered;
+}
+.total-price{
+  font-size: larger;
+  font-display:unset ;
+  color: orangered;
+}
 .total {
   border: 1px solid #ccc;
   text-align: right;
@@ -216,6 +294,7 @@ button:hover {
   line-height: 40px;
   height: 300px;
   margin-top: 20px;
+  font-size: larger ;
 }
 
 p {
