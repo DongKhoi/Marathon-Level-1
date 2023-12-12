@@ -1,5 +1,3 @@
-
- 
 async function loadData() {
     await axios.get('/getData').then(response => {
         const data = response.data;
@@ -8,16 +6,15 @@ async function loadData() {
         });
         displayProductDetails()
     })
-    .catch(error => {
-        console.error('Lỗi:', error);
-    });
+        .catch(error => {
+            console.error('Lỗi:', error);
+        });
 }
 function displayProductDetails() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const productId = urlParams.get("index");
-    if (productId)
-    {
+    if (productId) {
         const product = listData.find(item => item.id == productId);
         if (product) {
             // Sử dụng dữ liệu sản phẩm tìm thấy để cập nhật trang detail.html
@@ -66,4 +63,5 @@ document.getElementById("add-to-cart").addEventListener("click", function () {
         }
     }
 });
+
 

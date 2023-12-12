@@ -84,7 +84,7 @@ accountModal.addEventListener('show.bs.modal', function () {
 document.getElementById("accountInfoOk").addEventListener("click", function () {
   if (account) {
     // Nạp thêm 10,000$ vào số dư tài khoản
-    account.fund += 10000;
+    account.fund += 100000;
 
     // Cập nhật thông tin tài khoản trong storage
     localStorage.setItem("accounts", JSON.stringify(accounts));
@@ -101,7 +101,7 @@ searchButton.addEventListener("click", function () {
   console.log(name)
   loadData(name);
 });
-loadData();
+loadData("");
 
 //function loadData() {
 //axios.get('/getdata')

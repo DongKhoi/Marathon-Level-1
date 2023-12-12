@@ -86,7 +86,7 @@
                     </div>
                 </div>-->
             </div>
-            <div id="placeholder" class="row        ">
+            <div id="placeholder" class="row" style="display: none;">
                 <div class="col-md-4 my-3" aria-hidden="true">
                     <div class="card" style="width: 23rem;">
                         <img class="card-img-top" src="load.png" alt="Card image cap">
@@ -167,9 +167,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p><strong>UserName:</strong> <span id="usernameInfo"></span></p>
-                    <p><strong>Số Đơn Hàng đã thanh toán:</strong> <span id="orderCountInfo"></span></p>
-                    <p><strong>Số dư tài khoản:</strong> <span id="accountBalanceInfo"></span></p>
+                    <p style="font-size: larger"><strong>UserName:</strong> <span id="usernameInfo"></span></p>
+                    <p style="font-size: larger"><strong>Số Đơn Hàng đã thanh toán:</strong> <span id="orderCountInfo"></span></p>
+                    <p style="font-size: larger"><strong>Số dư tài khoản:</strong> <span id="accountBalanceInfo"></span></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -191,30 +191,31 @@
             $('#carouselExample').carousel({
                 interval: 2000 // 2 giây
             });
-            $("#changeInput").change(function () {
-                var searchValue = $("#changeInput").val();
-                alert("Bạn đã tìm kiếm: " + searchValue);
-            });
-            $('.user-dropdown').hover(
-                function () {
-                    $(this).addClass('active');
-                    $('.dropdown-menu', this).addClass('show');
-                },
-                function () {
-                    $(this).removeClass('active');
-                    $('.dropdown-menu', this).removeClass('show');
-                }
+            $("#placeholder").hide();
+
+            $("#loadmore").click(function () {
+                $("#placeholder").show();
+            }
             );
+        
+        $("#changeInput").change(function () {
+            var searchValue = $("#changeInput").val();
+            alert("Bạn đã tìm kiếm: " + searchValue);
+        });
+        $('.user-dropdown').hover(
+            function () {
+                $(this).addClass('active');
+                $('.dropdown-menu', this).addClass('show');
+            },
+            function () {
+                $(this).removeClass('active');
+                $('.dropdown-menu', this).removeClass('show');
+            }
+        );
         })
 
 
-        //     //$("#placeholder").hide();
 
-        //     //$("#loadmore").click(function () {
-        //         //$("#placeholder").show();
-        //     //}
-        //     //);
-        // //});
 
         // //const username = JSON.parse(localStorage.getItem("account"))
         // function logout() {
