@@ -1,0 +1,37 @@
+/* Thiet lap cac kieu cho header */
+header{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: sticky;
+}
+/* Thiet lap kieu cho navigation menu */
+nav{
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+}
+nav ul{
+    list-style-type: none;
+}
+nav ul li{
+    display: inline;
+    margin-right: 20px;
+}
+/* THiet lap kieu cho main content */
+main {
+    min-height: calc(100% - 100px); /* Chiều cao tối thiểu của main, trừ đi chiều cao của footer */
+  }
+/* Thiet lap kieu cho footer */
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 0;
+    ;
+}
+a{
+    color: white;
+} 
