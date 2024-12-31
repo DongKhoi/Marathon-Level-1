@@ -16,6 +16,7 @@ main {
 
 }
 
+
 nav {
   text-align: right;
 }
@@ -49,6 +50,7 @@ header {
   z-index: 1000;
   height: 10%;
 }
+
 
 .product {
   text-align: center;
@@ -305,6 +307,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 23rem;
 }
 
 .avatar {
@@ -312,4 +315,9 @@ p {
   height: 50px;
   display: flex;
   display: inline-block;
+}
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
